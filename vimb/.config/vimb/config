@@ -1,0 +1,9 @@
+set home-page=file:////home/potatoe/Documents/oftenlinks.html
+nnoremap b <C-O>
+nnoremap <BS> <C-O>
+nnoremap f <C-I>
+nnoremap s <C-C>
+nnoremap = zi
+nnoremap - zo
+nnoremap i :set images!<CR>
+set download-path=~/Downloads
