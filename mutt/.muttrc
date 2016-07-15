@@ -1,0 +1,145 @@
+#                                *** ameba's .muttrc ***
+# a bit of a mess... 
+#
+set sidebar_width=24
+set sidebar_visible=yes
+set sidebar_delim=' │'
+set sidebar_format  = "%B%* (%N)"
+color sidebar_new yellow default
+bind index . sidebar-next
+bind index , sidebar-prev
+bind index 0 sidebar-open
+macro index b '<enter-command>toggle sidebar_visible<enter>'
+macro pager b '<enter-command>toggle sidebar_visible<enter>'
+bind index B bounce-message
+
+
+
+# source ~/.mutt/personal.muttrc
+# folder-hook personal/* source ~/.mutt/personal.muttrc
+# folder-hook github/*   source ~/.mutt/github.muttrc
+set mbox_type=Maildir
+
+set sendmail="/usr/bin/msmtp"
+
+#      Next configure the locations of the common folders:
+    
+set from="ameba23 <ameba23@systemli.org>"
+set folder="~/Mail" 
+set mask="!^\\.[^.]"
+set mbox="+systemli/INBOX"
+set record="~/Mail/systemli/Sent" # +.Sent
+set postponed="+systemli/Drafts"
+set spoolfile="+systemli/INBOX"
+set header_cache=~/.cache/mutt
+    
+#      Set up mailboxes by scanning for all subfolders in ~/Maildir:    
+#mailboxes `echo -n "+ "; find ~/Mail/systemli -maxdepth 1 -type d -name ".*" -printf "+'%f' "`
+mailboxes +systemli/INBOX \
+          +systemli/Drafts \
+          +systemli/Sent \
+          +archive-sli \
+          +mtmedia/INBOX \
+          +mtmedia/INBOX.junk \
+          +mtmedia/INBOX.Sent
+macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+
+# To additionally get straight to the folder browser when copying, moving and
+#      attaching mail, add the following macros:
+    
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
+macro compose A "<attach-message>?<toggle-mailboxes>" "attach message(s) to this message"
+#macro index \Cs  "<change-folder> =JWR/INBOX.Sent<enter>"  "go to Sent Items"
+
+
+# ---------------- gpg encryption:
+#source ~/.gpg.rc
+
+# if not using offlineimap, directly use imap folders
+#set spoolfile=imaps://user@mail.example.com/INBOX
+#set folder=imaps://mail.example.com/ 
+
+# ---------------- address book
+# both aliases and keybindings for addresses stored in 'abook' address book program
+set alias_file=~/.addressbookmutt
+source ~/.addressbookmutt
+set sort_alias=address # or can be =unsorted
+
+set query_command="abook --mutt-query '%s'"  # address book
+macro editor ";" \Ct               # bin ; to  Ctrl-t in editor-mode (easier IMO)
+macro index a     "|abook --add-email\n" 'add sender to abook'
+macro pager a     "|abook --add-email\n" 'add sender to abook'
+
+# use urlview with <ctrl>-b
+macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+
+macro index <F3> "l~B \"" 'limit search of whole messages'
+
+
+set tmpdir="/tmp"
+
+# scroll in pager with up and down keys:
+set pager_stop
+bind pager <up> previous-line
+bind pager <down> next-line
+
+#normally this would be set sort=threads
+set sort=date
+   
+#set edit_headers=yes 
+
+set nomarkers   # no wrap markers
+# set markers=no
+#set editor="gvim -p --remote-tab-wait"
+
+# Forward attachments
+# This is possibly mutt's only obvious weak area. Forwarding attachments
+# isn't particularly good. [More details?]
+#set mime_forward=ask-no
+#set mime_forward_decode
+set mime_forward=yes
+
+# ---------- index and pager together on split screen:
+set pager_index_lines=10 
+
+# ---------------------- mu (mail-utils) to search email
+# first macro does the search according to user query, second macro jumps to result list
+#macro index <F8> "<shell-escape>rm -rf ~/.mu/results; mu-find -o l -l ~/.mu/results " "mu-find" 
+macro index <F8> "<shell-escape>mu find --clearlinks --format=links --linksdir=~/Mail/search " \
+                  "mu find"             
+#macro index <F9> "<change-folder-readonly>~/.mu/results\n" "display mu-find results" 
+macro index <F9> "<change-folder-readonly>~/Mail/search<return>" \
+                  "mu find results"
+
+# ------------------------ colours
+color normal default default
+# Colours for items in the index
+color index brightblue  black ~N
+# -*- Mode: muttrc -*-
+color attachment brightmagenta default
+color error      brightred    default
+color hdrdefault red          default
+color indicator  brightyellow blue
+color markers    brightcyan   default
+color message    brightcyan   default
+color normal     default      default
+color quoted     brightblue   default
+color search     default      green
+color signature  red          default
+color status     yellow       blue
+color tilde      magenta      default
+color tree       magenta      default
+#color index brightgreen white "~N (~x hagbard\.davep\.org | ~h \"^In-[Rr]eply-[Tt]o: .*hagbard\.riseup\.net\")"
+
+
+# ---------------------- View html using w3m.  this is used together with an entry in a mailcap (eg: .mailcap) file
+# from http://jasonwryan.com/blog/2012/05/12/mutt/
+auto_view text/html  #view html automatically
+alternative_order text/plain text/enriched text/html
+
+# save attachments to ~/Downloads
+# (commented out in favour of aliasing mutt to 'cd ~/Downloads;/usr/bin/mutt;cd -'
+#macro attach s <save-entry><kill-line>/home/potatoe/Downloads/<enter>
