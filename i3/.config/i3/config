@@ -95,13 +95,26 @@ bindsym $mod+Shift+a focus child
 set $tag1 "1:www"
 set $tag2 "2:mutt"
 set $tag3 "3:term"
+set $tag4 "4:todo"
+set $tag5 "5:mpc"
 
-# switch to workspace
+
+# assign programs to workspaces:
+assign [class="Firefox"] $tag1
+assign [class="Vimb"] $tag1
+#assign [class="URxvt"] $tag3
+assign [instance="urxvt"] $tag3
+assign [instance="mutt"] $tag2
+assign [instance="offlineimap"] $tag2
+assign [instance="todo"] $tag4
+assign [instance="ncmpcpp"] $tag5
+
+# switch to workspace - this also runs the programs assigned to the workspaces if they are not already running
 bindsym $mod+1 workspace $tag1
-bindsym $mod+2 workspace $tag2
+bindsym $mod+2 workspace $tag2 exec "ps -ef | grep -v grep | grep -- '-name offlineimap' || urxvt -name offlineimap" exec "pgrep mutt || urxvt -name mutt -e mutt" exec "i3-msg layout tabbed"
 bindsym $mod+3 workspace $tag3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
+bindsym $mod+4 workspace $tag4 exec "ps -ef | grep -v grep | grep -- '-name todo' || urxvt -name todo -e vim ~/Documents/todo.md"
+bindsym $mod+5 workspace $tag5 exec "pgrep ncmpcpp || urxvt -name ncmpcpp -e ncmpcpp"
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
@@ -112,8 +125,8 @@ bindsym $mod+0 workspace 10
 bindsym $mod+Shift+1 move container to workspace $tag1
 bindsym $mod+Shift+2 move container to workspace $tag2
 bindsym $mod+Shift+3 move container to workspace $tag3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+4 move container to workspace $tag4
+bindsym $mod+Shift+5 move container to workspace $tag5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
@@ -165,29 +178,31 @@ bar {
 # -------------------------------------startup 
 #xfce4-volumed & 
 exec --no-startup-id xfce4-power-manager 
-#exec xfce4-power-manager 
 
-#display wallpaper
+#---------------display wallpaper
 #exec --no-startup-id nitrogen --restore
 #exec --no-startup-id feh --bg-scale ~/photos/ant_kodak_camera/100_8698.JPG 
 exec --no-startup-id feh --bg-scale ~/Images/double_planetoid.jpg 
 
-#terminator -l mutttabs &
-#terminator -m &
 #gxkb &
 
 # start mpd
 exec --no-startup-id mpd
 
+# display resolutions
+exec --no-startup-id xrandr --auto --output VGA1 --mode 1280x1024 --left-of eDP1 --output eDP1 --mode 1366x768 &
 
-# ranger, mutt, ncmpcpp
-#exec --no-startup-id "URxvt -e xxx -name xxx"
+# ranger, mutt, ncmpcpp, todolist
+#exec --no-startup-id "urxvt -name mutt -e mutt"
+#exec --no-startup-id "urxvt -name offlineimap"
+
+exec "i3-msg layout tabbed"
+#exec --no-startup-id "urxvt -name todo -e vim ~/Documents/todo.md"
+#exec --no-startup-id "urxvt -name ncmpcpp -e ncmpcpp"
 
 #will be load layout:
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/michael/.i3/workspace-1.json'"
 
-#exec --no-startup-id terminator -e mutt
-#exec --no-startup-id terminator -e todo
 
 # ---------------------------ameba keybindings:
 #
@@ -201,7 +216,7 @@ bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 2%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 2%- unmute
 bindsym XF86AudioMute exec amixer -c 0 set Master 1+ toggle
 
-# i use this after i unplug monitor and im stuck
+# i use this after i unplug monitor and im stuck without a terminal
 bindsym $mod+m exec xrandr --auto
 
 #pause mpd
@@ -209,25 +224,19 @@ bindsym $mod+p exec "mpc toggle"
 #bindsym $mod+period exec "mpc toggle"
 
 # change track mpd
-bindsym $mod+comma exec mpc prev && ~/Documents/notifympc
-bindsym $mod+period exec mpc next && ~/Documents/notifympc
-# script to display mpd track name etc
-bindsym $mod+Ctrl+m exec ~/Documents/notifympc
+bindsym $mod+comma exec mpc prev && exec notify-send "`mpc`"
+bindsym $mod+period exec mpc next && exec notify-send "`mpc`"
+# whats this song called?  - display mpd track name etc
+bindsym $mod+Ctrl+m exec notify-send "`mpc`"
 
-# script to toggle between german and british keyboard layout
+# script to toggle between german and US keyboard layout
 bindsym $mod+Ctrl+k exec ~/Documents/togglekb.sh
 
-# script to permanently toggle images in vimprobable
+# script to permanently toggle images on/off in vimprobable
 bindsym $mod+Ctrl+i exec ~/Documents/toggleimages.py
 
-# display resolutions
-exec --no-startup-id xrandr --auto --output VGA1 --mode 1280x1024 --left-of eDP1 --output eDP1 --mode 1366x768 &
 
-# assign programs to workspaces:
-assign [class="Firefox"] $tag1
-assign [class="URxvt"] $tag3
-
-# Cycle through active workspaces
+# Cycle through active workspaces (similar to alt+tab)
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
@@ -240,6 +249,7 @@ bindsym $mod+Shift+bracketright move workspace to output right
 
 # scratchpad
 bindsym $mod+Shift+s scratchpad show
+bindsym $mod+Ctrl+s move window to scratchpad
 
 # i like this option but it messes with keybindings which change workspace
 workspace_auto_back_and_forth no
