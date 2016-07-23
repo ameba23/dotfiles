@@ -1,8 +1,12 @@
-# Aliases in this file are bash and zsh compatible
+# 
+# ------------------ameba's aliases (zsh, mostly bash compatible)
+# 
+# needs organising!  should be split into personal / more useful to other people 
+# should also be in categories
+#
+# stuff at the top is mostly adapted from YADR (yet another dotfile repo)
 #
 
-# Don't change. The following determines where YADR is installed.
-#yadr=$HOME/.yadr
 
 # Get operating system
 platform='unknown'
@@ -46,7 +50,7 @@ fi
 alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='vim ~/.config/aliases.zsh' #alias edit
+alias ae='vim ~/dotfiles/zsh/.config/aliases.zsh' #alias edit
 alias ar='source ~/.config/aliases.zsh'  #alias reload
 
 # vim using
@@ -176,9 +180,6 @@ alias rdmr='rake db:migrate:redo'
 alias hpr='hub pull-request'
 alias grb='git recent-branches'
 
-# Finder
-#alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-#alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 #alias dbtp='spring rake db:test:prepare'
 #alias dbm='spring rake db:migrate'
@@ -186,47 +187,74 @@ alias grb='git recent-branches'
 #alias dbmd='spring rake db:migrate:down'
 #alias dbmu='spring rake db:migrate:up'
 
-# Homebrew
-alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
-
+# surfraw 
 alias sr=surfraw
-alias i3config='vi ~/.config/i3/config'
+
+alias i3config='vim ~/.config/i3/config'
+
 alias cd..='cd ..'
-alias keys='cat ~/.config/i3/config|grep bindsym'
+
+
+# display keybindings for i3
+alias keys='cat ~/.config/i3/config|grep bindsym|highlight -S sh --out-format=ansi|less'
+
+# fasd (an amazing bit of software)
 alias v='f -e vim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
 
 alias fbreader=FBReader
 
+# too cautious?
 #alias rm='rm -I'
+
 alias vess='/usr/share/vim/vim74/macros/less.sh'
 alias oftenlinks='markdown ~/Documents/oftenlinks.md >! ~/Documents/oftenlinks.html'
 alias uploadsite='rsync -avz -e ssh ~/Documents/static/site/ ameba@ehion.com:public_html/site'
 alias dl='cd ~/Downloads'
-alias muttrc='vi ~/.muttrc'
+alias muttrc='vim ~/.muttrc'
 
-# start mutt in Download directory so that attachments are saved there
+# start mutt in Download directory so that attachments are saved there (an unelegant workaround)
 alias mutt='cd ~/Downloads;/usr/bin/mutt;cd -'
 
+# zmv - another amazing bit of software
 autoload zmv
 alias zmv='noglob zmv'
 alias zcp='noglob zmv -C'
 alias zln='noglob zmv -L'
 alias zsy='noglob zmv -Ls'
 
+# my global todo list.  i stopped using this alias since i have an i3 workspace dedicated to this file
 alias todo='vim ~/Documents/todo.md'
+
 alias l.='ls -d .*'
 alias ..='cd ..'
-alias nomonitor='xrandr --auto'
+
+
 #alias torbrowser='~/software/tor-browser_en-US/start-tor-browser'
+
+# this seems to work when the mouse cursor gets stuck
 #alias fixmouse='sudo rmmod psmouse; sudo modprobe psmouse'
-alias mtmutt='mutt -f ~/Mail/mtmedia/INBOX'
+
+# abandoned in favour of sidebar and folder-hooks
+#alias mtmutt='mutt -f ~/Mail/mtmedia/INBOX'
+
 alias vi=vim
 
 
+# ---xrandr:
 # alias monitor='xrandr --auto --output VGA1 --mode 1280x1024 --left-of eDP1'
 alias monitor='xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1'
+alias nomonitor='xrandr --auto'
 
-# newest file
+# newest file (or directory) -global alias (zsh)
 alias -g newest='*(om[1])'
+
+# vim remote (to keep only a single instance of vim) - been experimenting with this
+alias vr='vim --servername VIM --remote-tab'
+
+# run offlineimap one time.  i use this when i am connected through my phone and want to minimise data use
+alias oi='offlineimap -o'
+
+# unmount all devices (which are managed by udisks)
+alias unplug='udiskie-umount -a'

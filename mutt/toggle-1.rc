@@ -1,0 +1,6 @@
+# mutt script toggle to second mailbox
+set mbox="+systemli/INBOX"
+set record="~/Mail/systemli/Sent" # +.Sent
+set postponed="+systemli/Drafts"
+set spoolfile="+systemli/INBOX"
+macro index S '<enter-command>source ~/dotfiles/mutt/toggle-2.rc<enter>'

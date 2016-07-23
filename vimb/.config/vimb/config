@@ -7,3 +7,4 @@ nnoremap = zi
 nnoremap - zo
 nnoremap i :set images!<CR>
 set download-path=~/Downloads
+set images=false

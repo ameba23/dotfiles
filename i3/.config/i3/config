@@ -186,6 +186,8 @@ exec --no-startup-id feh --bg-scale ~/Images/double_planetoid.jpg
 
 #gxkb &
 
+exec --no-startup-id udiskie
+
 # start mpd
 exec --no-startup-id mpd
 
@@ -232,8 +234,8 @@ bindsym $mod+Ctrl+m exec notify-send "`mpc`"
 # script to toggle between german and US keyboard layout
 bindsym $mod+Ctrl+k exec ~/Documents/togglekb.sh
 
-# script to permanently toggle images on/off in vimprobable
-bindsym $mod+Ctrl+i exec ~/Documents/toggleimages.py
+# script to permanently toggle images on/off in vimb
+bindsym $mod+Ctrl+i exec "python2.7 ~/dotfiles/toggleimagesvimb.py"
 
 
 # Cycle through active workspaces (similar to alt+tab)

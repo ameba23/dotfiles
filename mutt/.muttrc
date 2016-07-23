@@ -1,6 +1,9 @@
 #                                *** ameba's .muttrc ***
 # a bit of a mess... 
 #
+
+
+#------------------------------sidebar
 set sidebar_width=24
 set sidebar_visible=yes
 set sidebar_delim=' │'
@@ -11,22 +14,30 @@ bind index , sidebar-prev
 bind index 0 sidebar-open
 macro index b '<enter-command>toggle sidebar_visible<enter>'
 macro pager b '<enter-command>toggle sidebar_visible<enter>'
+# rebind bounce-message cos b now used for sidebar:
 bind index B bounce-message
 
-
-
+#macro index S '<enter-command>set mbox="+mtmedia/INBOX"<enter>'
+#source ~/dotfiles/mutt/toggle-2.rc
+#set def_box="+mtmedia/INBOX"
+#set the_box=$def_box
+#macro index S '<change-folder>the_box<enter>'
 # source ~/.mutt/personal.muttrc
 # folder-hook personal/* source ~/.mutt/personal.muttrc
 # folder-hook github/*   source ~/.mutt/github.muttrc
-set mbox_type=Maildir
+# folder-hook +mtmedia/* from="penguin <penguin@mtmedia.org>"
+# folder-hook +systemli/* from="ameba23 <ameba23@systemli.org>"
 
+set mbox_type=Maildir
 set sendmail="/usr/bin/msmtp"
 
 #      Next configure the locations of the common folders:
     
-set from="ameba23 <ameba23@systemli.org>"
+#set from="ameba23 <ameba23@systemli.org>"
+
 set folder="~/Mail" 
 set mask="!^\\.[^.]"
+
 set mbox="+systemli/INBOX"
 set record="~/Mail/systemli/Sent" # +.Sent
 set postponed="+systemli/Drafts"
@@ -35,11 +46,12 @@ set header_cache=~/.cache/mutt
     
 #      Set up mailboxes by scanning for all subfolders in ~/Maildir:    
 #mailboxes `echo -n "+ "; find ~/Mail/systemli -maxdepth 1 -type d -name ".*" -printf "+'%f' "`
+# manually set up mailboxes:
 mailboxes +systemli/INBOX \
+          +mtmedia/INBOX \
           +systemli/Drafts \
           +systemli/Sent \
           +archive-sli \
-          +mtmedia/INBOX \
           +mtmedia/INBOX.junk \
           +mtmedia/INBOX.Sent
 macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
