@@ -1,0 +1,7 @@
+[Added Associations]
+text/plain=vim.desktop;
+
+[Default Applications]
+text/plain=vim.desktop
+
+video/webm=mplayer.desktop

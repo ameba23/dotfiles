@@ -1,6 +1,7 @@
 set home-page=file:////home/potatoe/Documents/oftenlinks.html
 nnoremap b <C-O>
 nnoremap <BS> <C-O>
+nnoremap q <C-Q>
 nnoremap f <C-I>
 nnoremap s <C-C>
 nnoremap = zi

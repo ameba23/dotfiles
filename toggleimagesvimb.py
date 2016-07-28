@@ -9,7 +9,7 @@ def excuteCmd(cmd):
     output = commands.getoutput(cmd)
 
 def setTask():
-    excuteCmd('cat ~/.config/vimb/config >  oldrc')
+    excuteCmd('cat ~/dotfiles/vimb/.config/vimb/config >  oldrc')
     input = open('oldrc','r')
     emptyFile = False
     lines = input.readlines()
@@ -26,7 +26,7 @@ def setTask():
         else:
             output.write(lines[i])
     output.close()
-    excuteCmd('mv -f newrc ~/.config/vimb/config')
+    excuteCmd('mv -f newrc ~/dotfiles/vimb/.config/vimb/config')
     excuteCmd('rm -f oldrc')
     excuteCmd('rm -f newrc')
 

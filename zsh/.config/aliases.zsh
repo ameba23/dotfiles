@@ -250,6 +250,9 @@ alias nomonitor='xrandr --auto'
 # newest file (or directory) -global alias (zsh)
 alias -g newest='*(om[1])'
 
+# on = open newest - open newest file with default application
+alias on='xdg-open newest'
+
 # vim remote (to keep only a single instance of vim) - been experimenting with this
 alias vr='vim --servername VIM --remote-tab'
 

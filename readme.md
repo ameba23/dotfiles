@@ -10,7 +10,9 @@ includes dotfiles for:
 * ranger (file manager)
 * vim 
 * vimb (browser)
-* x (xintrc and xresources, mostly for configuring my terminal, URxvt)
-* zsh, includes aliases
+* x (xintrc and xresources, mostly for configuring my terminal emulator, URxvt)
+* zsh, includes my aliases
 
-managed by symbolic links created by gnu stow
+now beginning to include some scripts as well
+
+managed by symbolic links created by GNU Stow

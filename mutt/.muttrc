@@ -3,6 +3,15 @@
 #
 
 
+set mbox_type=Maildir
+#set sendmail="/usr/bin/msmtp"
+
+set folder="~/Mail" 
+set mask="!^\\.[^.]"
+
+set header_cache=~/.cache/mutt
+set tmpdir="/tmp"
+
 #------------------------------sidebar
 set sidebar_width=24
 set sidebar_visible=yes
@@ -22,27 +31,27 @@ bind index B bounce-message
 #set def_box="+mtmedia/INBOX"
 #set the_box=$def_box
 #macro index S '<change-folder>the_box<enter>'
-# source ~/.mutt/personal.muttrc
-# folder-hook personal/* source ~/.mutt/personal.muttrc
-# folder-hook github/*   source ~/.mutt/github.muttrc
-# folder-hook +mtmedia/* from="penguin <penguin@mtmedia.org>"
-# folder-hook +systemli/* from="ameba23 <ameba23@systemli.org>"
 
-set mbox_type=Maildir
-set sendmail="/usr/bin/msmtp"
-
-#      Next configure the locations of the common folders:
-    
-#set from="ameba23 <ameba23@systemli.org>"
-
-set folder="~/Mail" 
-set mask="!^\\.[^.]"
 
 set mbox="+systemli/INBOX"
-set record="~/Mail/systemli/Sent" # +.Sent
+set record="~/Mail/systemli/Sent" 
 set postponed="+systemli/Drafts"
 set spoolfile="+systemli/INBOX"
-set header_cache=~/.cache/mutt
+#  --------folder hooks:
+folder-hook +mtmedia/* 'set from="penguin@mtmedia.org"'
+folder-hook +mtmedia/* 'set sendmail="/usr/bin/msmtp -a mtmedia"'
+folder-hook +mtmedia/* 'set mbox="+mtmedia/INBOX"'
+folder-hook +mtmedia/* 'set record="+mtmedia/INBOX.Sent"' 
+folder-hook +mtmedia/* 'set postponed="+mtmedia/INBOX.Drafts"'
+folder-hook +mtmedia/* 'set spoolfile="+mtmedia/INBOX"'
+
+folder-hook +systemli/* 'set from="ameba23@systemli.org"'
+folder-hook +systemli/* 'set sendmail="/usr/bin/msmtp -a default"'
+folder-hook +systemli/* 'set mbox="+systemli/INBOX"'
+folder-hook +systemli/* 'set record="~/Mail/systemli/Sent"' 
+folder-hook +systemli/* 'set postponed="+systemli/Drafts"'
+folder-hook +systemli/* 'set spoolfile="+systemli/INBOX"'
+
     
 #      Set up mailboxes by scanning for all subfolders in ~/Maildir:    
 #mailboxes `echo -n "+ "; find ~/Mail/systemli -maxdepth 1 -type d -name ".*" -printf "+'%f' "`
@@ -91,7 +100,6 @@ macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
 macro index <F3> "l~B \"" 'limit search of whole messages'
 
 
-set tmpdir="/tmp"
 
 # scroll in pager with up and down keys:
 set pager_stop

@@ -91,6 +91,7 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
 
+# ------------------------workspace names:
 set $tag1 "1:www"
 set $tag2 "2:mutt"
 set $tag3 "3:term"
@@ -98,16 +99,21 @@ set $tag4 "4:todo"
 set $tag5 "5:mpc"
 
 
-# assign programs to workspaces:
+# --------------------------------assign programs to workspaces:
 assign [class="Firefox"] $tag1
 assign [class="Vimb"] $tag1
+assign [class="Evopedia"] $tag1
+
 #assign [class="URxvt"] $tag3
 assign [instance="urxvt"] $tag3
+
 assign [instance="mutt"] $tag2
 assign [instance="offlineimap"] $tag2
+
 assign [instance="todo"] $tag4
 assign [instance="ncmpcpp"] $tag5
 
+#----------------------------------------
 # switch to workspace - this also runs the programs assigned to the workspaces if they are not already running
 bindsym $mod+1 workspace $tag1
 bindsym $mod+2 workspace $tag2 exec "ps -ef | grep -v grep | grep -- '-name offlineimap' || urxvt -name offlineimap" exec "pgrep mutt || urxvt -name mutt -e mutt" exec "i3-msg layout tabbed"
@@ -241,6 +247,7 @@ bindsym $mod+Ctrl+i exec "python2.7 ~/dotfiles/toggleimagesvimb.py"
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
+# Toggle between current workspace and the previous one 
 bindsym $mod+z workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_and_forth
 
@@ -248,7 +255,7 @@ bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_
 bindsym $mod+Shift+bracketleft move workspace to output left
 bindsym $mod+Shift+bracketright move workspace to output right
 
-# scratchpad
+# scratchpad -very useful
 bindsym $mod+Shift+s scratchpad show
 bindsym $mod+Ctrl+s move window to scratchpad
 
