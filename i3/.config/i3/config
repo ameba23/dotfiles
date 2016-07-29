@@ -29,7 +29,7 @@ font xft:Bitstream Sans Mono Bold 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return workspace $tag3; exec i3-sensible-terminal
+bindsym $mod+Return workspace $tag1; exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -92,23 +92,23 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+a focus child
 
 # ------------------------workspace names:
-set $tag1 "1:www"
-set $tag2 "2:mutt"
-set $tag3 "3:term"
+set $tag1 "1:term"
+set $tag2 "2:www"
+set $tag3 "3:mutt"
 set $tag4 "4:todo"
 set $tag5 "5:mpc"
 
 
 # --------------------------------assign programs to workspaces:
-assign [class="Firefox"] $tag1
-assign [class="Vimb"] $tag1
-assign [class="Evopedia"] $tag1
+assign [class="Firefox"] $tag2
+assign [class="Vimb"] $tag2
+assign [class="Evopedia"] $tag2
 
-#assign [class="URxvt"] $tag3
-assign [instance="urxvt"] $tag3
+#assign [class="URxvt"] $tag1
+assign [instance="urxvt"] $tag1
 
-assign [instance="mutt"] $tag2
-assign [instance="offlineimap"] $tag2
+assign [instance="mutt"] $tag3
+assign [instance="offlineimap"] $tag3
 
 assign [instance="todo"] $tag4
 assign [instance="ncmpcpp"] $tag5
@@ -116,8 +116,8 @@ assign [instance="ncmpcpp"] $tag5
 #----------------------------------------
 # switch to workspace - this also runs the programs assigned to the workspaces if they are not already running
 bindsym $mod+1 workspace $tag1
-bindsym $mod+2 workspace $tag2 exec "ps -ef | grep -v grep | grep -- '-name offlineimap' || urxvt -name offlineimap" exec "pgrep mutt || urxvt -name mutt -e mutt" exec "i3-msg layout tabbed"
-bindsym $mod+3 workspace $tag3
+bindsym $mod+2 workspace $tag2
+bindsym $mod+3 workspace $tag3 exec "ps -ef | grep -v grep | grep -- '-name offlineimap' || urxvt -name offlineimap" exec "pgrep mutt || urxvt -name mutt -e mutt" exec "i3-msg layout tabbed"
 bindsym $mod+4 workspace $tag4 exec "ps -ef | grep -v grep | grep -- '-name todo' || urxvt -name todo -e vim ~/Documents/todo.md"
 bindsym $mod+5 workspace $tag5 exec "pgrep ncmpcpp || urxvt -name ncmpcpp -e ncmpcpp"
 bindsym $mod+6 workspace 6
