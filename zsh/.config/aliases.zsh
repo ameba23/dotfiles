@@ -37,6 +37,7 @@ alias cls='clear;ls'
 alias df='df -h'
 alias du='du -h'
 #alias du='du -h -d 2'
+alias dus='du -sckx * | sort -nr' #directories sorted by size
 
 if [[ $platform == 'linux' ]]; then
   alias ll='ls -alh --color=auto'
