@@ -123,6 +123,8 @@ alias gt='git t'
 alias gbg='git bisect good'
 alias gbb='git bisect bad'
 
+alias gma='git commit -am'
+
 # Common shell functions
 alias less='less -r'
 alias tf='tail -f'
