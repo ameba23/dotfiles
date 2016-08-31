@@ -4,6 +4,7 @@ nnoremap <BS> <C-O>
 nnoremap q <C-Q>
 nnoremap f <C-I>
 nnoremap s <C-C>
+nnoremap p :sh! /bin/sh -c 'echo "*[$VIMB_TITLE]($VIMB_URI)" >> ~/Documents/oftenlinks.md'<CR>:sh echo *[$VIMB_TITLE]($VIMB_URI)<CR>
 nnoremap = zi
 nnoremap - zo
 nnoremap i :set images!<CR>

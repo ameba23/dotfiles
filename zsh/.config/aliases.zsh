@@ -67,7 +67,10 @@ alias ze='vim ~/.config/aliases.zsh'
 alias zr='source ~/.config/aliases.zsh'
 
 # Git Aliases
+
 alias gs='git status'
+# gs is normally ghostscript. 
+
 alias gstsh='git stash'
 alias gst='git stash'
 alias gsp='git stash pop'
@@ -212,8 +215,11 @@ alias fbreader=FBReader
 #alias rm='rm -I'
 
 alias vess='/usr/share/vim/vim74/macros/less.sh'
+
 alias oftenlinks='markdown ~/Documents/oftenlinks.md >! ~/Documents/oftenlinks.html'
+
 alias uploadsite='rsync -avz -e ssh ~/Documents/static/site/ ameba@ehion.com:public_html/site'
+
 alias dl='cd ~/Downloads'
 alias muttrc='vim ~/.muttrc'
 

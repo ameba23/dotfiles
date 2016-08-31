@@ -36,5 +36,11 @@ autoload zmv
 #for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file
 source $HOME/.config/aliases.zsh
 
+# vim-style keybindings (does prezto already do this?)
+bindkey -v
+
+# bind Ctrl-R to reverse history search
+bindkey '^R' history-incremental-search-backward
+
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

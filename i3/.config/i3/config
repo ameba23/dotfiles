@@ -237,7 +237,7 @@ bindsym $mod+period exec mpc next && exec notify-send "`mpc`"
 bindsym $mod+Ctrl+m exec notify-send "`mpc`"
 
 # script to toggle between german and US keyboard layout
-bindsym $mod+Ctrl+k exec ~/Documents/togglekb.sh
+bindsym $mod+Ctrl+k exec ~/dotfiles/togglekb.sh
 
 # script to permanently toggle images on/off in vimb
 bindsym $mod+Ctrl+i exec "python2.7 ~/dotfiles/toggleimagesvimb.py"

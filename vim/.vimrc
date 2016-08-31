@@ -14,6 +14,7 @@ call vundle#rc()
 "
 " original repos on github
 Bundle 'tpope/vim-fugitive'
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 " Bundle 'Lokaltog/vim-easymotion'
 Plugin 'ervandew/supertab'
 Plugin 'ctrlp.vim'
