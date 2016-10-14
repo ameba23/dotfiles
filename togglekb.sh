@@ -1,5 +1,6 @@
 #!/bin/bash
 # script to toggle between US and de keyboard layouts, to be called by keybinding in window manager
+# requires notify-send
 #
 setxkbmap -query | grep -q "us$"
 if [ $? -eq 0 ]

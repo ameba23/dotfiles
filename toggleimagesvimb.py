@@ -1,6 +1,10 @@
 #!/usr/bin/python
 #  toggle images in vimb (permanently)
-#  this program modifies the config file vimprobablerc
+#  - this is useful because if you set a variable such as images on/off in vimb it will be overridden by the setting in 
+#    your config file every time you open a new instance of vimb (equivalent to opening a new tab).  if this is not the
+#    desired behaviour you can use this script (bound to a key in your window manager) to 'permanently' toggle the setting
+#  - probably a very ugly way to do it but it works
+
 #  requires notify-send
 #  to be called from a keybinding in i3
 

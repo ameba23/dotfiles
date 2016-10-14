@@ -61,6 +61,7 @@ mailboxes +systemli/INBOX \
           +systemli/Drafts \
           +systemli/Sent \
           +archive-sli \
+          +archive-sli-sent \
           +mtmedia/INBOX.junk \
           +mtmedia/INBOX.Sent
 macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"

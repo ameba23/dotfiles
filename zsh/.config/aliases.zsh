@@ -270,3 +270,6 @@ alias oi='offlineimap -o'
 
 # unmount all devices (which are managed by udisks)
 alias unplug='udiskie-umount -a'
+
+# disable globbing of nmap command allowing you to do nmap -sn 192.168.0.*
+alias nmap='noglob nmap'
