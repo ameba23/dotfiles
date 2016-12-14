@@ -31,6 +31,12 @@ do
   # this will add a leading 0 to numbers under 9 (01, 02 etc)
   # assuming there are less than 100 tracks
   # todo:  count number of files, if more than 100 add "00" (001, 002, etc)
+  #   using wc (wordcount) linewise piped to wc charwise (-1 for newline)
+  #   echo `cat $1 | wc -l | wc -m`    gives us number of digits +1 
+  #   we can then use a for loop? 
+  #   we need to keep adding zeros lead=$lead"0"  until the number of digits `echo $lead | wc -m` is the same as 
+  #   lead=""
+  #   
   if [ $i -le 9 ]
   then
     lead="0"

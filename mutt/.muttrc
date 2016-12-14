@@ -95,8 +95,9 @@ macro editor ";" \Ct               # bin ; to  Ctrl-t in editor-mode (easier IMO
 macro index a     "|abook --add-email\n" 'add sender to abook'
 macro pager a     "|abook --add-email\n" 'add sender to abook'
 
-# use urlview with <ctrl>-b
-macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+# use urlscan with <ctrl>-b
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
 
 macro index <F3> "l~B \"" 'limit search of whole messages'
 

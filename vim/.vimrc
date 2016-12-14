@@ -8,11 +8,20 @@ set nocompatible
 
 filetype off                   " required!
 
+" Change leader to a comma because the backslash is too far away
+" *** That means all \x commands turn into ,x
+" The mapleader has to be set before vundle starts loading all 
+" the plugins.
+let mapleader=","
+
 call vundle#rc()
 
-" My Bundles here:
+" ===========================================My Bundles here:
 "
 " original repos on github
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'"
+
 Bundle 'tpope/vim-fugitive'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 " Bundle 'Lokaltog/vim-easymotion'
@@ -27,6 +36,8 @@ Plugin 'The-NERD-tree'
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
 " ...
+
+
 " =============== Vundle Initialization ===============
 " This loads all the plugins specified in ~/.vim/vundles.vim
 " Use Vundle plugin to manage all other plugins
@@ -54,7 +65,6 @@ filetype plugin indent on     " required!
 
 " ================ General Config ====================
 
-set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
@@ -70,16 +80,11 @@ set hidden
 "turn on syntax highlighting
 syntax on
 
-" Change leader to a comma because the backslash is too far away
-" That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all 
-" the plugins.
-let mapleader=","
 
 " ================ Turn Off Swap Files ==============
 
 set noswapfile
-set nobackup
+set nobackup " 
 set nowb
 let g:auto_save = 1
 
@@ -109,13 +114,13 @@ filetype indent on
 " **** fix this -character problem
 "set list listchars=tab:\ \ ,trail:·
 
-" =============== Wrapping - this is a mess ===============
-"set nowrap       "Don't wrap lines
+" =============== Wrapping ===============
 set linebreak    "Wrap lines at convenient points
 
-set wrap
-noremap <silent> <Leader>w :call ToggleWrap()<CR>
-function ToggleWrap()
+
+" ,w toggles 'wrapping mode' which changes binding of cursor keys 
+noremap <silent> <Leader>w :call ToggleWrap(0)<CR>
+function! ToggleWrap(firstrun)
   if &wrap
     echo "Wrap OFF"
     setlocal nowrap
@@ -129,7 +134,9 @@ function ToggleWrap()
     silent! iunmap <buffer> <Home>
     silent! iunmap <buffer> <End>
   else
-    echo "Wrap ON"
+    if a:firstrun != 1 
+      echo "Wrap ON"  " only display message when called by keybinding
+    endif
     setlocal wrap linebreak nolist
     set virtualedit=
     setlocal display+=lastline
@@ -144,6 +151,8 @@ function ToggleWrap()
   endif
 endfunction
 
+set nowrap   " Dont Wrap lines - so that calling ToggleWrap switches wrapping on
+call ToggleWrap(1)  " Run above function (silently)
 
 " ================ Folds ============================
 
@@ -179,16 +188,60 @@ set sidescroll=1
 set clipboard=unnamedplus
 set visualbell
 
-" ameba settings
 set ignorecase
 
 
-" Move visual block up and down -this is brilliant
+" Move visual block up and down with J and K -this is brilliant!!
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " Toggle nerdtree with Ctrl-D
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 
-" toggle line numbers 
-nmap <silent> <C-N> :set number! number?<CR>
+" highlight line cursor is on
+set cursorline
+
+set number                      "Line numbers are good
+" relative line numbers -very useful for vim motions
+set rnu
+
+" toggle line numbers with Ctrl-n (sometimes i dont wanna see linenumbers
+nmap <silent> <C-N> :set rnu! number! number?<CR>
+
+" todo: map _ and + to Ctrl W - and Ctrl W + -resize window
+
+"  ,* - prepend line with * (for adding markdown bullets)
+nnoremap <leader>* I* <esc>j
+
+" from steve losh: 
+" ,ev -open .vimrc in split window
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" ,sv -source .vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+inoremap jk <esc> " not quite got the hang of this yet
+
+" from drew niel:
+set hlsearch  " highlight search terms
+" remap <C-l> (redraw screen) to also unhighlight search terms 
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l> 
+
+" correct typos (todo: is there is simple way to switch these off?)
+iabbrev fuer für
+iabbrev fro for
+iabbrev amd and
+
+set mouse=a " enable mouse
+
+set incsearch " jump to search pattern as you type it
+
+vnoremap <leader>sr :'<,'> write !xargs surfraw google <CR>
+
+" enter in normal mode adds blank line (second mapping doesnt work.  why?)  
+nnoremap <Enter> o<ESC>
+nnoremap <S-Enter> O<ESC>
+
+" from my old vimrc, to paste from x clipboard?
+"map <F2> "+gP  
+
+"nnoremap <C-Left> <C-w><Left>

@@ -4,9 +4,12 @@ nnoremap <BS> <C-O>
 nnoremap q <C-Q>
 nnoremap f <C-I>
 nnoremap s <C-C>
-nnoremap p :sh! /bin/sh -c 'echo "*[$VIMB_TITLE]($VIMB_URI)" >> ~/Documents/oftenlinks.md'<CR>:sh echo *[$VIMB_TITLE]($VIMB_URI)<CR>
+nnoremap w :sh! /bin/sh -c '~/dotfiles/writeoftenlinks.sh'<CR>:sh echo written: * [$VIMB_TITLE]($VIMB_URI)<CR> 
+nnoremap m :sh! /bin/sh -c 'mpv "$VIMB_URI"'<CR>:sh echo starting mpv "$VIMB_URI"<CR>
+nnoremap M :sh! /bin/sh -c 'youtube-dl "$VIMB_URI"'<CR>:sh echo starting youtube-dl "$VIMB_URI"<CR>
 nnoremap = zi
 nnoremap - zo
 nnoremap i :set images!<CR>
+nnoremap I :sh! /bin/sh -c 'python2.7 ~/dotfiles/toggleimagesvimb.py'<CR>
 set download-path=~/Downloads
 set images=false

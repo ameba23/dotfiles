@@ -9,7 +9,9 @@
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
 eval "$(fasd --init auto)"
+
 export EDITOR=vim
 export COLORTERM=urxvt
 export MPD_HOST=$HOME/.mpd/socket

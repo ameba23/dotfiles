@@ -13,6 +13,6 @@ includes dotfiles for:
 * x (xintrc and xresources, mostly for configuring my terminal emulator, URxvt)
 * zsh, includes my aliases
 
-now beginning to include some scripts as well
+and various scripts are also included
 
 managed by symbolic links created by GNU Stow

@@ -117,7 +117,7 @@ assign [instance="ncmpcpp"] $tag5
 # switch to workspace - this also runs the programs assigned to the workspaces if they are not already running
 bindsym $mod+1 workspace $tag1
 bindsym $mod+2 workspace $tag2
-bindsym $mod+3 workspace $tag3 exec "ps -ef | grep -v grep | grep -- '-name offlineimap' || urxvt -name offlineimap" exec "pgrep mutt || urxvt -name mutt -e mutt" exec "i3-msg layout tabbed"
+bindsym $mod+3 workspace $tag3 exec "ps -ef | grep -v grep | grep -- '-name offlineimap' || urxvt -name offlineimap" exec "pgrep mutt || urxvt -name mutt -e ~/dotfiles/runmutt.sh" exec "i3-msg layout tabbed"
 bindsym $mod+4 workspace $tag4 exec "ps -ef | grep -v grep | grep -- '-name todo' || urxvt -name todo -e vim ~/Documents/todo.md"
 bindsym $mod+5 workspace $tag5 exec "pgrep ncmpcpp || urxvt -name ncmpcpp -e ncmpcpp"
 bindsym $mod+6 workspace 6
@@ -196,6 +196,7 @@ exec --no-startup-id udiskie
 # start mpd
 exec --no-startup-id mpd
 
+
 # display resolutions
 exec --no-startup-id xrandr --auto --output VGA1 --mode 1280x1024 --left-of eDP1 --output eDP1 --mode 1366x768 &
 
@@ -251,7 +252,7 @@ bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+z workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_and_forth
 
-# move workspace to left and right monitors
+# move workspace to left and right monitors (note: this means curlybrackets!)
 bindsym $mod+Shift+bracketleft move workspace to output left
 bindsym $mod+Shift+bracketright move workspace to output right
 

@@ -195,11 +195,12 @@ alias grb='git recent-branches'
 
 # surfraw 
 alias sr=surfraw
+alias srg="surfraw google"
 
 alias i3config='vim ~/.config/i3/config'
 
 alias cd..='cd ..'
-
+#alias ... = 'cd ../..'
 
 # display keybindings for i3
 alias keys='cat ~/.config/i3/config|grep bindsym|highlight -S sh --out-format=ansi|less'
@@ -217,8 +218,10 @@ alias fbreader=FBReader
 alias vess='/usr/share/vim/vim74/macros/less.sh'
 
 alias oftenlinks='markdown ~/Documents/oftenlinks.md >! ~/Documents/oftenlinks.html'
+alias oftenedit='vim ~/Documents/oftenlinks.md'
 
 alias uploadsite='rsync -avz -e ssh ~/Documents/static/site/ ameba@ehion.com:public_html/site'
+alias ehion='ssh ameba@ehion.com'
 
 alias dl='cd ~/Downloads'
 alias muttrc='vim ~/.muttrc'
@@ -250,6 +253,7 @@ alias ..='cd ..'
 
 alias vi=vim
 
+alias vb='i3-msg "workspace 2:www" ; vimb &'
 
 # ---xrandr:
 # alias monitor='xrandr --auto --output VGA1 --mode 1280x1024 --left-of eDP1'
@@ -273,3 +277,17 @@ alias unplug='udiskie-umount -a'
 
 # disable globbing of nmap command allowing you to do nmap -sn 192.168.0.*
 alias nmap='noglob nmap'
+
+# list wifi networks
+alias wscan='nmcli device wifi list'
+
+function t {
+ #argss=`echo "\"" $@ "\""` 
+ argss=`echo $@` 
+ sed -i "/# pending/a \* $argss" ~/Documents/todo.md 
+}
+
+# grep shell history (maybe pipe to less)
+alias histgrep='cat ~/.zhistory |grep -i '
+
+alias rnager=ranger
