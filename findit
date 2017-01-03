@@ -1,0 +1,42 @@
+#!/bin/zsh
+# find files using dmenu at the current directory, and open them
+# if arguements are supplied, they will be passed to locate instead of current directory
+#
+# example:  findit .pdf  --then start typing the name of a pdf
+#           cd books
+#           findit       --then start tpying the name of a book
+# --ameba 01/2017
+# todo: make a special version for music using mpd playlist
+# requires: sed, awk, dmenu, rifle or xdg-open
+
+
+if [ $# -eq 0 ]
+then  
+  a=`pwd`
+  n=`pwd | sed 's/ /_/g' | sed 's/\// /g' | wc -w`
+  p=`echo "$n + 2" | bc `
+  #s=`locate $a | cut -f $p- -d '/' | sed 's/ /\\ /g' | dmenu -l 30`
+
+  # make list of files, remove path name up until current dir, remove empty line, 
+  # pass to dmenu, case insensitive, 30 lines
+  s=`locate $a | cut -f $p- -d '/' | awk 'NF' | dmenu -i -l 30`
+else
+  s=`locate $@ | dmenu -i -l 30`
+fi
+
+# if no error caused by user aborting dmenu
+if [ $? -eq 0 ]
+then
+  # check if they chose a directory or a file
+  file $s | grep -q 'directory$'
+  if [ $? -eq 0 ]
+  then
+    # change dir then run this script again
+    cd $s
+    findit
+  else
+    # open the file using rifle (from ranger file manager) or xdg-open
+    #xdg-open $s
+    rifle $s
+  fi
+fi
