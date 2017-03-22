@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>config</title>
+<link rel="stylesheet" type="text/css" href="highlight.css">
+</head>
+<body class="hl">
+<pre class="hl"><span class="hl kwa">set</span> home<span class="hl opt">-</span>page<span class="hl opt">=</span>file<span class="hl opt">:////</span>home<span class="hl opt">/</span>potatoe<span class="hl opt">/</span>Documents<span class="hl opt">/</span>oftenlinks<span class="hl opt">.</span>html
+<span class="hl kwc">nnoremap</span> b <span class="hl opt">&lt;</span>C<span class="hl opt">-</span>O<span class="hl opt">&gt;</span>
+<span class="hl kwc">nnoremap</span> <span class="hl opt">&lt;</span>BS<span class="hl opt">&gt; &lt;</span>C<span class="hl opt">-</span>O<span class="hl opt">&gt;</span>
+<span class="hl kwc">nnoremap</span> q <span class="hl opt">&lt;</span>C<span class="hl opt">-</span>Q<span class="hl opt">&gt;</span>
+<span class="hl kwc">nnoremap</span> f <span class="hl opt">&lt;</span>C<span class="hl opt">-</span>I<span class="hl opt">&gt;</span>
+<span class="hl kwc">nnoremap</span> s <span class="hl opt">&lt;</span>C<span class="hl opt">-</span>C<span class="hl opt">&gt;</span>
+<span class="hl kwc">nnoremap</span> w <span class="hl opt">:</span>sh<span class="hl opt">! /</span>bin<span class="hl opt">/</span>sh <span class="hl opt">-</span>c <span class="hl str">&apos;~/dotfiles/writeoftenlinks.sh&apos;</span><span class="hl opt">&lt;</span>CR<span class="hl opt">&gt;:</span>sh echo written<span class="hl opt">: * [</span>$VIMB_TITLE<span class="hl opt">](</span><span class="hl kwd">$VIMB_URI)</span><span class="hl opt">&lt;</span>CR<span class="hl opt">&gt;</span> 
+<span class="hl kwc">nnoremap</span> W <span class="hl opt">:</span>sh<span class="hl opt">! /</span>bin<span class="hl opt">/</span>sh <span class="hl opt">-</span>c <span class="hl str">&apos;echo &quot;</span><span class="hl opt">* [</span>$VIMB_TITLE<span class="hl opt">](</span><span class="hl kwd">$VIMB_URI)&quot; | xclip -selection clipboard&apos;&lt;CR&gt;:sh echo Yanked: * [$VIMB_TITLE]($VIMB_URI)</span><span class="hl opt">&lt;</span>CR<span class="hl opt">&gt;</span> 
+<span class="hl kwc">nnoremap</span> m <span class="hl opt">:</span>sh<span class="hl opt">! /</span>bin<span class="hl opt">/</span>sh <span class="hl opt">-</span>c <span class="hl str">&apos;mpv &quot;</span>$VIMB_URI<span class="hl str">&quot;&apos;</span><span class="hl opt">&lt;</span>CR<span class="hl opt">&gt;:</span>sh echo starting mpv <span class="hl str">&quot;$VIMB_URI&quot;</span><span class="hl opt">&lt;</span>CR<span class="hl opt">&gt;</span>
+<span class="hl kwc">nnoremap</span> M <span class="hl opt">:</span>sh<span class="hl opt">! /</span>bin<span class="hl opt">/</span>sh <span class="hl opt">-</span>c <span class="hl str">&apos;youtube-dl &quot;</span>$VIMB_URI<span class="hl str">&quot;&apos;</span><span class="hl opt">&lt;</span>CR<span class="hl opt">&gt;:</span>sh echo starting youtube<span class="hl opt">-</span>dl <span class="hl str">&quot;$VIMB_URI&quot;</span><span class="hl opt">&lt;</span>CR<span class="hl opt">&gt;</span>
+<span class="hl kwc">nnoremap</span> F <span class="hl opt">:</span>sh<span class="hl opt">! /</span>bin<span class="hl opt">/</span>sh <span class="hl opt">-</span>c <span class="hl str">&apos;firefox &quot;</span>$VIMB_URI<span class="hl str">&quot;&apos;</span><span class="hl opt">&lt;</span>CR<span class="hl opt">&gt;:</span>sh echo starting firefox <span class="hl str">&quot;$VIMB_URI&quot;</span><span class="hl opt">&lt;</span>CR<span class="hl opt">&gt;</span>
+<span class="hl kwc">nnoremap</span> <span class="hl opt">=</span> zi
+<span class="hl kwc">nnoremap</span> <span class="hl opt">-</span> zo
+<span class="hl kwc">nnoremap</span> <span class="hl opt">! :</span>open <span class="hl opt">!</span>
+<span class="hl kwc">nnoremap</span> i <span class="hl opt">:</span><span class="hl kwa">set</span> images<span class="hl opt">!&lt;</span>CR<span class="hl opt">&gt;</span>
+<span class="hl kwc">nnoremap</span> I <span class="hl opt">:</span>sh<span class="hl opt">! /</span>bin<span class="hl opt">/</span>sh <span class="hl opt">-</span>c <span class="hl str">&apos;python2.7 ~/dotfiles/toggleimagesvimb.py&apos;</span><span class="hl opt">&lt;</span>CR<span class="hl opt">&gt;</span>
+<span class="hl kwc">nnoremap</span> A <span class="hl opt">:</span>sh<span class="hl opt">! /</span>bin<span class="hl opt">/</span>zsh <span class="hl opt">-</span>c <span class="hl str">&apos;rifle ~/Downloads/*(om[1])&apos;</span><span class="hl opt">&lt;</span>CR<span class="hl opt">&gt;:</span>sh echo rifle<span class="hl opt">&lt;</span>CR<span class="hl opt">&gt;</span>
+<span class="hl kwc">inoremap</span> <span class="hl opt">&lt;</span>C<span class="hl opt">-</span>C<span class="hl opt">&gt; &lt;</span>C<span class="hl opt">-</span>V<span class="hl opt">&gt;&lt;</span>C<span class="hl opt">-</span>C<span class="hl opt">&gt;</span>
+<span class="hl kwc">inoremap</span> <span class="hl opt">&lt;</span>C<span class="hl opt">-</span>V<span class="hl opt">&gt; &lt;</span>C<span class="hl opt">-</span>V<span class="hl opt">&gt;&lt;</span>C<span class="hl opt">-</span>V<span class="hl opt">&gt;</span>
+<span class="hl kwa">set</span> editor<span class="hl opt">-</span>command<span class="hl opt">=</span>urxvt <span class="hl opt">-</span>e vim <span class="hl opt">%</span>s
+<span class="hl kwa">set</span> dom<span class="hl opt">-</span>paste<span class="hl opt">=</span>true
+<span class="hl kwa">set</span> download<span class="hl opt">-</span>path<span class="hl opt">=~/</span>Downloads
+<span class="hl kwa">set</span> images<span class="hl opt">=</span>false
+</pre>
+</body>
+</html>
+<!--HTML generated by highlight 3.34, http://www.andre-simon.de/-->

@@ -12,6 +12,7 @@ URxvt.boldFont:         -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso8859-
 URxvt.italicFont:       xft:Bitstream Vera Sans Mono:italic:autohint=true
 URxvt.boldItalicFont:   xft:Bitstream Vera Sans Mono:bold:italic:autohint=true
 
+!URxvt.font:      xft:DejaVu Sans Mono for Powerline:size=16
 
 !URxvt.font:     xft:bitstream vera sans mono:bold:size=16
 !URxvt.boldFont: xft:bitstream vera sans mono:bold:size=16:antialias=true
@@ -45,3 +46,4 @@ URxvt*cursorBlink: true
 !URxvt.resize-font.bigger: C-plus
 !URxvt.resize-font.reset: C-equal
 !URxvt.resize-font.show: C-question
+URxvt.scrollBar: off

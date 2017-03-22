@@ -5,6 +5,11 @@
 #    desired behaviour you can use this script (bound to a key in your window manager) to 'permanently' toggle the setting
 #  - probably a very ugly way to do it but it works
 
+# Could this not be achieved by something much simpler like the following?
+# Enable recovery in the /etc/default/grub
+#sed -i -e 's|^\(GRUB_DISABLE_RECOVERY="\)true"|\1false"|' /etc/default/grub
+# then check error - if it did not run sucessfully run the other way round 
+
 #  requires notify-send
 #  to be called from a keybinding in i3
 

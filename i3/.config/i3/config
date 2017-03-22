@@ -29,7 +29,8 @@ font xft:Bitstream Sans Mono Bold 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return workspace $tag1; exec i3-sensible-terminal
+#bindsym $mod+Return workspace $tag1; exec i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -75,7 +76,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# --i have changed the binding for stacking cos i dont use it and
+#   i want that binding for scratchpad
+bindsym $mod+Ctrl+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -91,6 +94,8 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
 
+bindsym $mod+b exec vimb
+
 # ------------------------workspace names:
 set $tag1 "1:term"
 set $tag2 "2:www"
@@ -105,7 +110,7 @@ assign [class="Vimb"] $tag2
 assign [class="Evopedia"] $tag2
 
 #assign [class="URxvt"] $tag1
-assign [instance="urxvt"] $tag1
+#assign [instance="urxvt"] $tag1
 
 assign [instance="mutt"] $tag3
 assign [instance="offlineimap"] $tag3
@@ -118,7 +123,7 @@ assign [instance="ncmpcpp"] $tag5
 bindsym $mod+1 workspace $tag1
 bindsym $mod+2 workspace $tag2
 bindsym $mod+3 workspace $tag3 exec "ps -ef | grep -v grep | grep -- '-name offlineimap' || urxvt -name offlineimap" exec "pgrep mutt || urxvt -name mutt -e ~/dotfiles/runmutt.sh" exec "i3-msg layout tabbed"
-bindsym $mod+4 workspace $tag4 exec "ps -ef | grep -v grep | grep -- '-name todo' || urxvt -name todo -e vim ~/Documents/todo.md"
+bindsym $mod+4 workspace $tag4 exec "ps -ef | grep -v grep | grep -- '-name todo' || urxvt -name todo -e vim --servername todo ~/Documents/todo.md"
 bindsym $mod+5 workspace $tag5 exec "pgrep ncmpcpp || urxvt -name ncmpcpp -e ncmpcpp"
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -198,11 +203,15 @@ exec --no-startup-id mpd
 
 
 # display resolutions
-exec --no-startup-id xrandr --auto --output VGA1 --mode 1280x1024 --left-of eDP1 --output eDP1 --mode 1366x768 &
+#exec --no-startup-id xrandr --auto --output VGA1 --mode 1280x1024 --left-of eDP1 --output eDP1 --mode 1366x768 &
+exec --no-startup-id xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1 --output eDP1 --mode 1366x768 &
 
 # ranger, mutt, ncmpcpp, todolist
 #exec --no-startup-id "urxvt -name mutt -e mutt"
 #exec --no-startup-id "urxvt -name offlineimap"
+
+# -no-splash
+exec --no-startup-id xscreensaver
 
 exec "i3-msg layout tabbed"
 #exec --no-startup-id "urxvt -name todo -e vim ~/Documents/todo.md"
@@ -222,7 +231,9 @@ bindsym Print exec scrot -e 'notify-send "screenshot taken"'
 #volume/mute keys on laptop:
 bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 2%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 2%- unmute
-bindsym XF86AudioMute exec amixer -c 0 set Master 1+ toggle
+bindsym XF86AudioMute exec amixer -c 0 set Master toggle
+
+# XF86WLAN
 
 # i use this after i unplug monitor and im stuck without a terminal
 bindsym $mod+m exec xrandr --auto
@@ -234,6 +245,11 @@ bindsym $mod+p exec "mpc toggle"
 # change track mpd
 bindsym $mod+comma exec mpc prev && exec notify-send "`mpc`"
 bindsym $mod+period exec mpc next && exec notify-send "`mpc`"
+
+# seek mpd
+bindsym $mod+Shift+comma exec mpc seek -5%
+bindsym $mod+Shift+period exec mpc seek +5%
+
 # whats this song called?  - display mpd track name etc
 bindsym $mod+Ctrl+m exec notify-send "`mpc`"
 
@@ -257,8 +273,10 @@ bindsym $mod+Shift+bracketleft move workspace to output left
 bindsym $mod+Shift+bracketright move workspace to output right
 
 # scratchpad -very useful
-bindsym $mod+Shift+s scratchpad show
-bindsym $mod+Ctrl+s move window to scratchpad
+bindsym $mod+s scratchpad show
+bindsym $mod+Shift+s move window to scratchpad
 
 # i like this option but it messes with keybindings which change workspace
 workspace_auto_back_and_forth no
+
+new_window pixel

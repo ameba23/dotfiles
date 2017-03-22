@@ -101,7 +101,10 @@ macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract 
 
 macro index <F3> "l~B \"" 'limit search of whole messages'
 
-
+# works but spits out the complete header as well.  use mailcap?
+macro index,pager l "<pipe-entry> vimb -<Enter>" "Open message with vimb"
+# works when you choose html component:
+macro attach l "<pipe-entry> vimb -<Enter>" "Open message with vimb"
 
 # scroll in pager with up and down keys:
 set pager_stop

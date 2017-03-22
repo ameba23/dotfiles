@@ -1,0 +1,20 @@
+#!/bin/zsh
+# mpcf - select an mpd track using fuzzy selector 'fzy', add it to the
+#        playlist and play, without clearing playlist.
+      
+#
+# ameba -jan 17
+#
+set -o pipefail
+if [ $# -eq 0 ]
+then  
+  mpc listall | fzy --lines=30 | mpc add
+else 
+  mpc listall | fzy -e "$*" | fzy --lines=30 | mpc add 
+fi
+
+# if no error caused by user aborting 
+if [ $? -eq 0 ]
+then
+  mpc play `mpc playlist | wc -l`
+fi

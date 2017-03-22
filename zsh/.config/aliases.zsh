@@ -9,13 +9,7 @@
 
 
 # Get operating system
-platform='unknown'
-unamestr=$(uname)
-if [[ $unamestr == 'Linux' ]]; then
-  platform='linux'
-elif [[ $unamestr == 'Darwin' ]]; then
-  platform='darwin'
-fi
+platform='linux'
 
 # YADR support
 #alias yav='yadr vim-add-plugin'
@@ -32,20 +26,26 @@ alias psr='ps aux | grep ruby'
 # Moving around
 alias cdb='cd -'
 alias cls='clear;ls'
+alias cdc='cd;clear'
+alias cd..='cd ..'
+#alias ... = 'cd ../..'
+
+alias dl='cd ~/Downloads'
+alias doc='cd ~/Documents'
 
 # Show human friendly numbers and colors
 alias df='df -h'
 alias du='du -h'
 #alias du='du -h -d 2'
 alias dus='du -sckx * | sort -nr' #directories sorted by size
+# show biggest files
+#
+alias ducks='du -cks * | sort -rn | head -11'
 
-if [[ $platform == 'linux' ]]; then
-  alias ll='ls -alh --color=auto'
-  alias ls='ls --color=auto'
-elif [[ $platform == 'darwin' ]]; then
-  alias ll='ls -alGh'
-  alias ls='ls -Gh'
-fi
+alias ll='ls -alh --color=auto'
+alias ls='ls --color=auto'
+alias l.='ls -d .*'
+alias ..='cd ..'
 
 # show me files matching "ls grep"
 alias lsg='ll | grep'
@@ -56,19 +56,23 @@ alias ar='source ~/.config/aliases.zsh'  #alias reload
 
 # vim using
 
-# mimic vim functions
+alias vi=vim
+# vim remote (to keep only a single instance of vim) - been experimenting with this
+alias vr='vim --servername VIM --remote-tab'
+
+# mimic vim 
 alias :q='exit'
 
 # vimrc editing
 alias ve='vim ~/.vimrc'
 
-# zsh profile editing
-alias ze='vim ~/.config/aliases.zsh'
-alias zr='source ~/.config/aliases.zsh'
 
-# Git Aliases
+# ----------------------------------Git Aliases
+
+alias gpom='git push -u origin master'
 
 alias gs='git status'
+
 # gs is normally ghostscript. 
 
 alias gstsh='git stash'
@@ -126,13 +130,14 @@ alias gt='git t'
 alias gbg='git bisect good'
 alias gbb='git bisect bad'
 
+alias grb='git recent-branches'
 alias gma='git commit -am'
 
 # Common shell functions
 alias less='less -r'
 alias tf='tail -f'
 alias l='less'
-alias lh='ls -alt | head' # see the last modified files
+alias lh='ls -alt | head -n 25' # see the last modified files
 alias screen='TERM=screen screen'
 alias cl='clear'
 
@@ -146,84 +151,41 @@ alias gz='tar -zcvf'
 #alias ms='mongrel_rails start'
 #alias tfdl='tail -f log/development.log'
 #alias tftl='tail -f log/test.log'
+#alias rdm='rake db:migrate'
+#alias rdmr='rake db:migrate:redo'
+# Gem install
+#alias sgi='sudo gem install --no-ri --no-rdoc'
 
 alias ka9='killall -9'
 alias k9='kill -9'
 
-# Gem install
-alias sgi='sudo gem install --no-ri --no-rdoc'
-
-# TODOS
-# This uses NValt (NotationalVelocity alt fork) - http://brettterpstra.com/project/nvalt/
-# to find the note called 'todo'
-
-#alias todo='open nvalt://find/todo'
-
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
-alias rdm='rake db:migrate'
-alias rdmr='rake db:migrate:redo'
-
-# Zeus
-#alias zs='zeus server'
-#alias zc='zeus console'
-
-# Rspec
-#alias rs='rspec spec'
-#alias sr='spring rspec'
-#alias src='spring rails c'
-#alias srgm='spring rails g migration'
-#alias srdm='spring rake db:migrate'
-#alias srdt='spring rake db:migrate'
-#alias srdmt='spring rake db:migrate db:test:prepare'
-
-# Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
-#alias sp='sprintly'
-# spb = sprintly branch - create a branch automatically based on the bug you're working on
-#alias spb="git checkout -b \`sp | tail -2 | grep '#' | sed 's/^ //' | sed 's/[^A-Za-z0-9 ]//g' | sed 's/ /-/g' | cut -d"-" -f1,2,3,4,5\`"
-
-alias hpr='hub pull-request'
-alias grb='git recent-branches'
-
-
-#alias dbtp='spring rake db:test:prepare'
-#alias dbm='spring rake db:migrate'
-#alias dbmr='spring rake db:migrate:redo'
-#alias dbmd='spring rake db:migrate:down'
-#alias dbmu='spring rake db:migrate:up'
 
 # surfraw 
 alias sr=surfraw
 alias srg="surfraw google"
 
+# i3
 alias i3config='vim ~/.config/i3/config'
-
-alias cd..='cd ..'
-#alias ... = 'cd ../..'
-
 # display keybindings for i3
 alias keys='cat ~/.config/i3/config|grep bindsym|highlight -S sh --out-format=ansi|less'
 
-# fasd (an amazing bit of software)
+# ---fasd (an amazing bit of software)
 alias v='f -e vim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
+# change to rifle?
 alias o='a -e xdg-open' # quick opening files with xdg-open
 
 alias fbreader=FBReader
 
-# too cautious?
+# too cautious?  (rm already aliased by prezto -i think)
 #alias rm='rm -I'
 
-alias vess='/usr/share/vim/vim74/macros/less.sh'
+# vim+less
+alias vess='/usr/share/vim/vim80/macros/less.sh'
 
-alias oftenlinks='markdown ~/Documents/oftenlinks.md >! ~/Documents/oftenlinks.html'
-alias oftenedit='vim ~/Documents/oftenlinks.md'
-
-alias uploadsite='rsync -avz -e ssh ~/Documents/static/site/ ameba@ehion.com:public_html/site'
-alias ehion='ssh ameba@ehion.com'
-
-alias dl='cd ~/Downloads'
 alias muttrc='vim ~/.muttrc'
 
 # start mutt in Download directory so that attachments are saved there (an unelegant workaround)
@@ -236,40 +198,27 @@ alias zcp='noglob zmv -C'
 alias zln='noglob zmv -L'
 alias zsy='noglob zmv -Ls'
 
-# my global todo list.  i stopped using this alias since i have an i3 workspace dedicated to this file
-alias todo='vim ~/Documents/todo.md'
-
-alias l.='ls -d .*'
-alias ..='cd ..'
-
 
 #alias torbrowser='~/software/tor-browser_en-US/start-tor-browser'
 
 # this seems to work when the mouse cursor gets stuck
 #alias fixmouse='sudo rmmod psmouse; sudo modprobe psmouse'
 
-# abandoned in favour of sidebar and folder-hooks
-#alias mtmutt='mutt -f ~/Mail/mtmedia/INBOX'
-
-alias vi=vim
-
-alias vb='i3-msg "workspace 2:www" ; vimb &'
-
-# ---xrandr:
-# alias monitor='xrandr --auto --output VGA1 --mode 1280x1024 --left-of eDP1'
-alias monitor='xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1'
-alias nomonitor='xrandr --auto'
 
 # newest file (or directory) -global alias (zsh)
 alias -g newest='*(om[1])'
 
+alias -g FZY='"`find -type f | fzy`"'
+
 # on = open newest - open newest file with default application
-alias on='xdg-open newest'
+#    i use ranger's 'rifle' file opener, but you can also use 'xdg-open'
+#alias on='xdg-open newest'
+alias on='rifle newest'
 
-# vim remote (to keep only a single instance of vim) - been experimenting with this
-alias vr='vim --servername VIM --remote-tab'
+alias opendl='cd ~/Downloads; on'
 
-# run offlineimap one time.  i use this when i am connected through my phone and want to minimise data use
+
+# run offlineimap just one time.  i use this when i am connected through my phone and want to minimise data use
 alias oi='offlineimap -o'
 
 # unmount all devices (which are managed by udisks)
@@ -281,13 +230,75 @@ alias nmap='noglob nmap'
 # list wifi networks
 alias wscan='nmcli device wifi list'
 
+
+# grep shell history (maybe pipe to less) -because Ctrl-R will only find one result.
+#alias histgrep='cat ~/.zhistory |grep -i '
+alias histgrep='fc -li 1 |grep -i '
+
+# grep browser history
+alias wwwgrep='cat ~/.config/vimb/history |grep -i'
+
+# correct typos 
+alias rnager='ranger'
+alias cd,,='cd..'
+
+# put screensaver on
+alias save='xscreensaver-command -activate'
+
+# weather report
+#alias weather='curl wttr.in'
+alias weather='curl wttr.in/chemnitz'
+alias moon='curl wttr.in/moon'
+
+# i use this because by default xclip uses primary clipboard which i dont find useful.
+alias clip='xclip -selection clipboard'
+
+alias orphans='[[ -n $(pacman -Qdt) ]] && sudo pacman -Rs $(pacman -Qdtq) || echo "no orphans to remove"'
+
+# please! (after permission denied)
+alias pls='sudo `fc -n -l -1`'
+
+alias what='`fc -n -l -1`|less'
+
+# less with syntax highlighting.  Does not work in a pipe, as highlight uses filename to 
+# detect which syntax to use.  Anyone know a better way to do this?
+# (Note: less is alread aliased to less -r which allows ansi colour sequences)
+function hess { highlight -O ansi $1 | less } 
+
+alias schlaf='systemctl suspend'
+
+# ********************************************
+# *** personal -probably only useful to me ***
+# ********************************************
+
+# build/edit my browser start page:
+alias oftenlinks='markdown ~/Documents/oftenlinks.md >! ~/Documents/oftenlinks.html'
+alias oftenedit='vim ~/Documents/oftenlinks.md'
+
+# website stuff
+alias uploadsite='rsync -avz -e ssh ~/Documents/static/site/ ameba@ehion.com:public_html/site'
+alias ehion='ssh ameba@ehion.com'
+alias site='cd ~/Documents/static/docs'
+
+# my global todo list.  i stopped using this alias since i have an i3 workspace dedicated to this file
+alias todo='vim ~/Documents/todo.md'
+
 function t {
- #argss=`echo "\"" $@ "\""` 
- argss=`echo $@` 
- sed -i "/# pending/a \* $argss" ~/Documents/todo.md 
+# #argss=`echo "\"" $@ "\""` 
+ argss="$*" 
+ todoadd.sh $argss
 }
 
-# grep shell history (maybe pipe to less)
-alias histgrep='cat ~/.zhistory |grep -i '
+# ---xrandr:
+# alias monitor='xrandr --auto --output VGA1 --mode 1280x1024 --left-of eDP1'
+alias monitor='xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1'
+alias nomonitor='xrandr --auto'
 
-alias rnager=ranger
+# open browser and change to designated workspace
+alias vb='i3-msg "workspace 2:www" ; vimb &'
+
+# frequently used directories
+alias books='cd ~/books_and_zines'
+alias dot='cd ~/dotfiles'
+alias film='cd ~/film'
+# *******************************************

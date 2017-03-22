@@ -42,9 +42,11 @@ typeset -gU cdpath fpath mailpath path
 # )
 
 # Set the list of directories that Zsh searches for programs.
+# include ~/dotfiles which has some scripts --ameba 
 path=(
   /usr/local/{bin,sbin}
   $path
+  /home/potatoe/dotfiles
 )
 
 #

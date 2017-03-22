@@ -1,0 +1,26 @@
+#!/bin/zsh
+# find files using dmenu at the current directory, and open them
+#
+# todo: make a special version for music using mpd playlist
+
+a=`pwd`
+n=`pwd | sed 's/ /_/g' | sed 's/\// /g' | wc -w`
+p=`echo "$n + 2" | bc `
+#s=`locate $a | cut -f $p- -d '/' | sed 's/ /\\ /g' | dmenu -l 30`
+#s=`locate $a | cut -f $p- -d '/' | awk 'NF' | dmenu -i -l 30`
+locate $a | cut -f $p- -d '/' | awk 'NF' | dmenu -i -l 30 >! /tmp/finditout
+
+while read s
+  if [ $? -eq 0 ]
+  then
+    file $s | grep -q 'directory$'
+    if [ $? -eq 0 ]
+    then
+      cd $s
+      findit
+    else
+      rifle $s
+    fi
+  fi
+done < /tmp/finditout
+# rm /tmp/finditout

@@ -1,0 +1,23 @@
+#!/bin/zsh
+# mpclocal - play a file using mpc.  without clearing the playlist
+#
+# ameba -jan 17
+# todo -open multiple files 
+#
+#echo $@ >> ~/dotfiles/mpclocal.log
+#echo "file:///`readlink -f $1`" >> ~/dotfiles/mpclocal.log
+if [ -z "$*" ]
+then
+  echo "Usage: mpclocal file(s)"
+else 
+  firstfile=1
+  for var in "$@"
+  do
+    mpc add "file:///`readlink -f $var`"
+    if [ $firstfile = 1 ]
+    then 
+      firstfile=0
+      mpc play `mpc playlist | wc -l`
+    fi
+  done
+fi

@@ -35,10 +35,10 @@ then
   # make list of files, remove path name up until current dir, remove
   # empty line, pass to dmenu, case insensitive, 30 lines
   #s=`locate $a | cut -f $p- -d '/' | awk 'NF' | dmenu -i -l 30`
-  s=`locate $a | cut -f $p- -d '/' | awk 'NF' | fzy -l 30`
+  s=`locate $a | cut -f $p- -d '/' | awk 'NF' | fzy`
 else
   #s=`locate $@ | dmenu -i -l 30`
-  s=`locate $@ | fzy -l 30`
+  s=`locate $@ | fzy`
 fi
 
 # if no error caused by user aborting dmenu

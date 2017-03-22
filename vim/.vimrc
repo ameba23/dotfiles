@@ -151,6 +151,7 @@ function! ToggleWrap(firstrun)
   endif
 endfunction
 
+
 set nowrap   " Dont Wrap lines - so that calling ToggleWrap switches wrapping on
 call ToggleWrap(1)  " Run above function (silently)
 
@@ -211,6 +212,7 @@ nmap <silent> <C-N> :set rnu! number! number?<CR>
 " todo: map _ and + to Ctrl W - and Ctrl W + -resize window
 
 "  ,* - prepend line with * (for adding markdown bullets)
+"  move this to ftplugin/markdown
 nnoremap <leader>* I* <esc>j
 
 " from steve losh: 
@@ -245,3 +247,25 @@ nnoremap <S-Enter> O<ESC>
 "map <F2> "+gP  
 
 "nnoremap <C-Left> <C-w><Left>
+
+" lazy about umlaut:
+function! German()
+  " add support for uppercase?  is this needed?
+  %s/ae/ä/ge
+  %s/ue/ü/ge
+  %s/oe/ö/ge
+  %s/sss/ß/ge
+endfunction
+
+
+nnoremap <leader>g :call German()<CR>
+command! German call German()
+
+" format entire file to 75 columns (useful for emails)
+command! Fmtfile %!fmt
+
+func LessInitFunc()
+  set nocursorline
+  set nonumber
+  set nornu
+endfunc

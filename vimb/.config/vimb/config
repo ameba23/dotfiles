@@ -5,11 +5,20 @@ nnoremap q <C-Q>
 nnoremap f <C-I>
 nnoremap s <C-C>
 nnoremap w :sh! /bin/sh -c '~/dotfiles/writeoftenlinks.sh'<CR>:sh echo written: * [$VIMB_TITLE]($VIMB_URI)<CR> 
-nnoremap m :sh! /bin/sh -c 'mpv "$VIMB_URI"'<CR>:sh echo starting mpv "$VIMB_URI"<CR>
+nnoremap W :sh! /bin/sh -c 'echo "* [$VIMB_TITLE]($VIMB_URI)" | xclip -selection clipboard'<CR>:sh echo Yanked: * [$VIMB_TITLE]($VIMB_URI)<CR> 
+nnoremap m :sh! /bin/zsh -c 'noglob umpv "$VIMB_URI"'<CR>:sh echo starting mpv "$VIMB_URI"<CR>
 nnoremap M :sh! /bin/sh -c 'youtube-dl "$VIMB_URI"'<CR>:sh echo starting youtube-dl "$VIMB_URI"<CR>
+nnoremap F :sh! /bin/sh -c 'firefox "$VIMB_URI"'<CR>:sh echo starting firefox "$VIMB_URI"<CR>
+nnoremap h :sh! /bin/sh -c 'cd ~/software; git clone "$VIMB_URI" 2>> ~/out.log'<CR>:sh echo Running git clone "$VIMB_URI"<CR>
 nnoremap = zi
 nnoremap - zo
+nnoremap ! :open !
 nnoremap i :set images!<CR>
 nnoremap I :sh! /bin/sh -c 'python2.7 ~/dotfiles/toggleimagesvimb.py'<CR>
+nnoremap A :sh! /bin/zsh -c 'rifle ~/Downloads/*(om[1])'<CR>:sh echo rifle<CR>
+inoremap <C-C> <C-V><C-C>
+inoremap <C-V> <C-V><C-V>
+set editor-command=urxvt -e vim %s
+set dom-paste=true
 set download-path=~/Downloads
 set images=false
