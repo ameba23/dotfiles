@@ -72,8 +72,9 @@ alias ve='vim ~/.vimrc'
 alias gpom='git push -u origin master'
 
 alias gs='git status'
+# watch out! gs is normally ghostscript. 
 
-# gs is normally ghostscript. 
+alias gac='git add . && git commit -am'
 
 alias gstsh='git stash'
 alias gst='git stash'

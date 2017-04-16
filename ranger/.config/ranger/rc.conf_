@@ -200,7 +200,7 @@ set metadata_deep_search false
 # You can set local options that only affect a single directory.
 
 # Examples:
-setlocal path=~/Downloads sort mtime
+# setlocal path=~/downloads sort mtime
 
 # ===================================================================
 # == Command Aliases in the Console
@@ -488,11 +488,6 @@ map <C-f> fzf_select
 
 map . shell -f mpc seek +5
 map , shell -f mpc seek -5
-
-# move files to specific directories
-map bb shell mv %s ~/books_and_zines/unsorted  
-map bf shell mv %s ~/film
-
 
 # ===================================================================
 # == Define keys for the console

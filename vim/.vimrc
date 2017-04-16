@@ -230,6 +230,7 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " correct typos (todo: is there is simple way to switch these off?)
 iabbrev fuer für
+iabbrev ueber über
 iabbrev fro for
 iabbrev amd and
 
@@ -260,6 +261,9 @@ endfunction
 
 nnoremap <leader>g :call German()<CR>
 command! German call German()
+
+command Wq wq
+command W w
 
 " format entire file to 75 columns (useful for emails)
 command! Fmtfile %!fmt

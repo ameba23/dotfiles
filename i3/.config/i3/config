@@ -189,7 +189,10 @@ bar {
 #xfce4-volumed & 
 exec --no-startup-id xfce4-power-manager 
 
-#---------------display wallpaper
+# map capslock key to escape (for vim)
+exec --no-startup-id setxkbmap -option caps:escape
+
+#--------------display wallpaper
 #exec --no-startup-id nitrogen --restore
 #exec --no-startup-id feh --bg-scale ~/photos/ant_kodak_camera/100_8698.JPG 
 exec --no-startup-id feh --bg-scale ~/Images/double_planetoid.jpg 
