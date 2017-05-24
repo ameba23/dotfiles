@@ -9,9 +9,10 @@ includes dotfiles for:
 * offlineimap
 * ranger (file manager)
 * vim 
-* vimb (browser)
+* vimb (web browser)
 * x (xintrc and xresources, mostly for configuring my terminal emulator, URxvt)
 * zsh, includes my aliases
+* youtube-dl
 
 and various scripts are also included
 

@@ -1,0 +1,11 @@
+#!/bin/bash
+# bbc_listen -- uses pifm (raspberry pi fm transmitter) to stream bbc world service to fm.
+# (runs on raspberry pi with pifm)
+# uses fifo to pipe mplayer output into avconv (could also use ffmpeg).
+
+#  100.0 below is the broadcast frequency.
+
+mkfifo audio.wav
+mplayer -ao pcm:file=audio.wav -playlist "http://www.bbc.co.uk/worldservice/meta/live/mp3/eneuk.pls" &
+avconv -i audio.wav -f wav -ac 1 -ar 22050 - | sudo /home/pi/pi_fm/pifm - 100.0
+rm -I audio.wav

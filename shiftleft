@@ -1,8 +1,12 @@
 #!/bin/bash
 # script to move my first two workspaces to monitor
+# --ameba
 # todo: add error checking to only move if successfully changed
-i3-msg "workspace 1:term"
-i3-msg "move workspace to output left"
-i3-msg "workspace 2:www"
-i3-msg "move workspace to output left"
 
+#i3-msg "workspace 1:term"
+#i3-msg "move workspace to output left"
+#i3-msg "workspace 2:www"
+#i3-msg "move workspace to output left"
+
+i3-msg "workspace 1:term" && i3-msg "move workspace to output left"
+i3-msg "workspace 2:www" && i3-msg "move workspace to output left"

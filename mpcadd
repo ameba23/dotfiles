@@ -1,0 +1,41 @@
+#!/bin/zsh
+# mpcadd - play a file/directory using mpc, must be in the database.  without clearing the playlist
+# mpc will recursively add all playable files in the directory and its subdirectories. 
+#
+# ameba -april 17
+#      
+#
+#echo $@ >> ~/dotfiles/mpclocal.log
+#echo "file:///`readlink -f $1`" >> ~/dotfiles/mpclocal.log
+
+
+# MPD music dir:
+mpddir="/home/potatoe/Musique/"
+
+escapedmpddir=$((echo $mpddir | sed -r 's/([\$\.\*\/\[\\^])/\\\1/g' | sed 's/[]]/\[]]/g') >&1 ) 
+
+# todo: check if we are under the mpd music directory, if not expand directory and call each file with file://
+
+
+
+if [ -z "$*" ]
+then
+  echo " mpcadd - play a file or directory using mpc.  without clearing the playlist"
+  echo " Usage: mpcadd file(s)"
+else 
+  firstfile=1
+  for var in "$@"
+  do
+    tracks=$(mpc playlist | wc -l)
+    tracknum=$(echo $tracks + 1 | bc)
+
+    fname=$(echo $(readlink -f $var) | sed "s/^"$escapedmpddir"//g")
+    mpc add $fname
+
+    if [ $firstfile = 1 ]
+    then 
+      firstfile=0
+      mpc play $tracknum
+    fi
+  done
+fi

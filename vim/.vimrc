@@ -28,6 +28,8 @@ Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'ervandew/supertab'
 Plugin 'ctrlp.vim'
 Plugin 'The-NERD-tree'
+Plugin 'tComment'
+Plugin 'UltiSnips'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Bundle 'tpope/vim-rails.git'
 " vim-scripts repos

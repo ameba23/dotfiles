@@ -4,8 +4,8 @@
 # needs organising!  should be split into personal / more useful to other people 
 # should also be in categories
 #
-# stuff at the top is mostly adapted from YADR (yet another dotfile repo)
-#
+# stuff at the top is mostly from YADR (yet another dotfile repo)
+# with some minor changes
 
 
 # Get operating system
@@ -176,8 +176,8 @@ alias keys='cat ~/.config/i3/config|grep bindsym|highlight -S sh --out-format=an
 # ---fasd (an amazing bit of software)
 alias v='f -e vim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
-# change to rifle?
-alias o='a -e xdg-open' # quick opening files with xdg-open
+#alias o='a -e xdg-open' # quick opening files with xdg-open
+alias o='a -e rifle' # quick opening files with rifle
 
 alias fbreader=FBReader
 
@@ -268,6 +268,19 @@ function hess { highlight -O ansi $1 | less }
 
 alias schlaf='systemctl suspend'
 
+#function sedPath { 
+# Escape path for use with sed
+#  thepath=$((echo $1 | sed -r 's/([\$\.\*\/\[\\^])/\\\1/g' | sed 's/[]]/\[]]/g') >&1 ) 
+#  echo $thepath
+#} 
+
+alias thesaurus='dict -d moby-thesaurus'
+
+# run youtube-dl with a url from the clipboard
+alias ydl='youtube-dl "$(xclip -o)"'
+
+alias amp='amixer sset Headphone playback 90% unmute; amixer sset Speaker playback 30% unmute'
+
 # ********************************************
 # *** personal -probably only useful to me ***
 # ********************************************
@@ -292,8 +305,11 @@ function t {
 
 # ---xrandr:
 # alias monitor='xrandr --auto --output VGA1 --mode 1280x1024 --left-of eDP1'
-alias monitor='xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1'
-alias nomonitor='xrandr --auto'
+#alias monitor='xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1'
+#alias nomonitor='xrandr --auto'
+# --try monitor and if errors, load auto settings.  This command can be used when i plug or unplug the monitor
+alias monitor='xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1 || xrandr --auto'
+
 
 # open browser and change to designated workspace
 alias vb='i3-msg "workspace 2:www" ; vimb &'

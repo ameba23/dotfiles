@@ -29,14 +29,15 @@ font xft:Bitstream Sans Mono Bold 10
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return workspace $tag1; exec i3-sensible-terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return workspace $tag1; exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_frecency_run
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -238,8 +239,12 @@ bindsym XF86AudioMute exec amixer -c 0 set Master toggle
 
 # XF86WLAN
 
-# i use this after i unplug monitor and im stuck without a terminal
-bindsym $mod+m exec xrandr --auto
+#bindsym $mod+m exec xrandr --auto
+# --try monitor and if errors, load auto settings.  This command can be used when i plug or unplug the monitor
+#   very useful after i unplug monitor and im stuck without a terminal
+#bindsym $mod+m exec "xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1 || xrandr --auto"
+# also calls a script 'shiftleft' to move the first two workspaces to the monitor.
+bindsym $mod+m exec "xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1 && shiftleft || xrandr --auto"
 
 #pause mpd
 bindsym $mod+p exec "mpc toggle"

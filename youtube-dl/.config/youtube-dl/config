@@ -1,0 +1,7 @@
+# do not copy modification time
+--no-mtime
+# Save all videos under Movies directory in your home directory
+#-o ~/Movies/%(title)s.%(ext)s
+#
+# worst quality (for bad connection)
+#-f worstvideo

@@ -61,6 +61,13 @@ if [ "$preview_images" = "True" ]; then
         video/*)
             ffmpegthumbnailer -i "$path" -o "$cached" -s 0 && exit 6 || exit 1;;
     esac
+    case "$extension" in
+       # Use ffmpeg to extract album art from mp3:
+       # todo: if this fails, just display the first jpg in the dir. 
+       mp3)
+            ffmpeg -y -i "$path" "$cached" && exit 6 ;;
+            #ffmpeg -y -i "$path" "$cached" && exit 6 || exit 1;;
+    esac
 fi
 
 case "$extension" in
@@ -73,12 +80,17 @@ case "$extension" in
         exit 1;;
     rar)
         try unrar -p- lt "$path" && { dump | trim; exit 0; } || exit 1;;
+    # epub documents:
+    epub)
+        try epub2txt_wrapper.sh "$path"  && { dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
+        #try  epub2txt -a "$path" | head -n 50  && { dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
+        #try epub2txt "$path" && { dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
     # PDF documents:
     pdf)
         try pdftotext -l 10 -nopgbrk -q "$path" - && \
             { dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
     # BitTorrent Files
-    torrent)
+    torrent|added)
         try transmission-show "$path" && { dump | trim; exit 5; } || exit 1;;
     # ODT Files
     odt|ods|odp|sxw)
@@ -109,7 +121,8 @@ case "$mimetype" in
         img2txt --gamma=0.6 --width="$width" "$path" && exit 4 || exit 1;;
     # Display information about media files:
     video/* | audio/*)
-        exiftool "$path" && exit 5
+        #exiftool "$path" && exit 5
+        exiftoolwrapper "$path" && exit 5 
         # Use sed to remove spaces so the output fits into the narrow window
         try mediainfo "$path" && { dump | trim | sed 's/  \+:/: /;';  exit 5; } || exit 1;;
 esac
