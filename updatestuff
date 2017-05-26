@@ -1,0 +1,7 @@
+#!/bin/bash
+echo ---------------------running sudo updatedb
+sudo updatedb
+echo ---------------------running notmuch new
+notmuch new
+echo ---------------------running mpc update
+mpc update

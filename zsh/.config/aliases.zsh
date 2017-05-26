@@ -280,6 +280,10 @@ alias thesaurus='dict -d moby-thesaurus'
 alias ydl='youtube-dl "$(xclip -o)"'
 
 alias amp='amixer sset Headphone playback 90% unmute; amixer sset Speaker playback 30% unmute'
+# alias noamp=''
+
+alias trash='cd ~/.trash; ls'
+
 
 # ********************************************
 # *** personal -probably only useful to me ***
