@@ -28,6 +28,7 @@ alias cdb='cd -'
 alias cls='clear;ls'
 alias cdc='cd;clear'
 alias cd..='cd ..'
+# cant remember why i commented this out
 #alias ... = 'cd ../..'
 
 alias dl='cd ~/Downloads'
@@ -175,7 +176,8 @@ alias keys='cat ~/.config/i3/config|grep bindsym|highlight -S sh --out-format=an
 
 # ---fasd (an amazing bit of software)
 alias v='f -e vim' # quick opening files with vim
-alias m='f -e mplayer' # quick opening files with mplayer
+#alias m='f -e mplayer' # quick opening files with mplayer
+alias m='f -e mpv' # quick opening files with mpv
 #alias o='a -e xdg-open' # quick opening files with xdg-open
 alias o='a -e rifle' # quick opening files with rifle
 
@@ -206,15 +208,46 @@ alias zsy='noglob zmv -Ls'
 #alias fixmouse='sudo rmmod psmouse; sudo modprobe psmouse'
 
 
+
+# -----------------------fzy fuzzy finder 
+# (replace fzy with your own favourite filter program)
+
+# global:
+#alias -g FZY='"`find -type f | fzy`"'
+alias -g FZY='$(find -type f | fzy)'
+#vim with fzy 
+alias vzy='vim $(find -type f | fzy)'
+# cd with fzy
+alias czy='cd $(find -type d | fzy)'
+
+
 # newest file (or directory) -global alias (zsh)
 alias -g newest='*(om[1])'
-
-alias -g FZY='"`find -type f | fzy`"'
 
 # on = open newest - open newest file with default application
 #    i use ranger's 'rifle' file opener, but you can also use 'xdg-open'
 #alias on='xdg-open newest'
 alias on='rifle newest'
+
+#
+# Automatically change the directory in bash after closing ranger
+# Compatible with ranger 1.4.2 through 1.7.*
+# This is a bash function for .bashrc to automatically change the directory to
+# the last visited one after ranger quits.
+# To undo the effect of this function, you can type "cd -" to return to the
+# original directory.
+function ranger-cd {
+    tempfile="$(mktemp -t tmp.XXXXXX)"
+    /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        cd -- "$(cat "$tempfile")"
+    fi
+    rm -f -- "$tempfile"
+}
+
+# This binds Ctrl-O to ranger-cd:
+#bind '"\C-o":"ranger-cd\C-m"'
 
 alias opendl='cd ~/Downloads; on'
 
@@ -251,8 +284,12 @@ alias save='xscreensaver-command -activate'
 alias weather='curl wttr.in/chemnitz'
 alias moon='curl wttr.in/moon'
 
-# i use this because by default xclip uses primary clipboard which i dont find useful.
+# i use this because by default xclip uses selection rather than clipboard which i often dont want.
 alias clip='xclip -selection clipboard'
+alias -g CLIP='$(xclip -selection clipboard -o)'
+
+# copy last terminal command to clipboard 
+alias commandcopy='fc -l -n -1 | xclip -selection clipboard -i'
 
 alias orphans='[[ -n $(pacman -Qdt) ]] && sudo pacman -Rs $(pacman -Qdtq) || echo "no orphans to remove"'
 
@@ -280,11 +317,12 @@ alias thesaurus='dict -d moby-thesaurus'
 alias ydl='youtube-dl "$(xclip -o)"'
 
 alias amp='amixer sset Headphone playback 90% unmute; amixer sset Speaker playback 30% unmute'
-# alias noamp=''
+alias noamp='amixer sset Speaker playback 80% unmute'
 
-alias trash='cd ~/.trash; ls'
+alias trash='cd ~/.trash; ls; echo ----------------------; du ~/.trash'
 
-
+alias pg='ping google.com'
+alias p8='ping 8.8.8.8'
 # ********************************************
 # *** personal -probably only useful to me ***
 # ********************************************

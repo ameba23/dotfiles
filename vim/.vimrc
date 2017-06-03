@@ -30,6 +30,7 @@ Plugin 'ctrlp.vim'
 Plugin 'The-NERD-tree'
 Plugin 'tComment'
 Plugin 'UltiSnips'
+"Plugin 'ranger.vim'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
@@ -191,8 +192,9 @@ set sidescroll=1
 set clipboard=unnamedplus
 set visualbell
 
+" smartcase for searching
 set ignorecase
-
+set smartcase
 
 " Move visual block up and down with J and K -this is brilliant!!
 vnoremap J :m '>+1<CR>gv=gv

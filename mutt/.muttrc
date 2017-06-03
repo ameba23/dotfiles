@@ -18,13 +18,21 @@ set sidebar_visible=yes
 set sidebar_delim=' │'
 set sidebar_format  = "%B%* (%N)"
 color sidebar_new yellow default
+
 bind index . sidebar-next
 bind index , sidebar-prev
 bind index 0 sidebar-open
+
+bind pager . sidebar-next
+bind pager , sidebar-prev
+bind pager 0 sidebar-open
+
 macro index b '<enter-command>toggle sidebar_visible<enter>'
 macro pager b '<enter-command>toggle sidebar_visible<enter>'
 # rebind bounce-message cos b now used for sidebar:
 bind index B bounce-message
+
+#----------------------------------
 
 #macro index S '<enter-command>set mbox="+mtmedia/INBOX"<enter>'
 #source ~/dotfiles/mutt/toggle-2.rc
@@ -37,6 +45,7 @@ set mbox="+systemli/INBOX"
 set record="~/Mail/systemli/Sent" 
 set postponed="+systemli/Drafts"
 set spoolfile="+systemli/INBOX"
+
 #  --------folder hooks:
 folder-hook +mtmedia/* 'set from="penguin@mtmedia.org"'
 folder-hook +mtmedia/* 'set sendmail="/usr/bin/msmtp -a mtmedia"'

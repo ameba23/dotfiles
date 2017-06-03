@@ -68,9 +68,14 @@ bindkey "^S" "insert-selecta-path-in-command-line"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+#
+# Change the prompt when you open a shell from inside ranger
+#
+[ -n "$RANGER_LEVEL" ] && PS1="$PS1"'(in ranger) '
+
 # fh - repeat history using fzf
 fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *\**//')
 }
 
 # fd - cd to selected directory using fzf
@@ -80,6 +85,7 @@ fd() {
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
+
 
 # cf - fuzzy cd from anywhere
 # ex: cf word1 word2 ... (even part of a file name)
