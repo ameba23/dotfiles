@@ -301,7 +301,7 @@ alias what='`fc -n -l -1`|less'
 # less with syntax highlighting.  Does not work in a pipe, as highlight uses filename to 
 # detect which syntax to use.  Anyone know a better way to do this?
 # (Note: less is alread aliased to less -r which allows ansi colour sequences)
-function hess { highlight -O ansi $1 | less } 
+function hess { highlight --force -O ansi $1 | less } 
 
 alias schlaf='systemctl suspend'
 
@@ -320,6 +320,8 @@ alias amp='amixer sset Headphone playback 90% unmute; amixer sset Speaker playba
 alias noamp='amixer sset Speaker playback 80% unmute'
 
 alias trash='cd ~/.trash; ls; echo ----------------------; du ~/.trash'
+
+alias readme='hess (#i)readme(|.md|.txt) || echo no readme'
 
 alias pg='ping google.com'
 alias p8='ping 8.8.8.8'
