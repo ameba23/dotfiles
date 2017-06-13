@@ -160,9 +160,11 @@ call ToggleWrap(1)  " Run above function (silently)
 
 " ================ Folds ============================
 
-set foldmethod=indent   "fold based on indent
+set foldmethod=syntax   "syntax or indent
 set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
+"set foldminlines=10
+"set nofoldenable        "dont fold by default
+set foldenable        "dont fold by default
 
 " ================ Completion =======================
 
@@ -215,10 +217,6 @@ nmap <silent> <C-N> :set rnu! number! number?<CR>
 
 " todo: map _ and + to Ctrl W - and Ctrl W + -resize window
 
-"  ,* - prepend line with * (for adding markdown bullets)
-"  move this to ftplugin/markdown
-nnoremap <leader>* I* <esc>j
-
 " from steve losh: 
 " ,ev -open .vimrc in split window
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -233,6 +231,7 @@ set hlsearch  " highlight search terms
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l> 
 
 " correct typos (todo: is there is simple way to switch these off?)
+" put this in ftplugin?
 iabbrev fuer für
 iabbrev ueber über
 iabbrev fro for
@@ -262,7 +261,6 @@ function! German()
   %s/sss/ß/ge
 endfunction
 
-
 nnoremap <leader>g :call German()<CR>
 command! German call German()
 
@@ -272,6 +270,7 @@ command W w
 " format entire file to 75 columns (useful for emails)
 command! Fmtfile %!fmt
 
+" make pager look different to make me realise i cannot edit
 func LessInitFunc()
   set nocursorline
   set nonumber

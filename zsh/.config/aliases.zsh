@@ -3,6 +3,7 @@
 # 
 # needs organising!  should be split into personal / more useful to other people 
 # should also be in categories
+# there are also some functions in here, maybe put them elsewhere
 #
 # stuff at the top is mostly from YADR (yet another dotfile repo)
 # with some minor changes
@@ -290,12 +291,14 @@ alias -g CLIP='$(xclip -selection clipboard -o)'
 
 # copy last terminal command to clipboard 
 alias commandcopy='fc -l -n -1 | xclip -selection clipboard -i'
+alias outcopy='$(fc -l -n -1) | xclip -selection clipboard -i'
 
 alias orphans='[[ -n $(pacman -Qdt) ]] && sudo pacman -Rs $(pacman -Qdtq) || echo "no orphans to remove"'
 
 # please! (after permission denied)
 alias pls='sudo `fc -n -l -1`'
 
+# what? (after too much output)
 alias what='`fc -n -l -1`|less'
 
 # less with syntax highlighting.  Does not work in a pipe, as highlight uses filename to 
@@ -316,15 +319,23 @@ alias thesaurus='dict -d moby-thesaurus'
 # run youtube-dl with a url from the clipboard
 alias ydl='youtube-dl "$(xclip -o)"'
 
+# adjust volume when connected to amplifier:  (better would be to detect when headphone jack connected)
 alias amp='amixer sset Headphone playback 90% unmute; amixer sset Speaker playback 30% unmute'
-alias noamp='amixer sset Speaker playback 80% unmute'
+alias noamp='amixer sset Speaker playback 100% unmute'
 
+# jump to trash directory, list contents and disk space used:
 alias trash='cd ~/.trash; ls; echo ----------------------; du ~/.trash'
 
+# open readme file in pager 
 alias readme='hess (#i)readme(|.md|.txt) || echo no readme'
 
+# internet working?
 alias pg='ping google.com'
 alias p8='ping 8.8.8.8'
+
+# listen to bbc world service
+alias worldservice='mplayer -playlist http://www.bbc.co.uk/worldservice/meta/live/mp3/eneuk.pls'
+
 # ********************************************
 # *** personal -probably only useful to me ***
 # ********************************************
@@ -341,17 +352,21 @@ alias site='cd ~/Documents/static/docs'
 # my global todo list.  i stopped using this alias since i have an i3 workspace dedicated to this file
 alias todo='vim ~/Documents/todo.md'
 
+# wrapper for a script to add an item todo list by remotely controlling a vim session:
 function t {
-# #argss=`echo "\"" $@ "\""` 
- argss="$*" 
+ argss="$*"
  todoadd.sh $argss
 }
+# turn off globbing to allow special characters in todo items
+alias t='noglob t'
 
 # ---xrandr:
 # alias monitor='xrandr --auto --output VGA1 --mode 1280x1024 --left-of eDP1'
 #alias monitor='xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1'
 #alias nomonitor='xrandr --auto'
+
 # --try monitor and if errors, load auto settings.  This command can be used when i plug or unplug the monitor
+# it is also bound to a key in my window manager
 alias monitor='xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1 || xrandr --auto'
 
 
