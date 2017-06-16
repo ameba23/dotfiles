@@ -163,8 +163,7 @@ call ToggleWrap(1)  " Run above function (silently)
 set foldmethod=syntax   "syntax or indent
 set foldnestmax=3       "deepest fold is 3 levels
 "set foldminlines=10
-"set nofoldenable        "dont fold by default
-set foldenable        "dont fold by default
+set nofoldenable        "dont fold by default
 
 " ================ Completion =======================
 
@@ -218,10 +217,10 @@ nmap <silent> <C-N> :set rnu! number! number?<CR>
 " todo: map _ and + to Ctrl W - and Ctrl W + -resize window
 
 " from steve losh: 
-" ,ev -open .vimrc in split window
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-" ,sv -source .vimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
+" ,ve -open .vimrc in split window
+nnoremap <leader>ve :vsplit $MYVIMRC<cr>
+" ,vr -source .vimrc
+nnoremap <leader>vr :source $MYVIMRC<cr>
 
 inoremap jk <esc> " not quite got the hang of this yet
 
@@ -244,7 +243,8 @@ set incsearch " jump to search pattern as you type it
 vnoremap <leader>sr :'<,'> write !xargs surfraw google <CR>
 
 " enter in normal mode adds blank line (second mapping doesnt work.  why?)  
-nnoremap <Enter> o<ESC>
+"nnoremap <Enter> o<ESC>
+"nmap <Enter> o<ESC>
 nnoremap <S-Enter> O<ESC>
 
 " from my old vimrc, to paste from x clipboard?
@@ -270,9 +270,16 @@ command W w
 " format entire file to 75 columns (useful for emails)
 command! Fmtfile %!fmt
 
+" always show status line
+set laststatus=2
+
 " make pager look different to make me realise i cannot edit
 func LessInitFunc()
   set nocursorline
   set nonumber
   set nornu
 endfunc
+
+"set spelllang=en,de
+
+map <Leader>v 0ma}b:'a,.j<CR>070 ?  *<Esc>dwi<CR><Esc>

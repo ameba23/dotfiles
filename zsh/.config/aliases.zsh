@@ -327,7 +327,7 @@ alias noamp='amixer sset Speaker playback 100% unmute'
 alias trash='cd ~/.trash; ls; echo ----------------------; du ~/.trash'
 
 # open readme file in pager 
-alias readme='hess (#i)readme(|.md|.txt) || echo no readme'
+alias readme='hess (#i)readme(|.md|.txt|.rst) || echo no readme'
 
 # internet working?
 alias pg='ping google.com'
