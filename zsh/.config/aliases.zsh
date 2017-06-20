@@ -291,7 +291,7 @@ alias -g CLIP='$(xclip -selection clipboard -o)'
 
 # copy last terminal command to clipboard 
 alias commandcopy='fc -l -n -1 | xclip -selection clipboard -i'
-alias outcopy='$(fc -l -n -1) | xclip -selection clipboard -i'
+alias outcopy='$(fc -l -n -1) | xclip -selection clipboard -i; echo clipboard contains; clip -o'
 
 alias orphans='[[ -n $(pacman -Qdt) ]] && sudo pacman -Rs $(pacman -Qdtq) || echo "no orphans to remove"'
 
