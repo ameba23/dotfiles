@@ -9,9 +9,7 @@
 # Browser
 #
 
-if [[ "$OSTYPE" == darwin* ]]; then
-  export BROWSER='open'
-fi
+export BROWSER='vimb'
 
 #
 # Editors

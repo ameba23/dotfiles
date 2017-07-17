@@ -49,6 +49,8 @@ alias ls='ls --color=auto'
 alias l.='ls -d .*'
 alias ..='cd ..'
 
+alias lrt='ls++ -art'
+
 # show me files matching "ls grep"
 alias lsg='ll | grep'
 
@@ -326,7 +328,7 @@ alias noamp='amixer sset Speaker playback 100% unmute'
 # jump to trash directory, list contents and disk space used:
 alias trash='cd ~/.trash; ls; echo ----------------------; du ~/.trash'
 
-# open readme file in pager 
+# open readme file in pager.  todo: if no readme open .nfo 
 alias readme='hess (#i)readme(|.md|.txt|.rst) || echo no readme'
 
 # internet working?
@@ -342,7 +344,7 @@ alias worldservice='mplayer -playlist http://www.bbc.co.uk/worldservice/meta/liv
 
 # build/edit my browser start page:
 alias oftenlinks='markdown ~/Documents/oftenlinks.md >! ~/Documents/oftenlinks.html'
-alias oftenedit='vim ~/Documents/oftenlinks.md'
+alias oftenedit='vim ~/Documents/oftenlinks.md && oftenlinks'
 
 # website stuff
 alias uploadsite='rsync -avz -e ssh ~/Documents/static/site/ ameba@ehion.com:public_html/site'
@@ -378,3 +380,9 @@ alias books='cd ~/books_and_zines'
 alias dot='cd ~/dotfiles'
 alias film='cd ~/film'
 # *******************************************
+magnet-info() {
+  hash=$(echo "$1" | grep -oP "(?<=btih:).*?(?=&)")
+  echo "Magnet hash: $hash"
+  aria2c --bt-metadata-only=true --bt-save-metadata=true -q "$1"
+  aria2c "$hash.torrent" -S
+}

@@ -250,7 +250,6 @@ nnoremap <S-Enter> O<ESC>
 " from my old vimrc, to paste from x clipboard?
 "map <F2> "+gP  
 
-"nnoremap <C-Left> <C-w><Left>
 
 " lazy about umlaut:
 function! German()
@@ -275,11 +274,19 @@ set laststatus=2
 
 " make pager look different to make me realise i cannot edit
 func LessInitFunc()
+  set laststatus=1
   set nocursorline
   set nonumber
   set nornu
 endfunc
 
 "set spelllang=en,de
+
+" Ctrl + Arrows changes window.  -this requires either modifying urxvt or
+" remapping using escape sequences.
+nmap <C-Up> <C-w><Up> 
+nmap <C-Down> <C-w><Down> 
+nmap <C-Left> <C-w><Left> 
+nmap <C-Right> <C-w><Right> 
 
 map <Leader>v 0ma}b:'a,.j<CR>070 ?  *<Esc>dwi<CR><Esc>

@@ -4,4 +4,4 @@
 # download folder
 -o ~/Downloads/%(title)s.%(ext)s
 # worst quality (for bad connection)
--f worstvideo+bestaudio
+#-f worstvideo+bestaudio

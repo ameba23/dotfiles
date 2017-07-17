@@ -1,0 +1,2 @@
+#!/bin/sh
+grep -i "$@" ~/.config/vimb/history |grep -v "duckduckgo" | linkmarkdown.py

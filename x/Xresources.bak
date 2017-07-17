@@ -35,7 +35,7 @@ URxvt*color13: #FF00FF // magenta
 URxvt*color14: #00FFFF // cyan
 URxvt*color15: #FFFFFF // white
 !URxvt.font: xft:Bitstream Vera Sans:size=16
-URxvt.perl-ext-common: default,matcher,eval,font-size
+URxvt.perl-ext-common: default,matcher,resize-font,eval
 !URxvt.url-launcher: /usr/bin/firefox
 URxvt.url-launcher: /usr/bin/vimb
 URxvt.matcher.button: 1
@@ -51,14 +51,3 @@ URxvt*cursorBlink: true
 URxvt.scrollBar: off
 URxvt.saveLines: 8192
 URxvt.print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXXX)
-
-URxvt.keysym.Control-0x2b: perl:font-size:increase
-URxvt.keysym.Control-0x2d: perl:font-size:decrease
-
-!! Yeah, I am one of those, who use these keys in Vim :-(
-urxvt.keysym.Home:          \033[1~
-urxvt.keysym.End:           \033[4~
-urxvt.keysym.Control-Up:    \033[1;5A
-urxvt.keysym.Control-Down:  \033[1;5B
-urxvt.keysym.Control-Left:  \033[1;5D
-urxvt.keysym.Control-Right: \033[1;5C
