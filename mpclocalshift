@@ -31,20 +31,22 @@ function usage_info {
 
 }
 
-# test if arguments were passed
-if [ -z "$*" ]; then
-  usage_info
-else
 
-  filelist="$@"
-  firstfile=1
+inputFiles=( )
+while (( $# )); do
+  inputFiles+=( "$1" )
+  shift
+done
+
+firstfile=1
   
-  # find the position in the mpd playlist to startplaying from:
-  tracknum=$(echo $(mpc playlist | wc -l) + 1 | bc)
-  
-  for var in $filelist
-  do
-   echo $var
+# find the position in the mpd playlist to startplaying from:
+tracknum=$(echo $(mpc playlist | wc -l) + 1 | bc)
+
+# loop over the input files and process each one
+for var in "${inputFiles[@]}"; do
+  echo "$var"
+
     # test if it is within the mpd database directory:
     if [[ $(readlink -f $var) = $mpddir* ]]; then
       echo "**** in the music"
@@ -72,6 +74,15 @@ else
      
       fi
     fi
-  done
-fi
+done
+
+
+
+# test if arguments were passed
+#if [ -z "$*" ]; then
+#  usage_info
+#else
+
+#  filelist="$@"
+  
 

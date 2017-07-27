@@ -1,0 +1,18 @@
+#!/bin/bash
+inputFiles=( )
+#outputFile=
+while (( $# )); do
+#  if [[ $1 = -o ]]; then
+#    outputFile=$2; shift
+#  elif [[ $1 = -i ]]; then
+#    inputFiles+=( "$2" ); shift
+#  else
+    inputFiles+=( "$1" )
+#  fi
+  shift
+done
+
+# loop over the input files and process each one
+for inputFile in "${inputFiles[@]}"; do
+  echo "$inputFile"
+done

@@ -285,7 +285,8 @@ visualizer_look = ●▮
 ## Attention: It doesn't support song format anymore.
 ## Use `ncmpcpp --now-playing SONG_FORMAT` instead.
 ##
-#execute_on_song_change = ""
+execute_on_song_change = "mpccoverart.sh 2&>> ~/coverout.txt"
+#execute_on_song_change = "mpccoverart.sh 2&> /dev/null"
 #
 #playlist_show_remaining_time = no
 #

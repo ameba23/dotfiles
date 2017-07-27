@@ -1,6 +1,19 @@
 #!/bin/bash
+#echo fff
+#while read $flist
+#do
+#  echo $list
+#done < /dev/stdin
+while read line
+do
+  echo "$line"
+done < "${1:-/dev/stdin}"
+#find $@
+#iflist=$(find $@)
+#ls $@
 
-for f in $@
-  do
-    echo $f
-  done
+#for f in $flist
+# do
+#    echo $f
+#    echo "------"
+#  done

@@ -160,8 +160,8 @@ call ToggleWrap(1)  " Run above function (silently)
 
 " ================ Folds ============================
 
-set foldmethod=syntax   "syntax or indent
-set foldnestmax=3       "deepest fold is 3 levels
+"set foldmethod=syntax   "syntax or indent
+"set foldnestmax=3       "deepest fold is 3 levels
 "set foldminlines=10
 set nofoldenable        "dont fold by default
 
@@ -290,3 +290,6 @@ nmap <C-Left> <C-w><Left>
 nmap <C-Right> <C-w><Right> 
 
 map <Leader>v 0ma}b:'a,.j<CR>070 ?  *<Esc>dwi<CR><Esc>
+
+
+nnoremap <leader>oe :vsplit $HOME/Documents/oftenlinks.md<cr>
