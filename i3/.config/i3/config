@@ -125,7 +125,8 @@ bindsym $mod+1 workspace $tag1
 bindsym $mod+2 workspace $tag2
 bindsym $mod+3 workspace $tag3 exec "ps -ef | grep -v grep | grep -- '-name offlineimap' || urxvt -name offlineimap" exec "pgrep mutt || urxvt -name mutt -e ~/dotfiles/runmutt.sh" exec "i3-msg layout tabbed"
 bindsym $mod+4 workspace $tag4 exec "ps -ef | grep -v grep | grep -- '-name todo' || urxvt -name todo -e vim --servername todo -S ~/Documents/todo.vim ~/Documents/todo.md"
-bindsym $mod+5 workspace $tag5 exec "i3-msg 'append_layout /home/potatoe/workspace5.json'" exec "pgrep ncmpcpp || urxvt -name ncmpcpp -e ncmpcpp" exec "ps -ef | grep -v grep | grep -- '-name nausea' || urxvt -name nausea -e nausea -c /tmp/mpd.fifo" exec "pgrep imv || imv /tmp/cover.jpg" 
+#bindsym $mod+5 workspace $tag5 exec "i3-msg 'append_layout /home/potatoe/workspace5.json'" exec "pgrep ncmpcpp || urxvt -name ncmpcpp -e ncmpcpp" exec "ps -ef | grep -v grep | grep -- '-name nausea' || urxvt -name nausea -e nausea -c /tmp/mpd.fifo" exec "pgrep imv || imv /tmp/cover.jpg" 
+bindsym $mod+5 workspace $tag5 exec "pgrep ncmpcpp || ~/.config/i3/loadlayout_ncmpcpp.sh" 
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
