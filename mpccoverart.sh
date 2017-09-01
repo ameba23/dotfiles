@@ -1,9 +1,9 @@
 #!/bin/bash
 
 
-mpddir="/home/potatoe/Musique/"
+mpddir="$HOME/Musique/"
 
-defaultimage="/home/potatoe/dotfiles/hdd.jpg"
+defaultimage="$HOME/dotfiles/hdd.jpg"
 
 fname=$(mpc -f %file% current)
 ffname=$(echo $fname | sed "s/^\/\/home/\/home/g") || ffname="fff"
@@ -28,7 +28,8 @@ if [[ $found = 0 ]] ; then
     src="$(echo -n "$covers" | head -n1)"
     if [[ -f $src ]] ; then
       /bin/cp "$src" /tmp/cover.jpg
-    else 
+    else
+      # todo: if still no image found, search recursively into dirs?
       cp "$defaultimage" /tmp/cover.jpg
     fi
 fi

@@ -1,22 +1,48 @@
+
 set home-page=file:////home/potatoe/Documents/oftenlinks.html
-nnoremap b <C-O>
-nnoremap <BS> <C-O>
-nnoremap q <C-Q>
-nnoremap s <C-C>
-nnoremap w :sh! /bin/sh -c '~/dotfiles/writeoftenlinks.sh'<CR>:sh echo written: * [$VIMB_TITLE]($VIMB_URI)<CR> 
-nnoremap W :sh! /bin/sh -c 'echo "* [$VIMB_TITLE]($VIMB_URI)" | xclip -selection clipboard'<CR>:sh echo Yanked: * [$VIMB_TITLE]($VIMB_URI)<CR> 
-nnoremap m :sh! /bin/zsh -c 'noglob umpv "$VIMB_URI"'<CR>:sh echo starting mpv "$VIMB_URI"<CR>
-nnoremap M :sh! /bin/sh -c 'youtube-dl "$VIMB_URI"'<CR>:sh echo starting youtube-dl "$VIMB_URI"<CR>
-nnoremap <C-F> :sh! /bin/sh -c 'firefox "$VIMB_URI"'<CR>:sh echo starting firefox "$VIMB_URI"<CR>
-nnoremap h :sh! /bin/sh -c 'cd ~/software; git clone "$VIMB_URI" 2>> ~/dotfiles/vimb/out.log'<CR>:sh echo Running git clone "$VIMB_URI"<CR>
-nnoremap = zi
-nnoremap - zo
-nnoremap ! :open !
-nnoremap i :set images!<CR>
-nnoremap I :sh! /bin/sh -c 'python2.7 ~/dotfiles/toggleimagesvimb.py'<CR>
-nnoremap A :sh! /bin/zsh -c 'rifle ~/Downloads/*(om[1])'<CR>:sh echo rifle<CR>
-inoremap <C-C> <C-V><C-C>
-inoremap <C-V> <C-V><C-V>
+
 set editor-command=urxvt -e vim %s
 set download-path=~/Downloads
 set images=false
+
+# not really sure what this does
+set media-stream=true
+set mediasource=true
+
+# -------------------------keybindings:
+# map backspace to go back
+nnoremap <BS> <C-O>
+nnoremap b <C-O>
+
+# q=quit
+nnoremap q <C-Q>
+# s=stop loading
+nnoremap s <C-C>
+
+# add markdown link to startpage using script
+nnoremap w :sh! /bin/sh -c '~/dotfiles/writeoftenlinks.sh'<CR>:sh echo written: * [$VIMB_TITLE]($VIMB_URI)<CR> 
+# yank link as markdown bullet point
+nnoremap W :sh! /bin/sh -c 'echo "* [$VIMB_TITLE]($VIMB_URI)" | xclip -selection clipboard'<CR>:sh echo Yanked: * [$VIMB_TITLE]($VIMB_URI)<CR> 
+
+# play video using mpv (wrapper script)
+nnoremap m :sh! /bin/zsh -c 'noglob umpv "$VIMB_URI"'<CR>:sh echo starting mpv "$VIMB_URI"<CR>
+# download video
+nnoremap M :sh! /bin/sh -c 'youtube-dl "$VIMB_URI"'<CR>:sh echo starting youtube-dl "$VIMB_URI"<CR>
+# open page with firefox
+nnoremap <C-F> :sh! /bin/sh -c 'firefox "$VIMB_URI"'<CR>:sh echo starting firefox "$VIMB_URI"<CR>
+# clone git repo
+nnoremap h :sh! /bin/sh -c 'cd ~/software; git clone "$VIMB_URI" 2>> ~/dotfiles/vimb/out.log'<CR>:sh echo Running git clone "$VIMB_URI"<CR>
+# zoom
+nnoremap = zi
+nnoremap - zo
+# bang
+nnoremap ! :open !
+# i=toggle images
+nnoremap i :set images!<CR>
+# use script to toggle images in config file so it persists to new windows
+nnoremap I :sh! /bin/sh -c 'python2.7 ~/dotfiles/toggleimagesvimb.py'<CR>
+# open downloaded file using rifle 
+nnoremap A :sh! /bin/zsh -c 'rifle ~/Downloads/*(om[1])'<CR>:sh echo rifle<CR>
+# copy, paste text 
+inoremap <C-C> <C-V><C-C>
+inoremap <C-V> <C-V><C-V>

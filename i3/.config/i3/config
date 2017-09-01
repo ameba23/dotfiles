@@ -119,6 +119,9 @@ assign [instance="offlineimap"] $tag3
 assign [instance="todo"] $tag4
 assign [instance="ncmpcpp"] $tag5
 
+# jump to ranger (if its running) with $mod+backtick
+bindsym $mod+grave [title="^ranger$"] focus
+
 #----------------------------------------
 # switch to workspace - this also runs the programs assigned to the workspaces if they are not already running
 bindsym $mod+1 workspace $tag1
@@ -226,7 +229,7 @@ exec "i3-msg layout tabbed"
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/michael/.i3/workspace-1.json'"
 
 
-# ---------------------------ameba keybindings:
+# ---------------------------ameba's keybindings:
 #
 # printscreen = screenshot
 bindsym Print exec scrot -e 'notify-send "screenshot taken"' 
@@ -273,7 +276,7 @@ bindsym $mod+Ctrl+i exec "python2.7 ~/dotfiles/toggleimagesvimb.py"
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-# Toggle between current workspace and the previous one 
+# Toggle between current workspace and the previous one (very useful) 
 bindsym $mod+z workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_and_forth
 

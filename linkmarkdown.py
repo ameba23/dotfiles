@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#
+# generate markdown links (used by wwwhistgrep)
 
 import sys
 

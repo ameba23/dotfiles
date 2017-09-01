@@ -15,7 +15,7 @@ escapedmpddir=$((echo $mpddir | sed -r 's/([\$\.\*\/\[\\^])/\\\1/g' | sed 's/[]]
 
 
 #function test_firstfile {
-    # play, starting from the first file we added
+# play, starting from the first file we added
 #    if [ $firstfile = 1 ]
 #    then 
 #      firstfile=0
@@ -37,40 +37,40 @@ if [ -z "$*" ]; then
 else
 
   filelist="$@"
-#  firstfile=1
-  
+  #  firstfile=1
+
   # find the position in the mpd playlist to startplaying from:
   tracknum=$(echo $(mpc playlist | wc -l) + 1 | bc)
-  
+
   for var in $filelist
   do
 
-         echo "."$var"." >> /home/potatoe/logfile.txt
+    echo "."$var"." >> /home/potatoe/logfile.txt
     # test if it is within the mpd database directory:
     if [[ $(readlink -f $var) = $mpddir* ]]; then
-#     echo "**** in the music"
+      #     echo "**** in the music"
 
       # trim the path so that it becomes relative to the music directory
       fname=$(echo $(readlink -f $var) | sed "s/^"$escapedmpddir"//g")
-      
+
       mpc add $fname
-#      test_firstfile
-    
+      #      test_firstfile
+
     else   
-#      echo " NOT in the music"
-    
+      #      echo " NOT in the music"
+
       # test is argument is a directory or a file
       if [ -d "$var" ]; then
 
         # if its a directory, use find to recursively add the files within it 
         find $var -name '*.*' -exec mpc add "file:///$(readlink -f '{}')" \;
-#        test_firstfile
-         #echo $var >> /home/potatoe/logfile.txt
+        #        test_firstfile
+        #echo $var >> /home/potatoe/logfile.txt
       elif [ -f "$var" ]; then
 
         mpc add "file:///$(readlink -f $var)"
-#        test_firstfile
-     
+        #        test_firstfile
+
       fi
     fi
   done

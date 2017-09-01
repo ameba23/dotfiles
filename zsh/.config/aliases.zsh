@@ -167,6 +167,8 @@ alias k9='kill -9'
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
+alias mountphone='mkdir ~/phone && jmtpfs ~/phone'
+alias unmountphone='fusermount -u ~/phone && rmdir ~/phone'
 
 # surfraw 
 alias sr=surfraw
@@ -205,10 +207,10 @@ alias zln='noglob zmv -L'
 alias zsy='noglob zmv -Ls'
 
 
-#alias torbrowser='~/software/tor-browser_en-US/start-tor-browser'
+alias torbrowser='~/software/tor-browser_en-US/start-tor-browser.desktop'
 
 # this seems to work when the mouse cursor gets stuck
-#alias fixmouse='sudo rmmod psmouse; sudo modprobe psmouse'
+alias fixmouse='sudo rmmod psmouse && sudo modprobe psmouse'
 
 
 

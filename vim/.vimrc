@@ -30,6 +30,7 @@ Plugin 'ctrlp.vim'
 Plugin 'The-NERD-tree'
 Plugin 'tComment'
 Plugin 'UltiSnips'
+Plugin 'metakirby5/codi.vim'
 "Plugin 'ranger.vim'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Bundle 'tpope/vim-rails.git'
@@ -290,6 +291,10 @@ nmap <C-Left> <C-w><Left>
 nmap <C-Right> <C-w><Right> 
 
 map <Leader>v 0ma}b:'a,.j<CR>070 ?  *<Esc>dwi<CR><Esc>
+
+" not sure about these, maybe get rid:
+nmap <Leader>y "Ayy
+nmap <Leader>p "ap:let @a = ''<cr>
 
 
 nnoremap <leader>oe :vsplit $HOME/Documents/oftenlinks.md<cr>
