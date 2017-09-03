@@ -207,7 +207,8 @@ alias zln='noglob zmv -L'
 alias zsy='noglob zmv -Ls'
 
 
-alias torbrowser='~/software/tor-browser_en-US/start-tor-browser.desktop'
+#alias torbrowser='~/software/tor-browser_en-US/start-tor-browser.desktop'
+alias torbrowser='cd ~/software/tor-browser_en-US;./start-tor-browser.desktop;cd -'
 
 # this seems to work when the mouse cursor gets stuck
 alias fixmouse='sudo rmmod psmouse && sudo modprobe psmouse'
