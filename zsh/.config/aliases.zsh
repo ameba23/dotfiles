@@ -174,6 +174,10 @@ alias unmountphone='fusermount -u ~/phone && rmdir ~/phone'
 alias sr=surfraw
 alias srg="surfraw google"
 
+# change ownership of everything in current dir (recursively) to current user
+# and use that username as group.
+alias allmine='sudo chown -R $(whoami):$(whoami) *'
+
 # i3
 alias i3config='vim ~/.config/i3/config'
 # display keybindings for i3
