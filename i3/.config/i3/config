@@ -97,6 +97,7 @@ bindsym $mod+Shift+a focus child
 
 bindsym $mod+b exec vimb
 
+
 # ------------------------workspace names:
 set $tag1 "1:term"
 set $tag2 "2:www"
@@ -252,7 +253,6 @@ bindsym $mod+m exec "xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1 
 
 #pause mpd
 bindsym $mod+p exec "mpc toggle"
-#bindsym $mod+period exec "mpc toggle"
 
 # change track mpd
 bindsym $mod+comma exec mpc prev && exec notify-send "`mpc`"
@@ -287,6 +287,9 @@ bindsym $mod+Shift+bracketright move workspace to output right
 # scratchpad -very useful
 bindsym $mod+s scratchpad show
 bindsym $mod+Shift+s move window to scratchpad
+
+# go to sleep:
+bindsym $mod+Ctrl+x exec "systemctl suspend"
 
 # i like this option but it messes with keybindings which change workspace
 workspace_auto_back_and_forth no

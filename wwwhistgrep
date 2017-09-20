@@ -1,3 +1,5 @@
 #!/bin/sh
 # search vimb browsing history, and put results into markdown format
-grep -i "$@" $HOME/.config/vimb/history |grep -v "duckduckgo" | linkmarkdown.py
+# --also remove search engine results
+# --also remove duplicates
+grep -i "$@" $HOME/.config/vimb/history |grep -v "duckduckgo" | uniq | linkmarkdown.py

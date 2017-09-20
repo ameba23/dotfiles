@@ -167,6 +167,7 @@ alias k9='kill -9'
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
+# for samsung
 alias mountphone='mkdir ~/phone && jmtpfs ~/phone'
 alias unmountphone='fusermount -u ~/phone && rmdir ~/phone'
 
@@ -178,7 +179,7 @@ alias srg="surfraw google"
 # and use that username as group.
 alias allmine='sudo chown -R $(whoami):$(whoami) *'
 
-# i3
+# i3 window manager
 alias i3config='vim ~/.config/i3/config'
 # display keybindings for i3
 alias keys='cat ~/.config/i3/config|grep bindsym|highlight -S sh --out-format=ansi|less'
@@ -195,7 +196,9 @@ alias fbreader=FBReader
 # too cautious?  (rm already aliased by prezto -i think)
 #alias rm='rm -I'
 
-# vim+less
+alias whatsmyip='curl http://httpbin.org/ip'
+
+# vim+less (use vim as pager)
 alias vess='/usr/share/vim/vim80/macros/less.sh'
 
 alias muttrc='vim ~/.muttrc'
@@ -210,8 +213,7 @@ alias zcp='noglob zmv -C'
 alias zln='noglob zmv -L'
 alias zsy='noglob zmv -Ls'
 
-
-#alias torbrowser='~/software/tor-browser_en-US/start-tor-browser.desktop'
+# run torbrowser:
 alias torbrowser='cd ~/software/tor-browser_en-US;./start-tor-browser.desktop;cd -'
 
 # this seems to work when the mouse cursor gets stuck
@@ -223,7 +225,6 @@ alias fixmouse='sudo rmmod psmouse && sudo modprobe psmouse'
 # (replace fzy with your own favourite filter program)
 
 # global:
-#alias -g FZY='"`find -type f | fzy`"'
 alias -g FZY='$(find -type f | fzy)'
 #vim with fzy 
 alias vzy='vim $(find -type f | fzy)'
@@ -259,6 +260,7 @@ function ranger-cd {
 # This binds Ctrl-O to ranger-cd:
 #bind '"\C-o":"ranger-cd\C-m"'
 
+# jump to downloads and open the most recently modified file
 alias opendl='cd ~/Downloads; on'
 
 
@@ -279,7 +281,7 @@ alias wscan='nmcli device wifi list'
 #alias histgrep='cat ~/.zhistory |grep -i '
 alias histgrep='fc -li 1 |grep -i '
 
-# grep browser history
+# grep browser history (vimb)
 alias wwwgrep='cat ~/.config/vimb/history |grep -i'
 
 # correct typos 
@@ -300,14 +302,17 @@ alias -g CLIP='$(xclip -selection clipboard -o)'
 
 # copy last terminal command to clipboard 
 alias commandcopy='fc -l -n -1 | xclip -selection clipboard -i'
+
+# repeat last terminal command and pipe output to clipboard
 alias outcopy='$(fc -l -n -1) | xclip -selection clipboard -i; echo clipboard contains; clip -o'
 
+# removed orphaned pacman packages
 alias orphans='[[ -n $(pacman -Qdt) ]] && sudo pacman -Rs $(pacman -Qdtq) || echo "no orphans to remove"'
 
 # please! (after permission denied)
 alias pls='sudo `fc -n -l -1`'
 
-# what? (after too much output)
+# what? (after too much output) - pipe last command through less
 alias what='`fc -n -l -1`|less'
 
 # less with syntax highlighting.  Does not work in a pipe, as highlight uses filename to 
@@ -315,6 +320,7 @@ alias what='`fc -n -l -1`|less'
 # (Note: less is alread aliased to less -r which allows ansi colour sequences)
 function hess { highlight --force -O ansi $1 | less } 
 
+# go to sleep:
 alias schlaf='systemctl suspend'
 
 #function sedPath { 
@@ -344,6 +350,21 @@ alias p8='ping 8.8.8.8'
 
 # listen to bbc world service
 alias worldservice='mplayer -playlist http://www.bbc.co.uk/worldservice/meta/live/mp3/eneuk.pls'
+
+# Convert currentce using google financt API
+#   usage example:  currency_convert 1 usd eur  (also works with btc)
+currency_convert() {
+  curl -s "http://finance.google.com/finance/converter?a=$1&from=$2&to=$3" | sed '/res/!d;s/<[^>]*>//g';
+  # apparently this can be done transfering less data with something like:
+  # echo "GET download.finance.yahoo.com/d/quotes.csv?e=.csv&f=c4l1&s=USDINR=X" | nc download.finance.yahoo.com 80
+}
+
+magnet-info() {
+  hash=$(echo "$1" | grep -oP "(?<=btih:).*?(?=&)")
+  echo "Magnet hash: $hash"
+  aria2c --bt-metadata-only=true --bt-save-metadata=true -q "$1"
+  aria2c "$hash.torrent" -S
+}
 
 # ********************************************
 # *** personal -probably only useful to me ***
@@ -386,10 +407,5 @@ alias vb='i3-msg "workspace 2:www" ; vimb &'
 alias books='cd ~/books_and_zines'
 alias dot='cd ~/dotfiles'
 alias film='cd ~/film'
+
 # *******************************************
-magnet-info() {
-  hash=$(echo "$1" | grep -oP "(?<=btih:).*?(?=&)")
-  echo "Magnet hash: $hash"
-  aria2c --bt-metadata-only=true --bt-save-metadata=true -q "$1"
-  aria2c "$hash.torrent" -S
-}
