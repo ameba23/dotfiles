@@ -47,6 +47,7 @@ path=(
   /home/potatoe/dotfiles
   /home/potatoe/scripts
   /home/potatoe/.gem/ruby/2.4.0/bin
+  /root/.gem/ruby/2.4.0/bin
 )
 
 #

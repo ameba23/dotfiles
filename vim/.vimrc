@@ -31,6 +31,7 @@ Plugin 'The-NERD-tree'
 Plugin 'tComment'
 Plugin 'UltiSnips'
 Plugin 'metakirby5/codi.vim'
+Plugin 'cohama/lexima.vim'
 "Plugin 'ranger.vim'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Bundle 'tpope/vim-rails.git'

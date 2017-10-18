@@ -366,6 +366,10 @@ magnet-info() {
   aria2c "$hash.torrent" -S
 }
 
+
+alias fzfind="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m"
+
+
 # ********************************************
 # *** personal -probably only useful to me ***
 # ********************************************
