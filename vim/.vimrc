@@ -18,19 +18,35 @@ call vundle#rc()
 
 " ===========================================My Bundles here:
 "
-" original repos on github
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'"
 
+" git integration
 Bundle 'tpope/vim-fugitive'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 " Bundle 'Lokaltog/vim-easymotion'
+" tab completion
 Plugin 'ervandew/supertab'
+" find files
 Plugin 'ctrlp.vim'
 Plugin 'The-NERD-tree'
+" comment a line with gcc, and more... 
 Plugin 'tComment'
+" snippet manager
 Plugin 'UltiSnips'
+" run code as you type
 Plugin 'metakirby5/codi.vim'
+
+" highlighting for slim html templates
+Plugin 'slim-template/vim-slim.git'
+
+" to change or select ruby blocks
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+
+Plugin 'Valloric/YouCompleteMe'
+
+" Automatic closing of quotes and brackets
 Plugin 'cohama/lexima.vim'
 "Plugin 'ranger.vim'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -41,7 +57,12 @@ Plugin 'cohama/lexima.vim'
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
 " ...
+runtime macros/matchit.vim
 
+" Deoplete - 'asynchronous keywork completion system'
+"Plugin 'Shougo/deoplete.nvim'
+"Plugin 'roxma/nvim-yarp'
+"Plugin 'roxma/vim-hug-neovim-rpc'
 
 " =============== Vundle Initialization ===============
 " This loads all the plugins specified in ~/.vim/vundles.vim
@@ -256,6 +277,7 @@ nnoremap <S-Enter> O<ESC>
 " lazy about umlaut:
 function! German()
   " add support for uppercase?  is this needed?
+  " there are many words where this causes problems...
   %s/ae/ä/ge
   %s/ue/ü/ge
   %s/oe/ö/ge

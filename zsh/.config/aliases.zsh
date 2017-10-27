@@ -359,6 +359,9 @@ currency_convert() {
   # echo "GET download.finance.yahoo.com/d/quotes.csv?e=.csv&f=c4l1&s=USDINR=X" | nc download.finance.yahoo.com 80
 }
 
+# query coindesk api for bitcoin price in euro
+alias btceur='curl -s http://api.coindesk.com/v1/bpi/currentprice.json | jq .bpi.EUR.rate'
+
 magnet-info() {
   hash=$(echo "$1" | grep -oP "(?<=btih:).*?(?=&)")
   echo "Magnet hash: $hash"
