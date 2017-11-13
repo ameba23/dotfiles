@@ -1,6 +1,0 @@
-#!/bin/zsh
-mpc search any $1 > /tmp/outfile
-mpc search filename $1 >> /tmp/outfile
-s=`uniq /tmp/outfile | fzy -l 30`
-mpc add "$s"
-mpc play `mpc playlist | wc -l`

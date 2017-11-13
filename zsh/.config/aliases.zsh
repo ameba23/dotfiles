@@ -301,7 +301,7 @@ alias clip='xclip -selection clipboard'
 alias -g CLIP='$(xclip -selection clipboard -o)'
 
 # copy last terminal command to clipboard 
-alias commandcopy='fc -l -n -1 | xclip -selection clipboard -i'
+alias commandcopy='fc -l -n -1 | xclip -selection clipboard -i && echo Copied $(xclip -selection clipboard -o)'
 
 # repeat last terminal command and pipe output to clipboard
 alias outcopy='$(fc -l -n -1) | xclip -selection clipboard -i; echo clipboard contains; clip -o'

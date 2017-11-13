@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -e "[user] \n    email = ameba23@systemli.org \n[credential]\n    helper = store"  >> .git/config
