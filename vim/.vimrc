@@ -13,11 +13,12 @@ filetype off                   " required!
 " The mapleader has to be set before vundle starts loading all 
 " the plugins.
 let mapleader=","
-
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " ===========================================My Bundles here:
 "
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'"
 
@@ -71,7 +72,7 @@ if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
 
-
+call vundle#end()
 filetype plugin indent on     " required! 
 "
 " Brief help
