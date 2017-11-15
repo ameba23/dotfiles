@@ -1,4 +1,4 @@
-## notes for myself on setting up new system
+# notes for myself on setting up new system
 
 
 * adduser, mkdir /home/user, chmod, /etc/sudoers
@@ -10,10 +10,38 @@
 * chsh -s /usr/bin/zsh
 
 
-### packages to install
-sudo, vim, stow, curl, locate, zsh, git, ranger
+### packages to install (gradually put them into order of importance)
+- sudo, vim, stow, curl, locate, zsh, git, ranger
+- fasd
+- jq
+- keybase
+- mpv
+- mps-youtube
+- youtube-dl
+- xclip or xorg-xclipboard
+- offlineimap, mutt (sidebar) or neomutt
+- markdown
+- soulseekqt
+- transmission-gtk
+- mpd, ncmpcpp
+- atool
+- go-ipfs-git
+- alsa-util
+- ngrok
+- vundlevim
 
-fasd
+## todo:
+- passwdless ssh to laptop, vps, ehion?
+- sshfs to vps
+- fix mouse
+- sata cable
+- ipfs for sharing
+- email --offlineimap in different locations or single networked location
+- todo
+- where should mpd be running
+- unplug fan?
+- how to best suspend/hibernate?
+
 ### ssh without pw:
 * create public key with ssh-keygen
 * on remote host, mkdir ~/.ssh
