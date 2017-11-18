@@ -10,8 +10,10 @@
 * chsh -s /usr/bin/zsh
 
 
-### packages to install (gradually put them into order of importance)
+## packages to install (gradually put them into order of importance)
 - sudo, vim, stow, curl, locate, zsh, git, ranger
+- npm
+- python-pip
 - fasd
 - jq
 - keybase
@@ -29,15 +31,9 @@
 - alsa-util
 - ngrok
 - vundlevim
-- mupdf, FBreader?
-- feh
-- w3m, vimb, firefox, torbrowser
-- [ls++](https://github.com/trapd00r/ls--)
-- npm
-- python-pip
 - imagemagick
 - fzy, fzf, highlight 
-- ding, dictd
+- [ls++](https://github.com/trapd00r/ls--)
 
 ### wm related
 - i3 scrot
@@ -45,6 +41,7 @@
 ### heavy gui
 libreoffice
 gimp, inkscape
+
 
 ## todo:
 - passwdless ssh to laptop, vps, ehion?
@@ -62,7 +59,3 @@ gimp, inkscape
 * create public key with ssh-keygen
 * on remote host, mkdir ~/.ssh
 * cat ~/.ssh/id_rsa.pub | ssh user@host 'cat >> .ssh/authorized_keys'
-
-
-
-

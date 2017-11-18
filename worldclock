@@ -1,0 +1,13 @@
+#!/bin/bash
+
+wcformat='+%Z %H:%M:%S %d-%m-%y' 
+
+echo "UTC                 "  $(env TZ=UTC date "$wcformat")
+echo "GMT                 "  $(env TZ=GMT date "$wcformat")
+echo "America/New_York    "  $(env TZ=America/New_York date "$wcformat")
+echo "US Pacific          "  $(env TZ=US/Pacific date "$wcformat")
+echo "Asia/Tokyo          "  $(env TZ=Asia/Tokyo date "$wcformat")
+echo "Australia/Sydney    "  $(env TZ=Australia/Sydney date "$wcformat")
+echo "Africa/Johannesburg "  $(env TZ=Africa/Johannesburg date "$wcformat")
+echo "China/Shanghai      "  $(env TZ=China/Shanghai date "$wcformat")
+echo "America/Sao_Paulo   "  $(env TZ=America/Sao_Paulo date "$wcformat")

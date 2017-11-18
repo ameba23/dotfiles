@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/beetroot/potat/Documents/static/site/tech_open_source'
+let g:netrw_dirhist_2='/home/beetroot/potat/Documents/static/site'
+let g:netrw_dirhist_3='/home/beetroot/potat/Documents/static'
+let g:netrw_dirhist_4='/home/beetroot/potat/Documents/static/site'
+let g:netrw_dirhist_5='/home/beetroot/potat/Documents/static/site/tech_open_source'
+let g:netrw_dirhist_6='/home/beetroot/potat/Documents/static/site'
+let g:netrw_dirhist_7='/home/beetroot/potat/Documents/static'
+let g:netrw_dirhist_8='/home/beetroot/potat/Documents/static/docs'

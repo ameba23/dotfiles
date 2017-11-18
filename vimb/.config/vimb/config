@@ -1,5 +1,5 @@
 
-set home-page=file:////home/potatoe/Documents/oftenlinks.html
+set home-page=file:////home/beetroot/Documents/oftenlinks.html
 
 set editor-command=urxvt -e vim %s
 set download-path=~/Downloads

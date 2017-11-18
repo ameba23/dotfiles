@@ -220,6 +220,7 @@ alias torbrowser='cd ~/software/tor-browser_en-US;./start-tor-browser.desktop;cd
 alias fixmouse='sudo rmmod psmouse && sudo modprobe psmouse'
 
 
+alias cputemp='sensors | grep "CPU Temperature"'
 
 # -----------------------fzy fuzzy finder 
 # (replace fzy with your own favourite filter program)
