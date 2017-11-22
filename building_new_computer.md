@@ -19,7 +19,7 @@
 - mps-youtube
 - youtube-dl
 - xclip or xorg-xclipboard
-- offlineimap, mutt (sidebar) or neomutt
+- offlineimap, mutt (sidebar) or neomutt, urlscan, notmuch
 - markdown
 - soulseekqt
 - transmission-gtk

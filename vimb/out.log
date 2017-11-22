@@ -50,3 +50,6 @@ fatal: could not create work tree dir 'signin?redir=%2Foauth%3Fclient_id%3D34461
 Cloning into 'intro.md'...
 remote: Not Found
 fatal: repository 'https://github.com/mimblewimble/grin/blob/master/doc/intro.md/' not found
+Cloning into 'gollum'...
+fatal: unable to open /home/beetroot/software/gollum/.git/objects/pack/tmp_pack_K1bubt: No such file or directory
+fatal: index-pack failed

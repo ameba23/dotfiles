@@ -214,7 +214,7 @@ set sidescroll=1
 
 " ================ Custom Settings ========================
 "so ~/.yadr/vim/settings.vim
-set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus
 set visualbell
 
 " smartcase for searching
@@ -274,6 +274,7 @@ nnoremap <S-Enter> O<ESC>
 " from my old vimrc, to paste from x clipboard?
 "map <F2> "+gP  
 
+ 
 
 " lazy about umlaut:
 function! German()
