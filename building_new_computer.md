@@ -38,6 +38,7 @@
 - imagemagick
 - fzy, fzf, highlight 
 - ding, dictd
+- udiskie, ln -s /run/mount/$(whoami)/ ~/media
 
 ### wm related
 - i3 scrot

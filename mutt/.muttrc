@@ -14,23 +14,23 @@ set tmpdir="/tmp"
 
 #------------------------------sidebar
 #set sidebar_width=24
-#set sidebar_visible=yes
+set sidebar_visible=yes
 #set sidebar_delim=' │'
-#set sidebar_format  = "%B%* (%N)"
-#color sidebar_new yellow default
+set sidebar_format  = "%B%* (%N)"
+color sidebar_new yellow default
 
-#bind index . sidebar-next
-#bind index , sidebar-prev
-#bind index 0 sidebar-open
+bind index . sidebar-next
+bind index , sidebar-prev
+bind index 0 sidebar-open
 
-#bind pager . sidebar-next
-#bind pager , sidebar-prev
-#bind pager 0 sidebar-open
+bind pager . sidebar-next
+bind pager , sidebar-prev
+bind pager 0 sidebar-open
 
-#macro index b '<enter-command>toggle sidebar_visible<enter>'
-#macro pager b '<enter-command>toggle sidebar_visible<enter>'
+macro index b '<enter-command>toggle sidebar_visible<enter>'
+macro pager b '<enter-command>toggle sidebar_visible<enter>'
 # rebind bounce-message cos b now used for sidebar:
-#bind index B bounce-message
+bind index B bounce-message
 
 #----------------------------------
 
