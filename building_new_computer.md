@@ -39,6 +39,7 @@
 - fzy, fzf, highlight 
 - ding, dictd
 - udiskie, ln -s /run/mount/$(whoami)/ ~/media
+- poppler (for pdftotext)
 
 ### wm related
 - i3 scrot

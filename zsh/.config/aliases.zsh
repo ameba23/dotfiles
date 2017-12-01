@@ -49,7 +49,8 @@ alias ls='ls --color=auto'
 alias l.='ls -d .*'
 alias ..='cd ..'
 
-alias lrt='ls++ -art'
+#alias lrt='ls++ -art'
+alias lrt='ls -lhart'
 
 # show me files matching "ls grep"
 alias lsg='ll | grep'
@@ -373,6 +374,8 @@ magnet-info() {
 
 alias fzfind="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m"
 
+# dont store tomb commands in zsh history
+alias tomb=' tomb'
 
 # ********************************************
 # *** personal -probably only useful to me ***

@@ -95,7 +95,7 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
 
-bindsym $mod+b exec vimb
+bindsym $mod+b workspace $tag2 exec vimb
 
 
 # ------------------------workspace names:
