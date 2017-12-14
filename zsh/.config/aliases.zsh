@@ -169,8 +169,9 @@ alias k9='kill -9'
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
 # for samsung
-alias mountphone='mkdir ~/phone && jmtpfs ~/phone'
-alias unmountphone='fusermount -u ~/phone && rmdir ~/phone'
+alias mountphone='mkdir ~/phone && go-mtpfs ~/phone'
+#alias mountphone='mkdir ~/phone && jmtpfs ~/phone'
+#alias unmountphone='fusermount -u ~/phone && rmdir ~/phone'
 
 # surfraw 
 alias sr=surfraw

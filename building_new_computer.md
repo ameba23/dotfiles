@@ -65,6 +65,14 @@ gimp, inkscape
 * on remote host, mkdir ~/.ssh
 * cat ~/.ssh/id_rsa.pub | ssh user@host 'cat >> .ssh/authorized_keys'
 
+### hibernating
 
+in /etc/mkinitcpio.conf -add ''resume' to hooks.
+sudo mkinitcpio -P 
+also check /etc/logind.conf
+add uuid of swap partition to /etc/default/grub (you can find it in /etc/fstab)
+grub-mkconfig -o /boot/grub/grub.cfg
 
-
+## grub background
+/etc/default/grub
+GRUB_BACKGROUND="/boot/grub/ameba.png"

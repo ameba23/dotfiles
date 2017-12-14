@@ -2,7 +2,7 @@
 set home-page=file:////home/beetroot/Documents/oftenlinks.html
 
 set editor-command=urxvt -e vim %s
-set download-path=~/Downloads
+set download-path=~/Downloads_local
 set images=true
 
 # not really sure what this does
