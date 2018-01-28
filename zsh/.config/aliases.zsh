@@ -8,7 +8,7 @@
 # stuff at the top is mostly from YADR (yet another dotfile repo)
 # with some minor changes
 
-
+alias tomb=' tomb'
 # Get operating system
 platform='linux'
 

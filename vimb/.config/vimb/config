@@ -3,7 +3,7 @@ set home-page=file:////home/potatoe/Documents/oftenlinks.html
 
 set editor-command=urxvt -e vim %s
 set download-path=~/Downloads
-set images=false
+set images=true
 
 # not really sure what this does
 set media-stream=true
