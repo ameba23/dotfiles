@@ -13,6 +13,7 @@ fi
 eval "$(fasd --init auto)"
 
 export EDITOR=vim
+export BROWSER=vimb
 export COLORTERM=urxvt
 export MPD_HOST=$HOME/.mpd/socket
 
@@ -66,7 +67,7 @@ zle -N insert-selecta-path-in-command-line
 bindkey "^S" "insert-selecta-path-in-command-line"
 # -----------------------------------------------------
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #
 # Change the prompt when you open a shell from inside ranger
@@ -106,6 +107,9 @@ cf() {
   fi
 }
 #archey
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
+
 
 PATH="/home/beetroot/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/beetroot/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;

@@ -21,7 +21,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'"
-
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 " git integration
 Bundle 'tpope/vim-fugitive'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}

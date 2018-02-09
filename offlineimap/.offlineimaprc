@@ -88,7 +88,7 @@ status_backend = sqlite
 # source file and call them from this config file. You can find
 # an example of this in the manual.
 #
-pythonfile = ~/.offlineimap.py
+#pythonfile = ~/.offlineimap.py
 
 
 # By default, OfflineIMAP will not exit due to a network error until
@@ -295,10 +295,11 @@ cert_fingerprint = 4af7c35759b482c6ef4bd6bde4e2fe0105ce272b
 # remoteport = 993
 
 # Specify the remote user name.
-#remoteuser = penguin@mtmedia.org
+remoteuser = penguin@mtmedia.org
 #remotepasseval = get_pass()
-remoteusereval = get_username("mail.mtmedia.org")
-remotepasseval = get_password("mail.mtmedia.org")
+
+#remoteusereval = get_username("mail.mtmedia.org")
+#remotepasseval = get_password("mail.mtmedia.org")
 # There are five ways to give the password for the remote IMAP
 # server:
 #
@@ -354,7 +355,7 @@ remotehost = mail.systemli.org
 
 remoteuser = ameba23@systemli.org
 #remoteusereval = get_username("mail.systemli.org")
-remotepasseval = get_password("mail.systemli.org")
+#remotepasseval = get_password("mail.systemli.org")
 
 # Whether or not to use SSL.
 ssl = yes

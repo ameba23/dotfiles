@@ -1,6 +1,7 @@
 # notes for myself on setting up new system
 
 
+
 * adduser, mkdir /home/user, chmod, /etc/sudoers
 * clone dotfiles repo and stow relevant ones
 * zsh syntax highlighting is in a far off place.  is this part of prezto?  try first installing prezto.
@@ -40,6 +41,7 @@
 - ding, dictd
 - udiskie, ln -s /run/mount/$(whoami)/ ~/media
 - poppler (for pdftotext)
+- ncdu
 
 ### wm related
 - i3 scrot
@@ -76,3 +78,14 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ## grub background
 /etc/default/grub
 GRUB_BACKGROUND="/boot/grub/ameba.png"
+
+## to merge
+xdg-settings set default-web-browser vimb.desktop
+
+## ssh keys:
+
+on client: 
+ssh-keygen -t rsa
+leave password blank, then do:
+cat .ssh/id_rsa.pub | ssh user@host 'cat >> .ssh/authorized_keys'
+if on the host there is no directory .ssh you will need to create it

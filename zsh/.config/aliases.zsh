@@ -206,7 +206,7 @@ alias vess='/usr/share/vim/vim80/macros/less.sh'
 alias muttrc='vim ~/.muttrc'
 
 # start mutt in Download directory so that attachments are saved there (an unelegant workaround)
-alias mutt='cd ~/Downloads;/usr/bin/mutt;cd -'
+#alias mutt='cd ~/Downloads;/usr/bin/mutt;cd -'
 
 # zmv - another amazing bit of software
 autoload zmv
@@ -325,6 +325,8 @@ function hess { highlight --force -O ansi $1 | less }
 
 # go to sleep:
 alias schlaf='systemctl suspend'
+alias snore='systemctl hibernate'
+
 
 #function sedPath { 
 # Escape path for use with sed
