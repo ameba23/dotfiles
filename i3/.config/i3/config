@@ -245,6 +245,9 @@ bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 2%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 2%- unmute
 bindsym XF86AudioMute exec amixer -c 0 set Master toggle
 
+# pageup-pagedown also for volume
+bindsym $mod+Prior exec amixer -c 0 set Master 2%+ unmute
+bindsym $mod+Next exec amixer -c 0 set Master 2%- unmute
 # XF86WLAN
 
 #bindsym $mod+m exec xrandr --auto
