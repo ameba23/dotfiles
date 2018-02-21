@@ -229,6 +229,9 @@ vnoremap K :m '<-2<CR>gv=gv
 " Toggle nerdtree with Ctrl-D
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 
+" remove html tags
+nmap <leader>tt vat<Esc>`<df>`>F<df>
+
 " highlight line cursor is on
 set cursorline
 
