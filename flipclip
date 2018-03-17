@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+
+#aaa=$(xclip -o -selection clipboard)
+
+ssh -X potatoe@potatoe 'xclip -selection clipboard -o > aaa.txt'
+ssh potatoe@potatoe "cat aaa.txt" | xclip -i -selection clipboard 
+# rm aaa.txt?
+
+

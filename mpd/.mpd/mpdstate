@@ -1,7 +1,9 @@
 sw_volume: 98
 audio_device_state:1:My ALSA Device
 audio_device_state:1:my_fifo
-state: stop
+state: play
+current: 5
+time: 11.586000
 random: 0
 repeat: 0
 single: 0
@@ -80,4 +82,34 @@ playlist_begin
 67:Drum n bass jungle/old favourites/11 - Four Days.mp3
 68:Drum n bass jungle/old favourites/12 - The Code.mp3
 69:Drum n bass jungle/old favourites/13 - The Bridge.mp3
+song_begin: //home/beetroot/Downloads/complete/VA-Welcome_To_Paradise_(Italian_Dream_House_89_93)-ST003-WEB-2017-PITY/08-open_spaces-sunrise_paradise_garage-6165b414.mp3
+Time: 320.026000
+Artist: Open Spaces
+Title: Sunrise Paradise Garage
+Album: Welcome to Paradise (Italian Dream House 89-93)
+Track: 8
+Date: 2017
+Genre: House
+mtime: 1510764210
+song_end
+song_begin: //home/beetroot/Downloads/complete/VA-Welcome_To_Paradise_(Italian_Dream_House_89_93)-ST003-WEB-2017-PITY/08-open_spaces-sunrise_paradise_garage-6165b414.mp3
+Time: 320.026000
+Artist: Open Spaces
+Title: Sunrise Paradise Garage
+Album: Welcome to Paradise (Italian Dream House 89-93)
+Track: 8
+Date: 2017
+Genre: House
+mtime: 1510764210
+song_end
+song_begin: //home/beetroot/Downloads/complete/Top 100 Collection/Adamski Ft. Seal - Killer.mp3
+Time: 332.878000
+Artist: Adamski Ft. Seal
+Title: Killer
+Album: Top 100 Van 1990
+Track: 17
+Date: 1990
+Genre: Top 40
+mtime: 1510404785
+song_end
 playlist_end
