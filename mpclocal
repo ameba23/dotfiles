@@ -6,6 +6,8 @@
 #      
 #
 
+# todo:  requires bc which these days isnt always installed.  how to do maths in zsh nativey?
+
 # needs trailing /
 mpddir="/mnt/data/Musique/"
 
