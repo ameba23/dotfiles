@@ -8,7 +8,6 @@
 # stuff at the top is mostly from YADR (yet another dotfile repo)
 # with some minor changes
 
-alias tomb=' tomb'
 # Get operating system
 platform='linux'
 
@@ -178,6 +177,9 @@ alias srg="surfraw google"
 # change ownership of everything in current dir (recursively) to current user
 # and use that username as group.
 alias allmine='sudo chown -R $(whoami):$(whoami) *'
+
+# dont record history when using tomb
+alias tomb=' tomb'
 
 # i3 window manager
 alias i3config='vim ~/.config/i3/config'
@@ -414,5 +416,10 @@ alias vb='i3-msg "workspace 2:www" ; vimb &'
 alias books='cd ~/books_and_zines'
 alias dot='cd ~/dotfiles'
 alias film='cd ~/film'
+
+# 'server side' put/get xclipboard to file -will be sshed over by the client
+# a messy workaround for that i cant find an easy way to share x clipboard over ssh
+alias clipget='cat .flipclip | xclip -selection clipboard'
+alias clipsend='xclip -selection clipboard -o > .flipclip'
 
 # *******************************************

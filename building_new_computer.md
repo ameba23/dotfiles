@@ -26,7 +26,7 @@
 - mpd, ncmpcpp
 - atool
 - go-ipfs-git
-- alsa-util
+- alsa-utils (and unmute master)
 - ngrok
 - vundlevim
 
@@ -46,3 +46,17 @@
 * create public key with ssh-keygen
 * on remote host, mkdir ~/.ssh
 * cat ~/.ssh/id_rsa.pub | ssh user@host 'cat >> .ssh/authorized_keys'
+*
+## new 
+networkmanager
+sudo systemctl start NetworkManager.service
+xorg
+xorg-init
+graphics driver:
+lspci | grep -e VGA -e 3D
+pacman -Ss xf86-video
+
+eg xf86-video-amdgpu
+i3
+xrdb .Xresources
+
