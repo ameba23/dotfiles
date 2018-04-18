@@ -260,6 +260,8 @@ function ranger-cd {
     rm -f -- "$tempfile"
 }
 
+alias rg='ranger-cd'
+
 # This binds Ctrl-O to ranger-cd:
 #bind '"\C-o":"ranger-cd\C-m"'
 
@@ -421,5 +423,14 @@ alias vb='i3-msg "workspace 2:www" ; vimb &'
 alias books='cd ~/books_and_zines'
 alias dot='cd ~/dotfiles'
 alias film='cd ~/film'
+alias soft='cd ~/software'
+
+# client side.  put/get x clipboard over ssh.  a messy workaround
+alias clipsend='xclip -selection clipboard -o | ssh pot "cat > .flipclip" && echo Sent: $(xclip -selection clipboard -o)'
+alias clipget='ssh pot cat .flipclip | xclip -selection clipboard && echo Clipboard now: $(xclip -selection clipboard -o)'
+
+# sshfs
+alias mountpot='mkdir ~/potatoe && sshfs potatoe@potatoe: ~/potatoe/'
+alias umountpot='fusermount3 -u ~/potatoe && rmdir ~/potatoe'
 
 # *******************************************

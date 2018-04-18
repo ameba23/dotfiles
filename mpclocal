@@ -6,7 +6,6 @@
 #      
 #
 
-# todo:  requires bc which these days isnt always installed.  how to do maths in zsh nativey?
 
 # needs trailing /
 mpddir="/mnt/data/Musique/"
@@ -42,7 +41,8 @@ else
   firstfile=1
   
   # find the position in the mpd playlist to startplaying from:
-  tracknum=$(echo $(mpc playlist | wc -l) + 1 | bc)
+  #tracknum=$(echo $(mpc playlist | wc -l) + 1 | bc)
+  tracknum=$(($(echo $(mpc playlist | wc -l)) + 1))
   
   for var in $filelist
   do

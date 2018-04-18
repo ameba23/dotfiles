@@ -1,7 +1,9 @@
 sw_volume: 98
 audio_device_state:1:My ALSA Device
 audio_device_state:1:my_fifo
-state: stop
+state: pause
+current: 85
+time: 158.696000
 random: 0
 repeat: 0
 single: 0
@@ -110,34 +112,290 @@ Date: 1990
 Genre: Top 40
 mtime: 1510404785
 song_end
-song_begin: //home/beetroot/Downloads/complete/Top 100 Collection/Adamski Ft. Seal - Killer.mp3
-Time: 332.878000
-Artist: Adamski Ft. Seal
-Title: Killer
-Album: Top 100 Van 1990
-Track: 17
+73:AAAA everything else/senf/candie hank - invitation to dance.mp3
+74:AAAA everything else/senf/candie hank - schurkenlounge.mp3
+75:AAAA everything else/Fabric Live/Fabriclive 18_ Andy C & DJ Hype/20 Night Vision.mp3
+76:Drum n bass jungle/Drum & Bass Essentials 2009/Disk 2/2-15 Technicolour.mp3
+77:AAAA everything else/Markus/The Dungeonmaster's Guide - disc 1/04_-_Soul_on_Fire_(Concord_Dawn_Rmx)_-_Kaos_+_Karl_k_+_Jae_Kennedy_-_The_Dungeonmaster's_Guide_-_disc_1.mp3
+78:AAAA everything else/senf/-1 - Vanishing Point.mp3
+79:Drum n bass jungle/old favourites/14 - Ray Keith - Something Out There Samba Mix 2000.mp3
+80:AAAA everything else/Aarons flac collection/Future Sound Of London, The -- Papua New Guinea [1992].flac
+81:AAAA everything else/Massive Attack/(06) Unfinished Sympathy.mp3
+82:unsorted from mps/238 - Sweet Harmony - Liquid.mp3
+83:unsorted from mps/Baby D - [Everybody's Got To Learn Sometime] I Need Your Lo.ogg
+84:AAAA everything else/90s with remixes and other stuff/21 The Source Feat. Candi Staton - You Got The Love.mp3
+85:Drum n bass jungle/old favourites/Ratpack - Clipper.mp3
+86:Drum n bass jungle/old favourites/Roni Size Reprazent - Brown Paper Bag (Photek Remix).mp3
+87:AAAA everything else/Prodigy/09 - Charly - torrentazos.com.mp3
+song_begin: //home/beetroot/Downloads/complete/techxvnode/Black Box - Dreamland FLAC/09 - Strike it Up.flac
+Time: 315.640000
+Album: Dreamland
+Artist: Black Box
 Date: 1990
-Genre: Top 40
-mtime: 1510404785
+Genre: Dance
+Title: Strike it Up
+Track: 9
+mtime: 1521298119
 song_end
-song_begin: //home/beetroot/Downloads/complete/Top 100 Collection/Adamski Ft. Seal - Killer.mp3
-Time: 332.878000
-Artist: Adamski Ft. Seal
-Title: Killer
-Album: Top 100 Van 1990
-Track: 17
+song_begin: //home/beetroot/Downloads/complete/techxvnode/Black Box - Dreamland FLAC/08 - Ghost Box.flac
+Time: 237.733000
+Album: Dreamland
+Artist: Black Box
 Date: 1990
-Genre: Top 40
-mtime: 1510404785
+Genre: Dance
+Title: Ghost Box
+Track: 8
+mtime: 1521298040
 song_end
-song_begin: //home/beetroot/Downloads/complete/Top 100 Collection/Adamski Ft. Seal - Killer.mp3
-Time: 332.878000
-Artist: Adamski Ft. Seal
-Title: Killer
-Album: Top 100 Van 1990
-Track: 17
+song_begin: //home/beetroot/Downloads/complete/techxvnode/Black Box - Dreamland FLAC/07 - Hold On.flac
+Time: 338.560000
+Album: Dreamland
+Artist: Black Box
 Date: 1990
-Genre: Top 40
-mtime: 1510404785
+Genre: Dance
+Title: Hold On
+Track: 7
+mtime: 1521297922
 song_end
+song_begin: //home/beetroot/Downloads/complete/techxvnode/Black Box - Dreamland FLAC/06 - Ride on Time (featuring Loleatta Holloway).flac
+Time: 277.333000
+Album: Dreamland
+Artist: Black Box
+Date: 1990
+Genre: Dance
+Title: Ride on Time (featuring Loleatta Holloway)
+Track: 6
+mtime: 1521297426
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/02 - Akna krunk (Chant d'exil) (2 duduk).flac
+Time: 211.093000
+Artist: Haïg Sarikouyoumdjian; Georgi Minassyan; Hespèrion XXI; Jordi Savall
+Title: Akna krunk (Chant d'exil) (2 duduk)
+Album: Armenian Spirit
+Date: 2012
+Track: 2
+Genre: Traditional
+Composer: Anonymous
+Disc: 1
+mtime: 1521310155
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/03 - Kani vur djan im (Chant d'amour) (dudk, rebec, vièle à archet, percussion).flac
+Time: 235.213000
+Artist: Haïg Sarikouyoumdjian; Hespèrion XXI; Jordi Savall
+Title: Kani vur djan im (Chant d'amour) (dudk, rebec, vièle à archet, percussion)
+Album: Armenian Spirit
+Date: 2012
+Track: 3
+Genre: Traditional
+Composer: Sayat Nova
+Disc: 1
+mtime: 1521310293
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/04 - Chant et Danse (2 duduk, percussion).flac
+Time: 238.920000
+Artist: Georgi Minassyan; Haïg Sarikouyoumdjian; Hespèrion XXI; Jordi Savall
+Title: Chant et Danse (2 duduk, percussion)
+Album: Armenian Spirit
+Date: 2012
+Track: 4
+Genre: Traditional
+Composer: Anonymous
+Disc: 1
+mtime: 1521310556
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/05 - O'h intsh anush (Chant d'exil) (vièle, duduk, vièle à archet, percussion).flac
+Time: 340.360000
+Artist: Haïg Sarikouyoumdjian; Hespèrion XXI; Jordi Savall
+Title: O'h intsh anush (Chant d'exil) (vièle, duduk, vièle à archet, percussion)
+Album: Armenian Spirit
+Date: 2012
+Track: 5
+Genre: Traditional
+Composer: Tigran Tchukhadjian
+Disc: 1
+mtime: 1521310885
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/06 - Matshkal (Chant rustique) (2 duduk).flac
+Time: 191.813000
+Artist: Georgi Minassyan; Haïg Sarikouyoumdjian
+Title: Matshkal (Chant rustique) (2 duduk)
+Album: Armenian Spirit
+Date: 2012
+Track: 6
+Genre: Traditional
+Composer: Anonymous
+Disc: 1
+mtime: 1521311085
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/07 - Dun en glkhen (Supplique du roi avant l'exil) (kamantcha).flac
+Time: 220.760000
+Artist: Gaguik Mouradian
+Title: Dun en glkhen (Supplique du roi avant l'exil) (kamantcha)
+Album: Armenian Spirit
+Date: 2012
+Track: 7
+Genre: Traditional
+Composer: Sayat Nova
+Disc: 1
+mtime: 1521311270
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/08 - Garun a (Chant rustique) (vièle, duduk, vièle à archet, percussion).flac
+Time: 243.400000
+Artist: Haïg Sarikouyoumdjian; Hespèrion XXI; Jordi Savall
+Title: Garun a (Chant rustique) (vièle, duduk, vièle à archet, percussion)
+Album: Armenian Spirit
+Date: 2012
+Track: 8
+Genre: Traditional
+Composer: Anonymous
+Disc: 1
+mtime: 1521311465
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/09 - Chants de mariage (2 duduk, kamantcha, percussion).flac
+Time: 279.333000
+Artist: Haïg Sarikouyoumdjian; Georgi Minassyan; Gaguik Mouradian; Armen Badalyan
+Title: Chants de mariage (2 duduk, kamantcha, percussion)
+Album: Armenian Spirit
+Date: 2012
+Track: 9
+Genre: Traditional
+Composer: Anonymous
+Disc: 1
+mtime: 1521311644
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/10 - Al aylukhs (Dialogue amoureux) (duduk, kamantcha, vièle, vièle à archet, percussion).flac
+Time: 346.746000
+Artist: Haïg Sarikouyoumdjian; Gaguik Mouradian; Hespèrion XXI; Jordi Savall
+Title: Al aylukhs (Dialogue amoureux) (duduk, kamantcha, vièle, vièle à archet, percussion)
+Album: Armenian Spirit
+Date: 2012
+Track: 10
+Genre: Traditional
+Composer: Anonymous
+Disc: 1
+mtime: 1521311866
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/10. Al aylukhs (Dialogue amoureux) (duduk, kamantcha, vièle, vièle à archet, percussion).mp3
+Time: 346.775000
+Artist: Haïg Sarikouyoumdjian; Gaguik Mouradian; Hespèrion XXI; Jordi Savall
+Title: Al aylukhs (Dialogue amoureux) (duduk, kamantcha, vièle, vièle à archet, percussion)
+Album: Armenian Spirit
+Track: 10
+Date: 2012
+Genre: Traditional
+Composer: Anonymous
+Disc: 1
+mtime: 1521312001
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/11 - Plainte - en sarer (2 duduk).flac
+Time: 220.453000
+Artist: Georgi Minassyan; Haïg Sarikouyoumdjian
+Title: Plainte: en sarer (2 duduk)
+Album: Armenian Spirit
+Date: 2012
+Track: 11
+Genre: Traditional
+Composer: Gusan Ashot
+Disc: 1
+mtime: 1521312101
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/12 - Azat astvatsn et Ter kedzo (Ode à la liberté et supplique) (vielle and percussion).flac
+Time: 327.786000
+Artist: Jordi Savall; Marc Clos
+Title: Azat astvatsn et Ter kedzo (Ode à la liberté et supplique) (vielle and percussion)
+Album: Armenian Spirit
+Date: 2012
+Track: 12
+Genre: Traditional
+Composer: Anonymous
+Disc: 1
+mtime: 1521312430
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/12. Azat astvatsn et Ter kedzo (Ode à la liberté et supplique) (vielle and percussion).mp3
+Time: 327.836000
+Artist: Jordi Savall; Marc Clos
+Title: Azat astvatsn et Ter kedzo (Ode à la liberté et supplique) (vielle and percussion)
+Album: Armenian Spirit
+Track: 12
+Date: 2012
+Genre: Traditional
+Composer: Anonymous
+Disc: 1
+mtime: 1521312556
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/13 - Sirt im savani (Cantilène du Jeudi Saint) (2 duduk).flac
+Time: 199.106000
+Artist: Georgi Minassyan; Haïg Sarikouyoumdjian
+Title: Sirt im savani (Cantilène du Jeudi Saint) (2 duduk)
+Album: Armenian Spirit
+Date: 2012
+Track: 13
+Genre: Traditional
+Composer: Mkhitar Ayrivanetsi
+Disc: 1
+mtime: 1521312658
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/14 - Hayastan yerkir (Ode à la patrie) (viola, duduk, orgue).flac
+Time: 340.133000
+Artist: Jordi Savall; Haïg Sarikouyoumdjian; Dani Espasa
+Title: Hayastan yerkir (Ode à la patrie) (viola, duduk, orgue)
+Album: Armenian Spirit
+Date: 2012
+Track: 14
+Genre: Traditional
+Composer: Gabriel Yeranian
+Disc: 1
+mtime: 1521312853
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/15 - Hey djan (Chant d'amour) (2 duduk).flac
+Time: 204.920000
+Artist: Haïg Sarikouyoumdjian; Georgi Minassyan
+Title: Hey djan (Chant d'amour) (2 duduk)
+Album: Armenian Spirit
+Date: 2012
+Track: 15
+Genre: Traditional
+Composer: Anonymous
+Disc: 1
+mtime: 1521312973
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/16 - Hov arek (Chant rustique - plaitne) (duduk, vièle, vièle à archet, percussion).flac
+Time: 317.680000
+Artist: Haïg Sarikouyoumdjian; Hespèrion XXI; Jordi Savall
+Title: Hov arek (Chant rustique: plaitne) (duduk, vièle, vièle à archet, percussion)
+Album: Armenian Spirit
+Date: 2012
+Track: 16
+Genre: Traditional
+Composer: Anonymous
+Disc: 1
+mtime: 1521313206
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/17 - Lamento - sev mut amper (2 duduk).flac
+Time: 154.733000
+Artist: Haïg Sarikouyoumdjian; Georgi Minassyan
+Title: Lamento: sev mut amper (2 duduk)
+Album: Armenian Spirit
+Date: 2012
+Track: 17
+Genre: Traditional
+Composer: Anonymous
+Disc: 1
+mtime: 1521313301
+song_end
+song_begin: //home/beetroot/Downloads/complete/0x00ed/Armenian Spirit (Jordi Savall)/18 - Alagyeaz et Khnki tsar (Chants rustiques) (vièle, duduk, orgue, percussion).flac
+Time: 315.853000
+Artist: Haïg Sarikouyoumdjian; Hespèrion XXI; Jordi Savall
+Title: Alagyeaz et Khnki tsar (Chants rustiques) (vièle, duduk, orgue, percussion)
+Album: Armenian Spirit
+Date: 2012
+Track: 18
+Genre: Traditional
+Composer: Anonymous
+Disc: 1
+mtime: 1521313520
+song_end
+111:AAAA everything else/sister iodine - adn 115 1994/01 - xqz.mp3
+112:AAAA everything else/sister iodine - adn 115 1994/01 - xqz.mp3
+113:AAAA everything else/sister iodine - adn 115 1994/05 - tork.mp3
 playlist_end

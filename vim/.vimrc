@@ -46,7 +46,7 @@ Plugin 'slim-template/vim-slim.git'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 " Automatic closing of quotes and brackets
 Plugin 'cohama/lexima.vim'
