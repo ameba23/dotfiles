@@ -1,0 +1,4 @@
+rsync ehion public_html/download/. 
+chmod a+r a+x
+make link 
+gallery script

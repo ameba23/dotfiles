@@ -237,7 +237,7 @@ set cursorline
 
 set number                      "Line numbers are good
 " relative line numbers -very useful for vim motions
-set rnu
+"set rnu
 
 " toggle line numbers with Ctrl-n (sometimes i dont wanna see linenumbers
 nmap <silent> <C-N> :set rnu! number! number?<CR>
