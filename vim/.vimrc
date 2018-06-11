@@ -46,6 +46,8 @@ Plugin 'slim-template/vim-slim.git'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 
+Plugin 'prettier/vim-prettier'
+
 "Plugin 'Valloric/YouCompleteMe'
 
 " Automatic closing of quotes and brackets
@@ -327,3 +329,12 @@ nmap <Leader>p "ap:let @a = ''<cr>
 
 
 nnoremap <leader>oe :vsplit $HOME/Documents/oftenlinks.md<cr>
+
+let g:ctrlp_custom_ignore = {
+  \'dir': '\v[\/](\.git|node_modules)$'
+  \ }
+
+" prettier
+"autocmd FileType javascript set formatprg=prettier\ --stdin
+"autocmd BufWritePre *.js :normal gggqG
+"autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
