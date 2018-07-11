@@ -358,7 +358,8 @@ remotepasseval = get_password("mail.systemli.org")
 
 # Whether or not to use SSL.
 ssl = yes
-cert_fingerprint = 7e27b80bac16234120d569aff5adc5b73d912539
+cert_fingerprint = adb694517ce41706ff5d3d7b48f7c145fd1dcf02
+#cert_fingerprint = 7e27b80bac16234120d569aff5adc5b73d912539
 #cert_fingerprint = 027e86575e97894d7c69189629ed9423bf118c14 
 # SSL Client certificate (optional)
 # sslclientcert = /path/to/file.crt

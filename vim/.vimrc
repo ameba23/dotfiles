@@ -45,6 +45,8 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 
 Plugin 'Valloric/YouCompleteMe'
+" javascript formatter
+Plugin 'prettier/vim-prettier'
 
 " Automatic closing of quotes and brackets
 Plugin 'cohama/lexima.vim'
@@ -232,7 +234,7 @@ set cursorline
 
 set number                      "Line numbers are good
 " relative line numbers -very useful for vim motions
-set rnu
+"set rnu
 
 " toggle line numbers with Ctrl-n (sometimes i dont wanna see linenumbers
 nmap <silent> <C-N> :set rnu! number! number?<CR>
@@ -321,3 +323,7 @@ nmap <Leader>p "ap:let @a = ''<cr>
 
 
 nnoremap <leader>oe :vsplit $HOME/Documents/oftenlinks.md<cr>
+
+let g:ctrlp_custom_ignore = {
+   \'dir': '\v[\/](\.git|node_modules)$'
+   \ }
