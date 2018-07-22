@@ -129,5 +129,6 @@
 [user]
 	name = ameba23
   email = ameba23@systemli.org
+	signingkey = 44C422B05A7D43E70F4CD4A9893FF84E7B25C747
 [credential]
   helper = store
