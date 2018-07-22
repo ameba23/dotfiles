@@ -128,4 +128,6 @@
   path = .gitconfig.user
 [user]
 	name = ameba23
-	email = ameba23@systemli.org
+  email = ameba23@systemli.org
+[credential]
+  helper = store
