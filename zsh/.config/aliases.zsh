@@ -121,7 +121,9 @@ alias gtr='grb track'
 alias gpl='git pull'
 alias gplr='git pull --rebase'
 alias gps='git push'
-alias gpsh='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+
+alias gpo='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+
 alias gnb='git nb' # new branch aka checkout -b
 alias grs='git reset'
 alias grsh='git reset --hard'
