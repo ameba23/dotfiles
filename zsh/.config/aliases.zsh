@@ -79,7 +79,6 @@ alias gpom='git push -u origin master'
 alias gs='git status'
 # watch out! gs is normally ghostscript. 
 
-alias gac='git add . && git commit -am'
 
 alias gstsh='git stash'
 alias gst='git stash'
@@ -137,7 +136,11 @@ alias gbg='git bisect good'
 alias gbb='git bisect bad'
 
 alias grb='git recent-branches'
-alias gma='git commit -am'
+
+
+#alias gac='git add . && git commit -am'
+alias gac='git commit -am'
+alias gc='git commit -m'
 
 # Common shell functions
 alias less='less -r'

@@ -36,6 +36,7 @@ Plugin 'The-NERD-tree'
 Plugin 'tComment'
 " snippet manager
 Plugin 'UltiSnips'
+Plugin 'honza/vim-snippets'
 " run code as you type
 Plugin 'metakirby5/codi.vim'
 
@@ -47,6 +48,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 
 Plugin 'prettier/vim-prettier'
+Plugin 'pangloss/vim-javascript'
 
 "Plugin 'Valloric/YouCompleteMe'
 
