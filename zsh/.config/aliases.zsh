@@ -142,6 +142,9 @@ alias grb='git recent-branches'
 alias gac='git commit -am'
 alias gc='git commit -m'
 
+# jump to top level of a git repo (go home)
+alias gh='cd ./$(git rev-parse --show-cdup)'
+
 # Common shell functions
 alias less='less -r'
 alias tf='tail -f'
