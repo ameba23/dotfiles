@@ -51,9 +51,11 @@ Plugin 'prettier/vim-prettier'
 Plugin 'pangloss/vim-javascript'
 
 "Plugin 'Valloric/YouCompleteMe'
-
+Plugin 'mileszs/ack.vim'
 " Automatic closing of quotes and brackets
 Plugin 'cohama/lexima.vim'
+
+Plugin 'w0rp/ale'
 "Plugin 'ranger.vim'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Bundle 'tpope/vim-rails.git'
@@ -335,6 +337,12 @@ nnoremap <leader>oe :vsplit $HOME/Documents/oftenlinks.md<cr>
 let g:ctrlp_custom_ignore = {
   \'dir': '\v[\/](\.git|node_modules)$'
   \ }
+
+" Ack / ag
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+nnoremap <Leader>a :Ack!<Space>
 
 " prettier
 "autocmd FileType javascript set formatprg=prettier\ --stdin

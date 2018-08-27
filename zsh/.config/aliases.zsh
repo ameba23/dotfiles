@@ -80,7 +80,7 @@ alias gs='git status'
 # watch out! gs is normally ghostscript. 
 
 
-alias gstsh='git stash'
+# alias gstsh='git stash'
 alias gst='git stash'
 alias gsp='git stash pop'
 alias gsa='git stash apply'
@@ -318,6 +318,9 @@ alias commandcopy='fc -l -n -1 | xclip -selection clipboard -i && echo Copied $(
 
 # repeat last terminal command and pipe output to clipboard
 alias outcopy='$(fc -l -n -1) | xclip -selection clipboard -i; echo clipboard contains; clip -o'
+
+# wordcount clipboard
+alias clipcount='xclip -selection clipboard -o | wc'
 
 # removed orphaned pacman packages
 alias orphans='[[ -n $(pacman -Qdt) ]] && sudo pacman -Rs $(pacman -Qdtq) || echo "no orphans to remove"'

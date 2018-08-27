@@ -1,9 +1,9 @@
-sw_volume: 90
+sw_volume: 88
 audio_device_state:1:My ALSA Device
 audio_device_state:1:my_fifo
 state: pause
-current: 1241
-time: 2634.895000
+current: 1375
+time: 7.140000
 random: 0
 repeat: 0
 single: 0
@@ -1311,51 +1311,83 @@ playlist_begin
 1296:Drum n bass jungle/old favourites/dj mac (simon) dnb mix.mp3
 1297:AAAA everything else/_ - big h blues.ogg
 1298:AAAA everything else/A las Barricadas.mp3
-1299:AAAA everything else/17 - FSOL - Papua New Guinea.mp3
-1300:AAAA everything else/Santogold - Santogold/01 L.E.S. Artistes.mp3
-1301:AAAA everything else/Santogold - Santogold/02 You'll Find A Way.mp3
-1302:AAAA everything else/Santogold - Santogold/03 Shove It (feat. Spank Rock).mp3
-1303:AAAA everything else/Santogold - Santogold/04 Say Aha.mp3
-1304:AAAA everything else/Santogold - Santogold/05 Creator.mp3
-1305:AAAA everything else/Santogold - Santogold/06 My Superman.mp3
-1306:AAAA everything else/Santogold - Santogold/07 Lights Out.mp3
-1307:AAAA everything else/Santogold - Santogold/08 Starstruck.mp3
-1308:AAAA everything else/Santogold - Santogold/09 Unstoppable.mp3
-1309:AAAA everything else/Santogold - Santogold/10 I'm A Lady (feat. Trouble Andrew).mp3
-1310:AAAA everything else/Santogold - Santogold/11 Anne.mp3
-1311:AAAA everything else/Santogold - Santogold/12 You'll Find A Way (Switch and Sinden Remix).mp3
-1312:unsorted from mps/Raveageddon - Bagleys to host 352 day long rave.m4a
-1313:unsorted from mps/Everything But The Girl - Missing (Sllash Remix).ogg
-1314:unsorted from mps/Everything But The Girl - Missing (KOVEN. VIP DUBSTEP REMIX).ogg
-1315:unsorted from mps/238 - Sweet Harmony - Liquid.mp3
-1316:unsorted from mps/Baby D - [Everybody's Got To Learn Sometime] I Need Your Lo.ogg
-1317:unsorted from mps/Afrikan Boy - One Day I Went to Lidl.mp3
-1318:AAAA everything else/mangold/105-the_dsc-respect-def.mp3
-1319:AAAA everything else/mangold/fromhelenaradio.flac
-1320:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 02 With A Little Help From My Driend.mp3
-1321:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 01 Sgt. Pepper's Lonely Hearts Club.mp3
-1322:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 03 Lucy In The Sky With Diamonds ft.mp3
-1323:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 04 Getting Better ft. The Mighty Dia.mp3
-1324:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 05 Fixing A Hole ft. Max Romeo.mp3
-1325:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 06 She's Leaving Home ft. Kirsty Roc.mp3
-1326:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 07 Being For The Benefit Of Mr. Kite.mp3
-1327:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 08 Within You Without You ft. Matisy.mp3
-1328:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 09 When I'm Sixty-Four ft. Sugar Min.mp3
-1329:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 10 Lovely Rita ft. Bunny Rugs.mp3
-1330:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 11 Good Morning Good Morning ft. Ste.mp3
-1331:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 12 Sgt. Pepper's Lonely Hearts Club.mp3
-1332:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 13 A Day In The Life ft. Michael Ros.mp3
-1333:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/01  Airbag.mp3
-1334:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/02  Paranoid Android.mp3
-1335:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/03  Subterranean Homesick Alien.mp3
-1336:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/04  Exit Music (For A Film).mp3
-1337:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/05  Let Down.mp3
-1338:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/06  Karma Police.mp3
-1339:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/07  Fitter Happier.mp3
-1340:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/08  Electioneering.mp3
-1341:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/09  Climbing Up The Walls.mp3
-1342:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/10  No Surprises.mp3
-1343:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/11  Lucky.mp3
-1344:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/12  The Tourist.mp3
-1345:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/13  Exit Music (For A Dub).mp3
+1299:AAAA everything else/Santogold - Santogold/01 L.E.S. Artistes.mp3
+1300:AAAA everything else/Santogold - Santogold/02 You'll Find A Way.mp3
+1301:AAAA everything else/Santogold - Santogold/03 Shove It (feat. Spank Rock).mp3
+1302:AAAA everything else/Santogold - Santogold/04 Say Aha.mp3
+1303:AAAA everything else/Santogold - Santogold/05 Creator.mp3
+1304:AAAA everything else/Santogold - Santogold/06 My Superman.mp3
+1305:AAAA everything else/Santogold - Santogold/07 Lights Out.mp3
+1306:AAAA everything else/Santogold - Santogold/08 Starstruck.mp3
+1307:AAAA everything else/Santogold - Santogold/09 Unstoppable.mp3
+1308:AAAA everything else/Santogold - Santogold/10 I'm A Lady (feat. Trouble Andrew).mp3
+1309:AAAA everything else/Santogold - Santogold/11 Anne.mp3
+1310:AAAA everything else/Santogold - Santogold/12 You'll Find A Way (Switch and Sinden Remix).mp3
+1311:unsorted from mps/Raveageddon - Bagleys to host 352 day long rave.m4a
+1312:unsorted from mps/Everything But The Girl - Missing (Sllash Remix).ogg
+1313:unsorted from mps/Everything But The Girl - Missing (KOVEN. VIP DUBSTEP REMIX).ogg
+1314:unsorted from mps/238 - Sweet Harmony - Liquid.mp3
+1315:unsorted from mps/Baby D - [Everybody's Got To Learn Sometime] I Need Your Lo.ogg
+1316:unsorted from mps/Afrikan Boy - One Day I Went to Lidl.mp3
+1317:AAAA everything else/mangold/105-the_dsc-respect-def.mp3
+1318:AAAA everything else/mangold/fromhelenaradio.flac
+1319:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 02 With A Little Help From My Driend.mp3
+1320:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 01 Sgt. Pepper's Lonely Hearts Club.mp3
+1321:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 03 Lucy In The Sky With Diamonds ft.mp3
+1322:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 04 Getting Better ft. The Mighty Dia.mp3
+1323:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 05 Fixing A Hole ft. Max Romeo.mp3
+1324:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 06 She's Leaving Home ft. Kirsty Roc.mp3
+1325:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 07 Being For The Benefit Of Mr. Kite.mp3
+1326:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 08 Within You Without You ft. Matisy.mp3
+1327:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 09 When I'm Sixty-Four ft. Sugar Min.mp3
+1328:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 10 Lovely Rita ft. Bunny Rugs.mp3
+1329:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 11 Good Morning Good Morning ft. Ste.mp3
+1330:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 12 Sgt. Pepper's Lonely Hearts Club.mp3
+1331:Reggae Dub Dancehall Reggaeton/easy star all-stars - easy stars lonley hearts dub band/Easy Star All-Stars - 13 A Day In The Life ft. Michael Ros.mp3
+1332:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/01  Airbag.mp3
+1333:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/02  Paranoid Android.mp3
+1334:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/03  Subterranean Homesick Alien.mp3
+1335:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/04  Exit Music (For A Film).mp3
+1336:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/05  Let Down.mp3
+1337:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/06  Karma Police.mp3
+1338:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/07  Fitter Happier.mp3
+1339:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/08  Electioneering.mp3
+1340:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/09  Climbing Up The Walls.mp3
+1341:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/10  No Surprises.mp3
+1342:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/11  Lucky.mp3
+1343:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/12  The Tourist.mp3
+1344:Reggae Dub Dancehall Reggaeton/Easy Star Allstars - Radiodread/13  Exit Music (For A Dub).mp3
+1345:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/01 - DJ Defkline & Red Polo - Come Around.mp3
+1346:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/02 - DJ Defkline & Red Polo - Young Ones.mp3
+1347:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/03 - DJ Defkline & Red Polo - Pills Of Nazareth.mp3
+1348:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/04 - DJ Defkline & Red Polo - Superstylin'.mp3
+1349:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/05 - DJ Defkline & Red Polo - King Of Mongo.mp3
+1350:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/06 - DJ Defkline & Red Polo - Age Of Dub.mp3
+1351:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/07 - DJ Defkline & Red Polo - Booty Space.mp3
+1352:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/08 - DJ Defkline & Red Polo - One In The Front.mp3
+1353:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/09 - DJ Defkline & Red Polo - Funk Pit.mp3
+1354:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/10 - DJ Defkline & Red Polo - Wo Hoo It's (Song 2).mp3
+1355:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/11 - DJ Defkline & Red Polo - Killing In The Name Of 'Geek Nasty'.mp3
+1356:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/12 - DJ Defkline & Red Polo - Sudge vs. Ayo.mp3
+1357:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/13 - DJ Defkline & Red Polo - Celebrate vs. Technology.mp3
+1358:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/14 - DJ Defkline & Red Polo - Busta Get Down.mp3
+1359:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/15 - DJ Defkline & Red Polo - Let The Music Play.mp3
+1360:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/17 - DJ Defkline & Red Polo - Busta Touch It.mp3
+1361:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/18 - DJ Defkline & Red Polo - Bam Bam Breaks.mp3
+1362:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/19 - DJ Defkline & Red Polo - Bam Bam D+B.mp3
+1363:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/20 - DJ Defkline & Red Polo - Come Around D+B.mp3
+1364:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/21 - DJ Defkline & Red Polo - Never Scared D+B.mp3
+1365:AAAA everything else/[hccd01] deekline & ed solo - hot cakes ready mix vol. 1 [2008]/22 - DJ Defkline & Red Polo - Always There.mp3
+1366:AAAA everything else/Deekline & Ed Solo - Hot Cakes ready mix Vol. 2 [2010]/Deekline and Ed Solo - Hot Cakes ready mix vol.2.mp3
+1367:AAAA everything else/FSOL/2007 From The Archives Vol 2/14 FSOL - Mains Interuppt.mp3
+1368:Drum n bass jungle/old favourites/A-FSOL-Papua_New_Guinea_(Vector_Burn_Remix)-sour.mp3
+1369:AAAA everything else/17 - FSOL - Papua New Guinea.mp3
+1370:AAAA everything else/Aarons flac collection/Future Sound Of London, The -- Papua New Guinea [1992].flac
+1371:AAAA everything else/Massive Attack/(06) Unfinished Sympathy.mp3
+1372:unsorted from mps/238 - Sweet Harmony - Liquid.mp3
+1373:unsorted from mps/Baby D - [Everybody's Got To Learn Sometime] I Need Your Lo.ogg
+1374:AAAA everything else/90s with remixes and other stuff/21 The Source Feat. Candi Staton - You Got The Love.mp3
+1375:Drum n bass jungle/old favourites/Ratpack - Clipper.mp3
+1376:Drum n bass jungle/old favourites/Roni Size Reprazent - Brown Paper Bag (Photek Remix).mp3
+1377:AAAA everything else/Prodigy/09 - Charly - torrentazos.com.mp3
 playlist_end

@@ -53,7 +53,7 @@ nnoremap i :set images!<CR>
 nnoremap I :sh! /bin/sh -c 'python2.7 ~/dotfiles/toggleimagesvimb.py'<CR>
 
 # open downloaded file using rifle 
-nnoremap A :sh! /bin/zsh -c 'rifle ~/Downloads/*(om[1])'<CR>:sh echo rifle<CR>
+nnoremap A :sh! /bin/zsh -c 'rifle ~/Downloads/*(om[1])'<CR>:sh echo Opening latest download with rifle...<CR>
 
 # copy, paste text 
 inoremap <C-C> <C-V><C-C>
