@@ -397,6 +397,9 @@ alias tomb=' tomb'
 # *** personal -probably only useful to me ***
 # ********************************************
 
+# start feh with custom theme
+alias fehdrop='feh -Tcpimg' 
+
 # build/edit my browser start page:
 alias oftenlinks='markdown ~/Documents/oftenlinks.md >! ~/Documents/oftenlinks.html'
 alias oftenedit='vim ~/Documents/oftenlinks.md && oftenlinks'

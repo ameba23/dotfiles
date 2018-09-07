@@ -2,8 +2,8 @@ sw_volume: 88
 audio_device_state:1:My ALSA Device
 audio_device_state:1:my_fifo
 state: pause
-current: 1375
-time: 7.140000
+current: 1380
+time: 5.224000
 random: 0
 repeat: 0
 single: 0
@@ -1390,4 +1390,34 @@ playlist_begin
 1375:Drum n bass jungle/old favourites/Ratpack - Clipper.mp3
 1376:Drum n bass jungle/old favourites/Roni Size Reprazent - Brown Paper Bag (Photek Remix).mp3
 1377:AAAA everything else/Prodigy/09 - Charly - torrentazos.com.mp3
+song_begin: //home/beetroot/Downloads/complete/v.a. - noisecore channel - compilation vol. 4 (2015)/02 Alea Iacta Est - Bizonytalan.mp3
+Time: 44.355000
+Artist: Noisecore Channel
+AlbumArtist: Noisecore Channel
+Title: Alea Iacta Est - Bizonytalan
+Album: Compilation Vol.4
+Track: 2
+Date: 2015
+mtime: 1501016450
+song_end
+song_begin: //home/beetroot/Downloads/complete/v.a. - noisecore channel - compilation vol. 4 (2015)/01 AHNA - Perpetual Warfare.mp3
+Time: 246.857000
+Artist: Noisecore Channel
+AlbumArtist: Noisecore Channel
+Title: AHNA - Perpetual Warfare
+Album: Compilation Vol.4
+Track: 1
+Date: 2015
+mtime: 1501016390
+song_end
+song_begin: //home/beetroot/Downloads/complete/v.a. - noisecore channel - compilation vol. 4 (2015)/01 AHNA - Perpetual Warfare.mp3
+Time: 246.857000
+Artist: Noisecore Channel
+AlbumArtist: Noisecore Channel
+Title: AHNA - Perpetual Warfare
+Album: Compilation Vol.4
+Track: 1
+Date: 2015
+mtime: 1501016390
+song_end
 playlist_end
