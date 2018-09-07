@@ -147,6 +147,9 @@ alias gc='git commit -m'
 # jump to top level of a git repo (go home)
 alias gh='cd ./$(git rev-parse --show-cdup)'
 
+alias lastcommit='git diff HEAD^..HEAD'
+#alias lastcommit='git log --name-status HEAD^..HEAD'
+
 # Common shell functions
 alias less='less -r'
 alias tf='tail -f'
