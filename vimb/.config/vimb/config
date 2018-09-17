@@ -46,6 +46,9 @@ nnoremap - zo
 # bang
 nnoremap ! :open !
 
+# handle magnet links
+handler-add magnet=transmission-gtk %s
+
 # i=toggle images -maybe change this in favour of insert mode
 nnoremap i :set images!<CR>
 

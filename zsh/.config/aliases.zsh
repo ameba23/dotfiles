@@ -391,7 +391,8 @@ magnet-info() {
 }
 
 
-alias fzfind="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m"
+#alias fzfind="rifle $(find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m)"
+alias fzfind='rifle "$(fzf)"'
 
 # dont store tomb commands in zsh history
 alias tomb=' tomb'
