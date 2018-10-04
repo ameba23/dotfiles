@@ -182,6 +182,8 @@ color tree       magenta      default
 auto_view text/html  #view html automatically
 alternative_order text/plain text/enriched text/html
 
+
+
 # save attachments to ~/Downloads
 # (commented out in favour of aliasing mutt to 'cd ~/Downloads;/usr/bin/mutt;cd -'
 #macro attach s <save-entry><kill-line>/home/potatoe/Downloads/<enter>

@@ -391,8 +391,10 @@ magnet-info() {
 }
 
 
+# todo make these into a function that pass args to find or fzf
 #alias fzfind="rifle $(find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m)"
 alias fzfind='rifle "$(fzf)"'
+alias cdf='ls -d */ | fzf'
 
 # dont store tomb commands in zsh history
 alias tomb=' tomb'
@@ -409,6 +411,7 @@ alias oftenlinks='markdown ~/Documents/oftenlinks.md >! ~/Documents/oftenlinks.h
 alias oftenedit='vim ~/Documents/oftenlinks.md && oftenlinks'
 
 # website stuff
+alias buildsite='cd ~/Documents/static && mkdocs build && cd -'
 alias uploadsite='rsync -avz -e ssh ~/Documents/static/site/ ameba@ehion.com:public_html/site'
 alias ehion='ssh ameba@ehion.com'
 alias site='cd ~/Documents/static/docs'

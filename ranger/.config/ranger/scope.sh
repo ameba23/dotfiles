@@ -60,6 +60,7 @@ if [ "$preview_images" = "True" ]; then
         # Image preview for video, disabled by default.:
         video/*)
             ffmpegthumbnailer -i "$path" -o "$cached" -s 0 && exit 6 || exit 1;;
+            # ffmpegthumbnailer -i "$path" -o "$cached" -s 0 && exit 6 ;; 
     esac
     case "$extension" in
        # Use ffmpeg to extract album art from mp3:
@@ -121,8 +122,8 @@ case "$mimetype" in
         img2txt --gamma=0.6 --width="$width" "$path" && exit 4 || exit 1;;
     # Display information about media files:
     video/* | audio/*)
-        #exiftool "$path" && exit 5
-        exiftoolwrapper "$path" && exit 5 
+        exiftool "$path" && exit 5
+        #exiftoolwrapper2 "$path" && exit 5 
         # Use sed to remove spaces so the output fits into the narrow window
         try mediainfo "$path" && { dump | trim | sed 's/  \+:/: /;';  exit 5; } || exit 1;;
 esac
