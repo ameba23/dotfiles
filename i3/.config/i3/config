@@ -122,7 +122,7 @@ assign [instance="todo"] $tag4
 assign [instance="ncmpcpp"] $tag5
 
 # jump to ranger (if its running) with $mod+backtick
-bindsym $mod+grave [title="^ranger$"] focus
+bindsym $mod+grave [title="^ranger|rg$"] focus
 
 #----------------------------------------
 # switch to workspace - this also runs the programs assigned to the workspaces if they are not already running
