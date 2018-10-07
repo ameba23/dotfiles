@@ -145,7 +145,8 @@ alias gac='git commit -am'
 alias gc='git commit -m'
 
 # jump to top level of a git repo (go home)
-alias gh='cd ./$(git rev-parse --show-cdup)'
+# todo: if we are not in a git repo cd ~
+alias gh='cd ./$(git rev-parse --show-cdup) || cd ~'
 
 alias lastcommit='git diff HEAD^..HEAD'
 #alias lastcommit='git log --name-status HEAD^..HEAD'

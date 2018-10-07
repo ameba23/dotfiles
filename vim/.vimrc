@@ -20,9 +20,9 @@ call vundle#begin()
 "
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'"
+Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-repeat' 
 " git integration
 Bundle 'tpope/vim-fugitive'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -37,17 +37,18 @@ Plugin 'tComment'
 " snippet manager
 Plugin 'UltiSnips'
 Plugin 'honza/vim-snippets'
+
 " run code as you type
-Plugin 'metakirby5/codi.vim'
+" Plugin 'metakirby5/codi.vim'
 
 " highlighting for slim html templates
-Plugin 'slim-template/vim-slim.git'
+" Plugin 'slim-template/vim-slim.git'
 
 " to change or select ruby blocks
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
+" Plugin 'kana/vim-textobj-user'
+" Plugin 'nelstrom/vim-textobj-rubyblock'
 
-Plugin 'prettier/vim-prettier'
+" Plugin 'prettier/vim-prettier'
 Plugin 'pangloss/vim-javascript'
 
 "Plugin 'Valloric/YouCompleteMe'
@@ -233,7 +234,8 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " Toggle nerdtree with Ctrl-D
-nmap <silent> <C-D> :NERDTreeToggle<CR>
+" nmap <silent> <C-D> :NERDTreeToggle<CR>
+nmap <leader>n :NERDTreeToggle<CR>
 
 " remove html tags
 nmap <leader>tt vat<Esc>`<df>`>F<df>
@@ -344,7 +346,3 @@ if executable('ag')
 endif
 nnoremap <Leader>a :Ack!<Space>
 
-" prettier
-"autocmd FileType javascript set formatprg=prettier\ --stdin
-"autocmd BufWritePre *.js :normal gggqG
-"autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
