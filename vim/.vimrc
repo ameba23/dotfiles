@@ -170,7 +170,8 @@ function! ToggleWrap(firstrun)
     silent! iunmap <buffer> <End>
   else
     if a:firstrun != 1 
-      echo "Wrap ON"  " only display message when called by keybinding
+      echo "Wrap ON"  
+      " only display message when called by keybinding
     endif
     setlocal wrap linebreak nolist
     set virtualedit=
