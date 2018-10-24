@@ -111,6 +111,7 @@
 [core]
   autocrlf = false
   editor = vim
+	excludesfile = /home/potatoe/.gitignore_global
 #  excludesfile = ~/.yadr/git/gitignore
 [advice]
   statusHints = false

@@ -135,7 +135,8 @@ alias gbg='git bisect good'
 alias gbb='git bisect bad'
 
 alias grb='git recent-branches'
-alias gma='git commit -am'
+alias gca='git commit -am'
+alias gc='git commit -m'
 
 # Common shell functions
 alias less='less -r'
@@ -178,7 +179,7 @@ alias srg="surfraw google"
 # and use that username as group.
 alias allmine='sudo chown -R $(whoami):$(whoami) *'
 
-# dont record history when using tomb
+# dont record shell history when using tomb
 alias tomb=' tomb'
 
 # i3 window manager
@@ -208,7 +209,7 @@ alias muttrc='vim ~/.muttrc'
 # start mutt in Download directory so that attachments are saved there (an unelegant workaround)
 alias mutt='cd ~/Downloads;/usr/bin/mutt;cd -'
 
-# zmv - another amazing bit of software
+# zmv - another *amazing* bit of software
 autoload zmv
 alias zmv='noglob zmv'
 alias zcp='noglob zmv -C'
@@ -233,6 +234,16 @@ alias vzy='vim $(find -type f | fzy)'
 # cd with fzy
 alias czy='cd $(find -type d | fzy)'
 
+# -----------------------fzf another fuzzy finder 
+
+# global:
+alias -g FZF='$(fzf)'
+#vim with fzf 
+alias vzf='vim $(fzf)'
+# cd with fzf
+alias czf='cd $(find -type d | fzf)'
+#rifle with fzf 
+alias ozf='rifle $(fzf)'
 
 # newest file (or directory) -global alias (zsh)
 alias -g newest='*(om[1])'
