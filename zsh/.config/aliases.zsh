@@ -403,8 +403,9 @@ alias tomb=' tomb'
 # ********************************************
 # *** personal -probably only useful to me ***
 # ********************************************
+# TODO: stick this somewhere else and source it
 
-# start feh with custom theme
+# start feh with custom theme, to copy images with a keybinding
 alias fehdrop='feh -Tcpimg' 
 
 # build/edit my browser start page:
@@ -414,7 +415,6 @@ alias oftenedit='vim ~/Documents/oftenlinks.md && oftenlinks'
 # website stuff
 alias buildsite='cd ~/Documents/static && mkdocs build && cd -'
 alias uploadsite='rsync -avz -e ssh ~/Documents/static/site/ ameba@ehion.com:public_html/site'
-alias ehion='ssh ameba@ehion.com'
 alias site='cd ~/Documents/static/docs'
 
 # my global todo list.  i stopped using this alias since i have an i3 workspace dedicated to this file
@@ -455,4 +455,6 @@ alias clipget='ssh pot cat .flipclip | xclip -selection clipboard && echo Clipbo
 alias mountpot='mkdir ~/potatoe && sshfs potatoe@potatoe: ~/potatoe/'
 alias umountpot='fusermount3 -u ~/potatoe && rmdir ~/potatoe'
 
+# backup magnetico db
+alias backupmagnet='rsync -avz -e ssh vps:.local/share/magneticod/ ~/archive/magnetico_database'
 # *******************************************
