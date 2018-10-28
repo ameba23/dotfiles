@@ -79,9 +79,8 @@ alias gpom='git push -u origin master'
 alias gs='git status'
 # watch out! gs is normally ghostscript. 
 
-alias gac='git add . && git commit -am'
 
-alias gstsh='git stash'
+# alias gstsh='git stash'
 alias gst='git stash'
 alias gsp='git stash pop'
 alias gsa='git stash apply'
@@ -122,7 +121,9 @@ alias gtr='grb track'
 alias gpl='git pull'
 alias gplr='git pull --rebase'
 alias gps='git push'
-alias gpsh='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+
+alias gpo='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+
 alias gnb='git nb' # new branch aka checkout -b
 alias grs='git reset'
 alias grsh='git reset --hard'
@@ -137,7 +138,18 @@ alias gbg='git bisect good'
 alias gbb='git bisect bad'
 
 alias grb='git recent-branches'
-alias gma='git commit -am'
+
+
+#alias gac='git add . && git commit -am'
+alias gac='git commit -am'
+alias gc='git commit -m'
+
+# jump to top level of a git repo (go home)
+# todo: if we are not in a git repo cd ~
+alias gh='cd ./$(git rev-parse --show-cdup) || cd ~'
+
+alias lastcommit='git diff HEAD^..HEAD'
+#alias lastcommit='git log --name-status HEAD^..HEAD'
 
 # Common shell functions
 alias less='less -r'
@@ -206,7 +218,7 @@ alias vess='/usr/share/vim/vim80/macros/less.sh'
 alias muttrc='vim ~/.muttrc'
 
 # start mutt in Download directory so that attachments are saved there (an unelegant workaround)
-alias mutt='cd ~/Downloads;/usr/bin/mutt;cd -'
+#alias mutt='cd ~/Downloads;/usr/bin/mutt;cd -'
 
 # zmv - another amazing bit of software
 autoload zmv
@@ -260,6 +272,8 @@ function ranger-cd {
     rm -f -- "$tempfile"
 }
 
+alias rg='ranger-cd'
+
 # This binds Ctrl-O to ranger-cd:
 #bind '"\C-o":"ranger-cd\C-m"'
 
@@ -309,6 +323,9 @@ alias commandcopy='fc -l -n -1 | xclip -selection clipboard -i && echo Copied $(
 # repeat last terminal command and pipe output to clipboard
 alias outcopy='$(fc -l -n -1) | xclip -selection clipboard -i; echo clipboard contains; clip -o'
 
+# wordcount clipboard
+alias clipcount='xclip -selection clipboard -o | wc'
+
 # removed orphaned pacman packages
 alias orphans='[[ -n $(pacman -Qdt) ]] && sudo pacman -Rs $(pacman -Qdtq) || echo "no orphans to remove"'
 
@@ -325,6 +342,8 @@ function hess { highlight --force -O ansi $1 | less }
 
 # go to sleep:
 alias schlaf='systemctl suspend'
+alias snore='systemctl hibernate'
+
 
 #function sedPath { 
 # Escape path for use with sed
@@ -373,7 +392,10 @@ magnet-info() {
 }
 
 
-alias fzfind="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m"
+# todo make these into a function that pass args to find or fzf
+#alias fzfind="rifle $(find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m)"
+alias fzfind='rifle "$(fzf)"'
+alias cdf='ls -d */ | fzf'
 
 # dont store tomb commands in zsh history
 alias tomb=' tomb'
@@ -382,11 +404,15 @@ alias tomb=' tomb'
 # *** personal -probably only useful to me ***
 # ********************************************
 
+# start feh with custom theme
+alias fehdrop='feh -Tcpimg' 
+
 # build/edit my browser start page:
 alias oftenlinks='markdown ~/Documents/oftenlinks.md >! ~/Documents/oftenlinks.html'
 alias oftenedit='vim ~/Documents/oftenlinks.md && oftenlinks'
 
 # website stuff
+alias buildsite='cd ~/Documents/static && mkdocs build && cd -'
 alias uploadsite='rsync -avz -e ssh ~/Documents/static/site/ ameba@ehion.com:public_html/site'
 alias ehion='ssh ameba@ehion.com'
 alias site='cd ~/Documents/static/docs'
@@ -419,5 +445,14 @@ alias vb='i3-msg "workspace 2:www" ; vimb &'
 alias books='cd ~/books_and_zines'
 alias dot='cd ~/dotfiles'
 alias film='cd ~/film'
+alias soft='cd ~/software'
+
+# client side.  put/get x clipboard over ssh.  a messy workaround
+alias clipsend='xclip -selection clipboard -o | ssh pot "cat > .flipclip" && echo Sent: $(xclip -selection clipboard -o)'
+alias clipget='ssh pot cat .flipclip | xclip -selection clipboard && echo Clipboard now: $(xclip -selection clipboard -o)'
+
+# sshfs
+alias mountpot='mkdir ~/potatoe && sshfs potatoe@potatoe: ~/potatoe/'
+alias umountpot='fusermount3 -u ~/potatoe && rmdir ~/potatoe'
 
 # *******************************************
