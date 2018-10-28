@@ -8,6 +8,7 @@
 # stuff at the top is mostly from YADR (yet another dotfile repo)
 # with some minor changes
 
+
 # Get operating system
 platform='linux'
 
@@ -48,7 +49,8 @@ alias ls='ls --color=auto'
 alias l.='ls -d .*'
 alias ..='cd ..'
 
-alias lrt='ls++ -art'
+#alias lrt='ls++ -art'
+alias lrt='ls -lhart'
 
 # show me files matching "ls grep"
 alias lsg='ll | grep'
@@ -135,8 +137,7 @@ alias gbg='git bisect good'
 alias gbb='git bisect bad'
 
 alias grb='git recent-branches'
-alias gca='git commit -am'
-alias gc='git commit -m'
+alias gma='git commit -am'
 
 # Common shell functions
 alias less='less -r'
@@ -168,8 +169,9 @@ alias k9='kill -9'
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
 # for samsung
-alias mountphone='mkdir ~/phone && jmtpfs ~/phone'
-alias unmountphone='fusermount -u ~/phone && rmdir ~/phone'
+alias mountphone='mkdir ~/phone && go-mtpfs ~/phone'
+#alias mountphone='mkdir ~/phone && jmtpfs ~/phone'
+#alias unmountphone='fusermount -u ~/phone && rmdir ~/phone'
 
 # surfraw 
 alias sr=surfraw
@@ -178,9 +180,6 @@ alias srg="surfraw google"
 # change ownership of everything in current dir (recursively) to current user
 # and use that username as group.
 alias allmine='sudo chown -R $(whoami):$(whoami) *'
-
-# dont record shell history when using tomb
-alias tomb=' tomb'
 
 # i3 window manager
 alias i3config='vim ~/.config/i3/config'
@@ -209,7 +208,7 @@ alias muttrc='vim ~/.muttrc'
 # start mutt in Download directory so that attachments are saved there (an unelegant workaround)
 alias mutt='cd ~/Downloads;/usr/bin/mutt;cd -'
 
-# zmv - another *amazing* bit of software
+# zmv - another amazing bit of software
 autoload zmv
 alias zmv='noglob zmv'
 alias zcp='noglob zmv -C'
@@ -223,6 +222,7 @@ alias torbrowser='cd ~/software/tor-browser_en-US;./start-tor-browser.desktop;cd
 alias fixmouse='sudo rmmod psmouse && sudo modprobe psmouse'
 
 
+alias cputemp='sensors | grep "CPU Temperature"'
 
 # -----------------------fzy fuzzy finder 
 # (replace fzy with your own favourite filter program)
@@ -234,16 +234,6 @@ alias vzy='vim $(find -type f | fzy)'
 # cd with fzy
 alias czy='cd $(find -type d | fzy)'
 
-# -----------------------fzf another fuzzy finder 
-
-# global:
-alias -g FZF='$(fzf)'
-#vim with fzf 
-alias vzf='vim $(fzf)'
-# cd with fzf
-alias czf='cd $(find -type d | fzf)'
-#rifle with fzf 
-alias ozf='rifle $(fzf)'
 
 # newest file (or directory) -global alias (zsh)
 alias -g newest='*(om[1])'
@@ -385,6 +375,8 @@ magnet-info() {
 
 alias fzfind="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m"
 
+# dont store tomb commands in zsh history
+alias tomb=' tomb'
 
 # ********************************************
 # *** personal -probably only useful to me ***
@@ -427,10 +419,5 @@ alias vb='i3-msg "workspace 2:www" ; vimb &'
 alias books='cd ~/books_and_zines'
 alias dot='cd ~/dotfiles'
 alias film='cd ~/film'
-
-# 'server side' put/get xclipboard to file -will be sshed over by the client
-# a messy workaround for that i cant find an easy way to share x clipboard over ssh
-alias clipget='cat .flipclip | xclip -selection clipboard'
-alias clipsend='xclip -selection clipboard -o > .flipclip'
 
 # *******************************************

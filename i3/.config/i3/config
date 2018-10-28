@@ -220,7 +220,7 @@ exec --no-startup-id xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1 
 #exec --no-startup-id "urxvt -name offlineimap"
 
 # -no-splash
-exec --no-startup-id xscreensaver
+#exec --no-startup-id xscreensaver
 
 exec "i3-msg layout tabbed"
 #exec --no-startup-id "urxvt -name todo -e vim ~/Documents/todo.md"
