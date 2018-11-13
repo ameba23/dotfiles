@@ -50,7 +50,7 @@ nnoremap ! :open !
 handler-add magnet=transmission-gtk %s
 
 # i=toggle images -maybe change this in favour of insert mode
-nnoremap i :set images!<CR>
+#nnoremap i :set images!<CR>
 
 # use script to toggle images in config file so it persists to new windows
 nnoremap I :sh! /bin/sh -c 'python2.7 ~/dotfiles/toggleimagesvimb.py'<CR>
