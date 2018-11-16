@@ -38,7 +38,7 @@ nnoremap - zo
 # bang
 nnoremap ! :open !
 # i=toggle images
-nnoremap i :set images!<CR>
+#nnoremap i :set images!<CR>
 # use script to toggle images in config file so it persists to new windows
 nnoremap I :sh! /bin/sh -c 'python2.7 ~/dotfiles/toggleimagesvimb.py'<CR>
 # open downloaded file using rifle 
