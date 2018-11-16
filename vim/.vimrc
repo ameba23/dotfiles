@@ -13,14 +13,16 @@ filetype off                   " required!
 " The mapleader has to be set before vundle starts loading all 
 " the plugins.
 let mapleader=","
-
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " ===========================================My Bundles here:
 "
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'"
-
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat' 
 " git integration
 Bundle 'tpope/vim-fugitive'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -34,22 +36,27 @@ Plugin 'The-NERD-tree'
 Plugin 'tComment'
 " snippet manager
 Plugin 'UltiSnips'
+Plugin 'honza/vim-snippets'
+
 " run code as you type
-Plugin 'metakirby5/codi.vim'
+" Plugin 'metakirby5/codi.vim'
 
 " highlighting for slim html templates
-Plugin 'slim-template/vim-slim.git'
+" Plugin 'slim-template/vim-slim.git'
 
 " to change or select ruby blocks
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
+" Plugin 'kana/vim-textobj-user'
+" Plugin 'nelstrom/vim-textobj-rubyblock'
 
-Plugin 'Valloric/YouCompleteMe'
-" javascript formatter
-Plugin 'prettier/vim-prettier'
+" Plugin 'prettier/vim-prettier'
+Plugin 'pangloss/vim-javascript'
 
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'mileszs/ack.vim'
 " Automatic closing of quotes and brackets
 Plugin 'cohama/lexima.vim'
+
+Plugin 'w0rp/ale'
 "Plugin 'ranger.vim'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Bundle 'tpope/vim-rails.git'
@@ -73,7 +80,7 @@ if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
 
-
+call vundle#end()
 filetype plugin indent on     " required! 
 "
 " Brief help
@@ -163,7 +170,8 @@ function! ToggleWrap(firstrun)
     silent! iunmap <buffer> <End>
   else
     if a:firstrun != 1 
-      echo "Wrap ON"  " only display message when called by keybinding
+      echo "Wrap ON"  
+      " only display message when called by keybinding
     endif
     setlocal wrap linebreak nolist
     set virtualedit=
@@ -215,7 +223,7 @@ set sidescroll=1
 
 " ================ Custom Settings ========================
 "so ~/.yadr/vim/settings.vim
-set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus
 set visualbell
 
 " smartcase for searching
@@ -227,7 +235,11 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " Toggle nerdtree with Ctrl-D
-nmap <silent> <C-D> :NERDTreeToggle<CR>
+" nmap <silent> <C-D> :NERDTreeToggle<CR>
+nmap <leader>n :NERDTreeToggle<CR>
+
+" remove html tags
+nmap <leader>tt vat<Esc>`<df>`>F<df>
 
 " highlight line cursor is on
 set cursorline
@@ -275,6 +287,7 @@ nnoremap <S-Enter> O<ESC>
 " from my old vimrc, to paste from x clipboard?
 "map <F2> "+gP  
 
+ 
 
 " lazy about umlaut:
 function! German()
@@ -325,5 +338,12 @@ nmap <Leader>p "ap:let @a = ''<cr>
 nnoremap <leader>oe :vsplit $HOME/Documents/oftenlinks.md<cr>
 
 let g:ctrlp_custom_ignore = {
-   \'dir': '\v[\/](\.git|node_modules)$'
-   \ }
+  \'dir': '\v[\/](\.git|node_modules)$'
+  \ }
+
+" Ack / ag
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+nnoremap <Leader>a :Ack!<Space>
+
