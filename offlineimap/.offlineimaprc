@@ -281,7 +281,9 @@ remotehost = mail.mtmedia.org
 ssl = yes
 
 # When updating the fingerprint, remember to change it in .msmtprc also.
-cert_fingerprint = 4af7c35759b482c6ef4bd6bde4e2fe0105ce272b
+
+cert_fingerprint = 0c1234b6b6b7e4ba03dea20a49c30fdae2338109
+# cert_fingerprint = 4af7c35759b482c6ef4bd6bde4e2fe0105ce272b
 #cert_fingerprint = c4fb6f7b917e8a3471e9608512ee364d2c1b8a91
 #cert_fingerprint = CA31C145525177B04AFCAF85A9E7BBBED98C759F
 #cert_fingerprint = CA:31:C1:45:52:51:77:B0:4A:FC:AF:85:A9:E7:BB:BE:D9:8C:75:9F

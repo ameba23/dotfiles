@@ -181,9 +181,10 @@ alias k9='kill -9'
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
 # for samsung
-alias mountphone='mkdir ~/phone && go-mtpfs ~/phone'
+alias mountphone='mkdir ~/phone && simple-mtpfs --device 1 ~/phone'
+#alias mountphone='mkdir ~/phone && go-mtpfs ~/phone'
 #alias mountphone='mkdir ~/phone && jmtpfs ~/phone'
-#alias unmountphone='fusermount -u ~/phone && rmdir ~/phone'
+alias unmountphone='fusermount -u ~/phone && rmdir ~/phone'
 
 # surfraw 
 alias sr=surfraw
@@ -316,6 +317,9 @@ alias moon='curl wttr.in/moon'
 # i use this because by default xclip uses selection rather than clipboard which i often dont want.
 alias clip='xclip -selection clipboard'
 alias -g CLIP='$(xclip -selection clipboard -o)'
+
+# dump the clipboard contents to a qrcode (to send to a phone)
+alias qclip='xclip -selection clipboard -o | qrencode -t UTF8'
 
 # copy last terminal command to clipboard 
 alias commandcopy='fc -l -n -1 | xclip -selection clipboard -i && echo Copied $(xclip -selection clipboard -o)'
