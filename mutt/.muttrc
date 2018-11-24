@@ -92,6 +92,11 @@ macro compose A "<attach-message>?<toggle-mailboxes>" "attach message(s) to this
 # ---------------- gpg encryption:
 # https://www.linuxjournal.com/content/encrypt-your-dog-mutt-and-gpg
 source ~/.gpg.rc
+# should now replace 'pgp_' with 'crypt_' in these:
+
+# always sign
+folder-hook +systemli/* 'set pgp_autosign'
+
 set pgp_replyencrypt
 set pgp_replysign
 set pgp_replysignencrypted
