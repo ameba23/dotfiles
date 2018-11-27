@@ -234,6 +234,7 @@ exec "i3-msg layout tabbed"
 #will be load layout:
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/michael/.i3/workspace-1.json'"
 
+exec --no-startup-id clipmenud
 
 # ---------------------------ameba's keybindings:
 #
@@ -308,5 +309,8 @@ new_window pixel
 
 # password manager
 bindsym $mod+o exec "passmenu"
+
+# clipboard manager
+bindsym $mod+c exec "clipmenu"
 
 #for_window [class="imv"] floating enable

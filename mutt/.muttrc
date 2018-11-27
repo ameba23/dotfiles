@@ -96,6 +96,8 @@ source ~/.gpg.rc
 
 # always sign
 folder-hook +systemli/* 'set pgp_autosign'
+folder-hook +mtmedia/* 'set pgp_autosign=no'
+
 
 set pgp_replyencrypt
 set pgp_replysign
