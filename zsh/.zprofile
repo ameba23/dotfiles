@@ -47,6 +47,7 @@ path=(
   $HOME/dotfiles
   $HOME/scripts
   $HOME/.gem/ruby/2.4.0/bin
+  $HOME/.gem/ruby/2.5.0/bin
   /root/.gem/ruby/2.4.0/bin
 )
 

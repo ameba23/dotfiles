@@ -111,7 +111,7 @@
 [core]
   autocrlf = false
   editor = vim
-	excludesfile = /home/potatoe/.gitignore_global
+	excludesfile = /home/beetroot/.gitignore_global
 #  excludesfile = ~/.yadr/git/gitignore
 [advice]
   statusHints = false
@@ -128,4 +128,7 @@
   path = .gitconfig.user
 [user]
 	name = ameba23
-	email = ameba23@systemli.org
+  email = ameba23@systemli.org
+	signingkey = 44C422B05A7D43E70F4CD4A9893FF84E7B25C747
+[credential]
+  helper = store

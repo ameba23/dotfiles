@@ -7,6 +7,7 @@
 
 export TERMCMD=urxvt
 export RANGER_LOAD_DEFAULT_RC=FALSE
+export EDITOR=vim
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then

@@ -1,0 +1,2 @@
+# first feh theme
+cpimg --draw-actions --draw-filename -F -A "cp %F ~/photos/fehdrop/%N"

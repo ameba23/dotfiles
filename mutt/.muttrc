@@ -13,9 +13,9 @@ set header_cache=~/.cache/mutt
 set tmpdir="/tmp"
 
 #------------------------------sidebar
-set sidebar_width=24
+#set sidebar_width=24
 set sidebar_visible=yes
-set sidebar_delim=' │'
+#set sidebar_delim=' │'
 set sidebar_format  = "%B%* (%N)"
 color sidebar_new yellow default
 
@@ -72,7 +72,10 @@ mailboxes +systemli/INBOX \
           +archive-sli \
           +archive-sli-sent \
           +mtmedia/INBOX.junk \
-          +mtmedia/INBOX.Sent
+          +mtmedia/INBOX.Sent \
+          +archive-mtmedia \
+          +archive-mtmedia-sent
+
 macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 
@@ -87,7 +90,12 @@ macro compose A "<attach-message>?<toggle-mailboxes>" "attach message(s) to this
 
 
 # ---------------- gpg encryption:
-#source ~/.gpg.rc
+# https://www.linuxjournal.com/content/encrypt-your-dog-mutt-and-gpg
+source ~/.gpg.rc
+set pgp_replyencrypt
+set pgp_replysign
+set pgp_replysignencrypted
+set pgp_show_unusable=no
 
 # if not using offlineimap, directly use imap folders
 #set spoolfile=imaps://user@mail.example.com/INBOX
@@ -111,7 +119,7 @@ macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract 
 macro index <F3> "l~B \"" 'limit search of whole messages'
 
 # works but spits out the complete header as well.  use mailcap?
-macro index,pager l "<pipe-entry> vimb -<Enter>" "Open message with vimb"
+#macro index,pager l "<pipe-entry> vimb -<Enter>" "Open message with vimb"
 # works when you choose html component:
 macro attach l "<pipe-entry> vimb -<Enter>" "Open message with vimb"
 
@@ -173,6 +181,8 @@ color tree       magenta      default
 # from http://jasonwryan.com/blog/2012/05/12/mutt/
 auto_view text/html  #view html automatically
 alternative_order text/plain text/enriched text/html
+
+
 
 # save attachments to ~/Downloads
 # (commented out in favour of aliasing mutt to 'cd ~/Downloads;/usr/bin/mutt;cd -'

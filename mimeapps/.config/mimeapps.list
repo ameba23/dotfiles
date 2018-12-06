@@ -1,7 +1,8 @@
 [Added Associations]
 text/plain=vim.desktop;
+application/pdf=mupdf.desktop;
 
 [Default Applications]
 text/plain=vim.desktop
-
 video/webm=mplayer.desktop
+application/pdf=mupdf.desktop

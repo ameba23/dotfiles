@@ -6,8 +6,9 @@
 #      
 #
 
+
 # needs trailing /
-mpddir="/home/potatoe/Musique/"
+mpddir="/mnt/data/Musique/"
 
 # Escape special characters in the path so we can use it in a regular expression with sed:
 # this seems to work perfectly, but it messes up the syntax highlighting for the rest of the script:
@@ -40,7 +41,8 @@ else
   firstfile=1
   
   # find the position in the mpd playlist to startplaying from:
-  tracknum=$(echo $(mpc playlist | wc -l) + 1 | bc)
+  #tracknum=$(echo $(mpc playlist | wc -l) + 1 | bc)
+  tracknum=$(($(echo $(mpc playlist | wc -l)) + 1))
   
   for var in $filelist
   do

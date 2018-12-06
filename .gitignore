@@ -2,3 +2,6 @@ vim/.vim/bundle
 vim/.vim/spell
 vim/.vim/backups
 vimb/out.log
+mpd/.mpd/mpd.pid
+mpd/.mpd/mpdstate
+mpd/.mpd/mpd.log

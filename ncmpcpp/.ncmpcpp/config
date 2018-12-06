@@ -24,7 +24,7 @@
 #
 ##### connection settings #####
 #
-mpd_host = /home/potatoe/.mpd/socket
+mpd_host = /home/beetroot/.mpd/socket
 #
 mpd_port = 6600
 #
@@ -32,7 +32,7 @@ mpd_port = 6600
 #
 ## Needed for tag editor and file operations to work.
 ##
-mpd_music_dir = /home/potatoe/Musique
+mpd_music_dir = /mnt/data/Musique
 #
 #mpd_crossfade_time = 5
 #

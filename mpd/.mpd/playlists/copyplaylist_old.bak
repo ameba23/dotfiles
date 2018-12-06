@@ -1,0 +1,10 @@
+#!/bin/bash
+# for copying mpd playlists
+# usage copyplaylist playlist destination
+
+while read name
+do
+  #echo $name
+  cp ~/Musique/"$name" $2
+#  printf "jjj%s\n" "$name" 
+done < $1

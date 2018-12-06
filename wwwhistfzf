@@ -1,0 +1,6 @@
+#!/bin/sh
+# search vimb browsing history, and put results into markdown format
+# --also remove search engine results
+# --also remove duplicates
+#grep -a -i "$@" $HOME/.config/vimb/history |grep -v "duckduckgo" | uniq | fzf
+vimb $(cat $HOME/.config/vimb/history |grep -v "duckduckgo" | uniq | fzf | cut -f 1 -d ' ')

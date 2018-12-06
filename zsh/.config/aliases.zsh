@@ -181,9 +181,10 @@ alias k9='kill -9'
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
 # for samsung
-alias mountphone='mkdir ~/phone && go-mtpfs ~/phone'
+alias mountphone='mkdir ~/phone && simple-mtpfs --device 1 ~/phone'
+#alias mountphone='mkdir ~/phone && go-mtpfs ~/phone'
 #alias mountphone='mkdir ~/phone && jmtpfs ~/phone'
-#alias unmountphone='fusermount -u ~/phone && rmdir ~/phone'
+alias unmountphone='fusermount -u ~/phone && rmdir ~/phone'
 
 # surfraw 
 alias sr=surfraw
@@ -317,6 +318,9 @@ alias moon='curl wttr.in/moon'
 alias clip='xclip -selection clipboard'
 alias -g CLIP='$(xclip -selection clipboard -o)'
 
+# dump the clipboard contents to a qrcode (to send to a phone)
+alias qclip='xclip -selection clipboard -o | qrencode -t UTF8'
+
 # copy last terminal command to clipboard 
 alias commandcopy='fc -l -n -1 | xclip -selection clipboard -i && echo Copied $(xclip -selection clipboard -o)'
 
@@ -403,8 +407,9 @@ alias tomb=' tomb'
 # ********************************************
 # *** personal -probably only useful to me ***
 # ********************************************
+# TODO: stick this somewhere else and source it
 
-# start feh with custom theme
+# start feh with custom theme, to copy images with a keybinding
 alias fehdrop='feh -Tcpimg' 
 
 # build/edit my browser start page:
@@ -414,7 +419,6 @@ alias oftenedit='vim ~/Documents/oftenlinks.md && oftenlinks'
 # website stuff
 alias buildsite='cd ~/Documents/static && mkdocs build && cd -'
 alias uploadsite='rsync -avz -e ssh ~/Documents/static/site/ ameba@ehion.com:public_html/site'
-alias ehion='ssh ameba@ehion.com'
 alias site='cd ~/Documents/static/docs'
 
 # my global todo list.  i stopped using this alias since i have an i3 workspace dedicated to this file
@@ -455,4 +459,6 @@ alias clipget='ssh pot cat .flipclip | xclip -selection clipboard && echo Clipbo
 alias mountpot='mkdir ~/potatoe && sshfs potatoe@potatoe: ~/potatoe/'
 alias umountpot='fusermount3 -u ~/potatoe && rmdir ~/potatoe'
 
+# backup magnetico db
+alias backupmagnet='rsync -avz -e ssh vps:.local/share/magneticod/ ~/archive/magnetico_database'
 # *******************************************

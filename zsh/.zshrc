@@ -13,6 +13,7 @@ fi
 eval "$(fasd --init auto)"
 
 export EDITOR=vim
+export BROWSER=vimb
 export COLORTERM=urxvt
 export MPD_HOST=$HOME/.mpd/socket
 
@@ -66,12 +67,24 @@ zle -N insert-selecta-path-in-command-line
 bindkey "^S" "insert-selecta-path-in-command-line"
 # -----------------------------------------------------
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #
 # Change the prompt when you open a shell from inside ranger
 #
 [ -n "$RANGER_LEVEL" ] && PS1="$PS1"'(in ranger) '
+
+# fzf
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+
+# Setting fd as the default source for fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+
 
 # fh - repeat history using fzf
 fh() {
@@ -79,12 +92,12 @@ fh() {
 }
 
 # fd - cd to selected directory using fzf
-fd() {
-  local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
-}
+# fd() {
+#   local dir
+#   dir=$(find ${1:-.} -path '*/\.*' -prune \
+#                   -o -type d -print 2> /dev/null | fzf +m) &&
+#   cd "$dir"
+# }
 
 
 # cf - fuzzy cd from anywhere
@@ -106,7 +119,13 @@ cf() {
   fi
 }
 #archey
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+PATH="/home/beetroot/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/beetroot/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/beetroot/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/beetroot/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/beetroot/perl5"; export PERL_MM_OPT;
+source /usr/share/nvm/init-nvm.sh
