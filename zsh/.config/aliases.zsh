@@ -247,7 +247,6 @@ alias vzy='vim $(find -type f | fzy)'
 # cd with fzy
 alias czy='cd $(find -type d | fzy)'
 
-
 # newest file (or directory) -global alias (zsh)
 alias -g newest='*(om[1])'
 
