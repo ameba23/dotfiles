@@ -239,7 +239,7 @@ exec --no-startup-id clipmenud
 # ---------------------------ameba's keybindings:
 #
 # printscreen = screenshot
-bindsym Print exec scrot -e 'notify-send "screenshot taken"' 
+bindsym Print exec scrot -e 'mv $f ~/scrot/ && notify-send "screenshot taken"' 
 # alt and printscreen = grab only active window ---doesnt work, what should 'alt' be?
 #bindsym Mod1+Sysreq exec scrot -u
 
@@ -272,7 +272,7 @@ bindsym $mod+Next exec pulsemixer --change-volume -10
 #bindsym $mod+m exec "xrandr --auto --output VGA1 --mode 1440x900 --left-of eDP1 && shiftleft || xrandr --auto"
 
 #pause mpd
-bindsym $mod+p exec "mpc toggle"
+bindsym $mod+p exec notify-send "`mpc toggle`"
 
 # change track mpd
 bindsym $mod+comma exec mpc prev && exec notify-send "`mpc`"
