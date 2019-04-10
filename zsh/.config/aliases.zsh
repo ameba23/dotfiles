@@ -194,6 +194,9 @@ alias srg="surfraw google"
 # and use that username as group.
 alias allmine='sudo chown -R $(whoami):$(whoami) *'
 
+# tmux conf
+alias tmuxconf='vim ~/.tmux.conf'
+
 # i3 window manager
 alias i3config='vim ~/.config/i3/config'
 # display keybindings for i3
@@ -246,7 +249,6 @@ alias -g FZY='$(find -type f | fzy)'
 alias vzy='vim $(find -type f | fzy)'
 # cd with fzy
 alias czy='cd $(find -type d | fzy)'
-
 
 # newest file (or directory) -global alias (zsh)
 alias -g newest='*(om[1])'

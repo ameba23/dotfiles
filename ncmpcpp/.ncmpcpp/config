@@ -24,7 +24,7 @@
 #
 ##### connection settings #####
 #
-mpd_host = /home/beetroot/.mpd/socket
+mpd_host = ~/.mpd/socket
 #
 mpd_port = 6600
 #

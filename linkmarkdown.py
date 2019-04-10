@@ -5,7 +5,7 @@ import sys
 
 
 for line in sys.stdin:
-    markdownline = '* ['
+    markdownline = '- ['
     splitlines = line.split()
     # todo? if len(splitlines > 1) ?
     for ii in range(len(splitlines)-1):
@@ -15,7 +15,7 @@ for line in sys.stdin:
 
     # if no title, title=url
     # todo: strip http(s)
-    if (markdownline == '* ['):
+    if (markdownline == '- ['):
         markdownline = markdownline + splitlines[0]
     
     markdownline = markdownline + '](' + splitlines[0] + ') ' 

@@ -323,10 +323,17 @@ endfunc
 
 " Ctrl + Arrows changes window.  -this requires either modifying urxvt or
 " remapping using escape sequences.
-nmap <C-Up> <C-w><Up> 
-nmap <C-Down> <C-w><Down> 
-nmap <C-Left> <C-w><Left> 
-nmap <C-Right> <C-w><Right> 
+" nmap <ESC>[5D <C-W><Left>
+" nmap <ESC>[5C <C-W><Right>
+" nnoremap <M-Up> <C-w><Up> 
+" nnoremap <M-Down> <C-w><Down> 
+" nnoremap <S-Left> <C-w><Left> 
+" nnoremap <S-Right> <C-w><Right> 
+nmap <tab> <C-w>w
+" nmap <C-Up> <C-w><Up> 
+" nmap <C-Down> <C-w><Down> 
+" nmap <C-Left> <C-w><Left> 
+" nmap <C-Right> <C-w><Right> 
 
 map <Leader>v 0ma}b:'a,.j<CR>070 ?  *<Esc>dwi<CR><Esc>
 
@@ -347,3 +354,6 @@ if executable('ag')
 endif
 nnoremap <Leader>a :Ack!<Space>
 
+" Remove trailing spaces when writing file of particular filetypes
+" fix this
+autocmd FileType cpp,java,php,js autocmd BufWritePre <buffer> %s/\s\+$//e
