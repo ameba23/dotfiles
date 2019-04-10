@@ -23,4 +23,4 @@ if (( $+commands[fortune] )); then
 fi
 
 # startx
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 && -z $SSH_CONNECTION ]] && exec startx
