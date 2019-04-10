@@ -1,0 +1,89 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 364,
+       "width": 724,
+       "x": 0,
+       "y": 0
+    },
+    "name": "ncmpcpp 0.8",
+    "percent": 0.7,
+    "swallows": [
+       {
+        "class": "^URxvt$",
+        "instance": "^ncmpcpp$",
+        "title": "^ncmpcpp$"
+        //"transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.3,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 364,
+               "width": 724,
+               "x": 0,
+               "y": 0
+            },
+            "name": "nausea",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^URxvt$",
+                //"instance": "^nausea$",
+                "title": "^nausea$"
+               // "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            // splith split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 720,
+                       "width": 1280,
+                       "x": 1483,
+                       "y": 24
+                    },
+                    "name": "imv - [1/1] [335x297] [127.76%] /tmp/cover.jpg [perfect fit]",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                        "class": "^imv$",
+                        "instance": "^imv$"
+                        //"title": "^imv\\ \\-\\ \\[1\\/1\\]\\ \\[335x297\\]\\ \\[127\\.76\\%\\]\\ \\/tmp\\/cover\\.jpg\\ \\[perfect\\ fit\\]$",
+                        //"transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+
