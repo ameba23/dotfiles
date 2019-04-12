@@ -1,8 +1,11 @@
 vim/.vim/bundle
 vim/.vim/spell
 vim/.vim/backups
+vim/.vim/.netrwhist
 vimb/out.log
 mpd/.mpd/mpd.pid
 mpd/.mpd/mpdstate
 mpd/.mpd/mpd.log
-vim/.vim/.netrwhist
+mpd_potatoe/.mpd/mpd.pid
+mpd_potatoe/.mpd/mpdstate
+mpd_potatoe/.mpd/mpd.log
