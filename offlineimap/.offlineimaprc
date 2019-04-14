@@ -364,11 +364,6 @@ remotepasseval = get_pass("systemli")
 ssl = yes
 cert_fingerprint = 9eab0cb41245e52d0c8e7d8dd51aca9daaa0d7bc
 # cert_fingerprint = 2c6b89ab1617d1bfa7127bb51b07184bf7fd03c8
-# cert_fingerprint = c27513927505a8de9073b36b739df93ae307ac89
-#cert_fingerprint = 10bbae6d8fcb9b66d58c8960d9da5b9a80683e75 
-# cert_fingerprint = adb694517ce41706ff5d3d7b48f7c145fd1dcf02
-#cert_fingerprint = 7e27b80bac16234120d569aff5adc5b73d912539
-#cert_fingerprint = 027e86575e97894d7c69189629ed9423bf118c14 
 
 # SSL Client certificate (optional)
 # sslclientcert = /etc/ssl/certs/ca-certificates.crt

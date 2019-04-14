@@ -4,6 +4,7 @@
 # ameba 11/2016
 
 htmlfile="~/Documents/oftenlinks.html"
+mdfile="~/Documents/oftenlinks/oftenlinks.md"
 
 # create markdown bullet point from link
 towrite="* [$VIMB_TITLE]($VIMB_URI)" 
@@ -15,12 +16,12 @@ do
   case $line in 
     $towrite) found=1 ;;  
   esac 
-done < ~/Documents/oftenlinks.md
+done < $mdfile
 
 # use sed to insert the line at the begining of the 'unsorted' section
 if [ $found = 0 ]
 then
-  sed -i "/unsorted/a $towrite" ~/Documents/oftenlinks.md
+  sed -i "/unsorted/a $towrite" $mdfile
   #echo $towrite >> ~/Documents/oftenlinks.md
 fi
 
@@ -36,5 +37,5 @@ fi
 #echo "* [$VIMB_TITLE]($VIMB_URI)" >> ~/Documents/oftenlinks.md 
 
 echo "<html>" >! $htmlfile
-markdown ~/Documents/oftenlinks.md >> $htmlfile
+markdown $mdfile >> $htmlfile
 echo "</html>" >> $htmlfile
