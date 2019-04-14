@@ -281,7 +281,6 @@ remotehost = mail.mtmedia.org
 ssl = yes
 
 # When updating the fingerprint, remember to change it in .msmtprc also.
-
 cert_fingerprint = 0c1234b6b6b7e4ba03dea20a49c30fdae2338109
 # cert_fingerprint = 4af7c35759b482c6ef4bd6bde4e2fe0105ce272b
 #cert_fingerprint = c4fb6f7b917e8a3471e9608512ee364d2c1b8a91
@@ -363,7 +362,8 @@ remotepasseval = get_pass("systemli")
 
 # Whether or not to use SSL.
 ssl = yes
-cert_fingerprint = 2c6b89ab1617d1bfa7127bb51b07184bf7fd03c8
+cert_fingerprint = 9eab0cb41245e52d0c8e7d8dd51aca9daaa0d7bc
+# cert_fingerprint = 2c6b89ab1617d1bfa7127bb51b07184bf7fd03c8
 # cert_fingerprint = c27513927505a8de9073b36b739df93ae307ac89
 #cert_fingerprint = 10bbae6d8fcb9b66d58c8960d9da5b9a80683e75 
 # cert_fingerprint = adb694517ce41706ff5d3d7b48f7c145fd1dcf02
