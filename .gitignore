@@ -6,6 +6,8 @@ vimb/out.log
 mpd/.mpd/mpd.pid
 mpd/.mpd/mpdstate
 mpd/.mpd/mpd.log
+mpd/.mpd/mpd.db
 mpd_potatoe/.mpd/mpd.pid
 mpd_potatoe/.mpd/mpdstate
 mpd_potatoe/.mpd/mpd.log
+mpd_potatoe/.mpd/mpd.db
