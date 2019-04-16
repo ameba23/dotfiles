@@ -362,7 +362,8 @@ remotepasseval = get_pass("systemli")
 
 # Whether or not to use SSL.
 ssl = yes
-cert_fingerprint = 9eab0cb41245e52d0c8e7d8dd51aca9daaa0d7bc
+cert_fingerprint = 9dde6dcc02612019197cc8c2f95e568cfd3761ea
+# cert_fingerprint = 9eab0cb41245e52d0c8e7d8dd51aca9daaa0d7bc
 # cert_fingerprint = 2c6b89ab1617d1bfa7127bb51b07184bf7fd03c8
 
 # SSL Client certificate (optional)
