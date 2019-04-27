@@ -257,6 +257,7 @@ alias -g newest='*(om[1])'
 #    i use ranger's 'rifle' file opener, but you can also use 'xdg-open'
 #alias on='xdg-open newest'
 alias on='rifle newest'
+alias dlon='cd ~/Downloads && rifle newest'
 
 #
 # Automatically change the directory in bash after closing ranger
