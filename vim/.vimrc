@@ -357,3 +357,6 @@ nnoremap <Leader>a :Ack!<Space>
 " Remove trailing spaces when writing file of particular filetypes
 " fix this
 autocmd FileType cpp,java,php,js autocmd BufWritePre <buffer> %s/\s\+$//e
+
+set shell=zsh
+
