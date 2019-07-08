@@ -35,7 +35,7 @@ metadata = ~/.offlineimap
 # not use "general" for an account name.
 #
 
-accounts = systemli, mtmedia
+accounts = blockades, systemli, mtmedia
 
 # Offlineimap can synchronize more the one account at a time. If you
 # want to enable this feature, set the below value to something
@@ -47,7 +47,7 @@ accounts = systemli, mtmedia
 # since any given sync run never "finishes" due to a timer, you will never
 # sync your additional accounts if this is 1.
 
-maxsyncaccounts = 2
+maxsyncaccounts = 3
 
 # You can specify one or more user interface modules for OfflineIMAP
 # to use. OfflineIMAP will try the first in the list, and if it
@@ -156,6 +156,36 @@ statuschar = .
 
 # This is an account definition clause. You'll have one of these
 # for each account listed in general/accounts above.
+
+[Account blockades]
+
+localrepository = Localblockades
+remoterepository = Remoteblockades
+
+autorefresh = 3
+quick = 10
+
+[Repository Localblockades]
+
+type = Maildir
+localfolders = ~/Mail/blockades
+
+[Repository Remoteblockades]
+
+type = IMAP
+
+remotehost = mail.gandi.net
+
+#ssl = yes
+
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+# When updating the fingerprint, remember to change it in .msmtprc also.
+#cert_fingerprint = c4fb6f7b917e8a3471e9608512ee364d2c1b8a91
+
+# Specify the remote user name.
+remoteuser = peg@blockades.org
+remotepasseval = get_pass("blockades")
+
 
 [Account mtmedia]
 ########## Basic settings
@@ -362,7 +392,8 @@ remotepasseval = get_pass("systemli")
 
 # Whether or not to use SSL.
 ssl = yes
-cert_fingerprint = 9dde6dcc02612019197cc8c2f95e568cfd3761ea
+cert_fingerprint = eb052a93997800f1e0d2a3abb50af02927194036
+#cert_fingerprint = 9dde6dcc02612019197cc8c2f95e568cfd3761ea
 # cert_fingerprint = 9eab0cb41245e52d0c8e7d8dd51aca9daaa0d7bc
 # cert_fingerprint = 2c6b89ab1617d1bfa7127bb51b07184bf7fd03c8
 

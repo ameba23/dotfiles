@@ -112,6 +112,8 @@ assign [class="Firefox"] $tag2
 assign [class="Vimb"] $tag2
 assign [class="Evopedia"] $tag2
 
+for_window [class="gimp"] floating enable
+
 #assign [class="URxvt"] $tag1
 #assign [instance="urxvt"] $tag1
 
@@ -252,14 +254,14 @@ bindsym Print exec scrot -e 'mv $f ~/scrot/ && notify-send "screenshot taken"'
 # bindsym $mod+Prior exec amixer -c 0 set Master 2%+ unmute
 # bindsym $mod+Next exec amixer -c 0 set Master 2%- unmute
 
-bindsym XF86AudioRaiseVolume exec pulsemixer -change-volume +10
-bindsym XF86AudioLowerVolume exec pulsemixer -change-volume -10
+bindsym XF86AudioRaiseVolume exec pulsemixer -change-volume +5
+bindsym XF86AudioLowerVolume exec pulsemixer -change-volume -5
 bindsym XF86AudioMute exec pulsemixer --toggle-mute
 
 bindsym $mod+End exec pulsemixer --toggle-mute
 
-bindsym $mod+Prior exec pulsemixer --change-volume +10
-bindsym $mod+Next exec pulsemixer --change-volume -10
+bindsym $mod+Prior exec pulsemixer --change-volume +5
+bindsym $mod+Next exec pulsemixer --change-volume -5
 # XF86WLAN
 
 #bindsym $mod+m exec xrandr --auto

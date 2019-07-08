@@ -1,7 +1,5 @@
 "   ameba's vimrc
 
-
-
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -10,7 +8,7 @@ filetype off                   " required!
 
 " Change leader to a comma because the backslash is too far away
 " *** That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all 
+" The mapleader has to be set before vundle starts loading all
 " the plugins.
 let mapleader=","
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -22,7 +20,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat' 
+Plugin 'tpope/vim-repeat'
 " git integration
 Bundle 'tpope/vim-fugitive'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -32,11 +30,19 @@ Plugin 'ervandew/supertab'
 " find files
 Plugin 'ctrlp.vim'
 Plugin 'The-NERD-tree'
-" comment a line with gcc, and more... 
+" comment a line with gcc, and more...
 Plugin 'tComment'
 " snippet manager
 Plugin 'UltiSnips'
 Plugin 'honza/vim-snippets'
+
+Plugin 'ntpeters/vim-better-whitespace'
+
+
+Plugin 'hecal3/vim-leader-guide'
+let g:lmap = {}
+nnoremap <silent> <leader> :<c-u>LeaderGuide ','<CR>
+vnoremap <silent> <leader> :<c-u>LeaderGuideVisual ','<CR>
 
 " run code as you type
 " Plugin 'metakirby5/codi.vim'
@@ -81,11 +87,11 @@ if filereadable(expand("~/.vim/vundles.vim"))
 endif
 
 call vundle#end()
-filetype plugin indent on     " required! 
+filetype plugin indent on     " required!
 "
 " Brief help
 " :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles 
+" :BundleInstall(!)    - install(update) bundles
 " :BundleSearch(!) foo - search(or refresh cache first) for foo
 " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
@@ -119,7 +125,7 @@ syntax on
 " ================ Turn Off Swap Files ==============
 
 set noswapfile
-set nobackup " 
+set nobackup "
 set nowb
 let g:auto_save = 1
 
@@ -152,9 +158,11 @@ filetype indent on
 " =============== Wrapping ===============
 set linebreak    "Wrap lines at convenient points
 
+noremap <silent> <Leader>s :StripWhitespace<CR>
 
-" ,w toggles 'wrapping mode' which changes binding of cursor keys 
+" ,w toggles 'wrapping mode' which changes binding of cursor keys
 noremap <silent> <Leader>w :call ToggleWrap(0)<CR>
+" let g:lmap.w = ['call ToggleWrap(0)', 'Toggle wrap mode']
 function! ToggleWrap(firstrun)
   if &wrap
     echo "Wrap OFF"
@@ -169,8 +177,8 @@ function! ToggleWrap(firstrun)
     silent! iunmap <buffer> <Home>
     silent! iunmap <buffer> <End>
   else
-    if a:firstrun != 1 
-      echo "Wrap ON"  
+    if a:firstrun != 1
+      echo "Wrap ON"
       " only display message when called by keybinding
     endif
     setlocal wrap linebreak nolist
@@ -237,6 +245,7 @@ vnoremap K :m '<-2<CR>gv=gv
 " Toggle nerdtree with Ctrl-D
 " nmap <silent> <C-D> :NERDTreeToggle<CR>
 nmap <leader>n :NERDTreeToggle<CR>
+" let g:lmap.n = ['NERDTreeToggle', 'Toggle nerdtree']
 
 " remove html tags
 nmap <leader>tt vat<Esc>`<df>`>F<df>
@@ -253,7 +262,7 @@ nmap <silent> <C-N> :set rnu! number! number?<CR>
 
 " todo: map _ and + to Ctrl W - and Ctrl W + -resize window
 
-" from steve losh: 
+" from steve losh:
 " ,ve -open .vimrc in split window
 nnoremap <leader>ve :vsplit $MYVIMRC<cr>
 " ,vr -source .vimrc
@@ -263,8 +272,8 @@ inoremap jk <esc> " not quite got the hang of this yet
 
 " from drew niel:
 set hlsearch  " highlight search terms
-" remap <C-l> (redraw screen) to also unhighlight search terms 
-nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l> 
+" remap <C-l> (redraw screen) to also unhighlight search terms
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " correct typos (todo: is there is simple way to switch these off?)
 " put this in ftplugin?
@@ -279,15 +288,15 @@ set incsearch " jump to search pattern as you type it
 
 vnoremap <leader>sr :'<,'> write !xargs surfraw google <CR>
 
-" enter in normal mode adds blank line (second mapping doesnt work.  why?)  
+" enter in normal mode adds blank line (second mapping doesnt work.  why?)
 "nnoremap <Enter> o<ESC>
 "nmap <Enter> o<ESC>
 nnoremap <S-Enter> O<ESC>
 
 " from my old vimrc, to paste from x clipboard?
-"map <F2> "+gP  
+"map <F2> "+gP
 
- 
+
 
 " lazy about umlaut:
 function! German()
@@ -325,19 +334,20 @@ endfunc
 " remapping using escape sequences.
 " nmap <ESC>[5D <C-W><Left>
 " nmap <ESC>[5C <C-W><Right>
-" nnoremap <M-Up> <C-w><Up> 
-" nnoremap <M-Down> <C-w><Down> 
-" nnoremap <S-Left> <C-w><Left> 
-" nnoremap <S-Right> <C-w><Right> 
+" nnoremap <M-Up> <C-w><Up>
+" nnoremap <M-Down> <C-w><Down>
+" nnoremap <S-Left> <C-w><Left>
+" nnoremap <S-Right> <C-w><Right>
 nmap <tab> <C-w>w
-" nmap <C-Up> <C-w><Up> 
-" nmap <C-Down> <C-w><Down> 
-" nmap <C-Left> <C-w><Left> 
-" nmap <C-Right> <C-w><Right> 
+" nmap <C-Up> <C-w><Up>
+" nmap <C-Down> <C-w><Down>
+" nmap <C-Left> <C-w><Left>
+" nmap <C-Right> <C-w><Right>
 
-map <Leader>v 0ma}b:'a,.j<CR>070 ?  *<Esc>dwi<CR><Esc>
+" map <Leader>v 0ma}b:'a,.j<CR>070 ?  *<Esc>dwi<CR><Esc>
 
-" not sure about these, maybe get rid:
+" not sure
+" about these, maybe get rid:
 nmap <Leader>y "Ayy
 nmap <Leader>p "ap:let @a = ''<cr>
 
@@ -360,3 +370,4 @@ autocmd FileType cpp,java,php,js autocmd BufWritePre <buffer> %s/\s\+$//e
 
 set shell=zsh
 
+call leaderGuide#register_prefix_descriptions(',', 'g:lmap')

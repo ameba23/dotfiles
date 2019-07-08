@@ -45,6 +45,26 @@ class fzf_select(Command):
             else:
                 self.fm.select_file(fzf_file)
 
+class random_file(Command):
+    """
+    :random_file
+
+    jump to random file in directory tree
+    """
+    def execute(self):
+        import subprocess
+        # match files and directories
+        command="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
+          -o -print 2> /dev/null | sed 1d | cut -b3- | shuf | head -n 1"
+        rf = self.fm.execute_command(command, stdout=subprocess.PIPE)
+        stdout, stderr = rf.communicate()
+        if rf.returncode == 0:
+            rf_file = os.path.abspath(stdout.decode('utf-8').rstrip('\n'))
+            if os.path.isdir(rf_file):
+                self.fm.cd(rf_file)
+            else:
+                self.fm.select_file(rf_file)
+
 class mpdjump(Command):
     """
     :mpdjump

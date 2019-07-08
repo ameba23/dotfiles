@@ -61,12 +61,21 @@ folder-hook +systemli/* 'set record="~/Mail/systemli/Sent"'
 folder-hook +systemli/* 'set postponed="+systemli/Drafts"'
 folder-hook +systemli/* 'set spoolfile="+systemli/INBOX"'
 
+folder-hook +blockades/* 'set from="peg@blockades.org"'
+folder-hook +blockades/* 'set sendmail="/usr/bin/msmtp -a blockades"'
+folder-hook +blockades/* 'set mbox="+blockades/INBOX"'
+folder-hook +blockades/* 'set record="~/Mail/blockades/Sent"' 
+folder-hook +blockades/* 'set postponed="+blockades/Drafts"'
+folder-hook +blockades/* 'set spoolfile="+blockades/INBOX"'
+
     
 #      Set up mailboxes by scanning for all subfolders in ~/Maildir:    
 #mailboxes `echo -n "+ "; find ~/Mail/systemli -maxdepth 1 -type d -name ".*" -printf "+'%f' "`
 # manually set up mailboxes:
 mailboxes +systemli/INBOX \
           +mtmedia/INBOX \
+          +blockades/INBOX \
+          +blockades/Sent \
           +systemli/Drafts \
           +systemli/Sent \
           +archive-sli \
