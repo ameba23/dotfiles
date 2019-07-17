@@ -416,8 +416,8 @@ alias tomb=' tomb'
 alias fehdrop='feh -Tcpimg' 
 
 # build/edit my browser start page:
-alias oftenlinks='markdown ~/Documents/oftenlinks.md >! ~/Documents/oftenlinks.html'
-alias oftenedit='vim ~/Documents/oftenlinks.md && oftenlinks'
+alias oftenlinks='markdown ~/Documents/oftenlinks/oftenlinks.md >! ~/Documents/oftenlinks.html'
+alias oftenedit='vim ~/Documents/oftenlinks/oftenlinks.md && oftenlinks'
 
 # website stuff
 alias buildsite='cd ~/Documents/static && mkdocs build && cd -'
@@ -450,7 +450,7 @@ alias vb='i3-msg "workspace 2:www" ; vimb &'
 
 # frequently used directories
 alias books='cd ~/books_and_zines'
-alias dot='cd ~/dotfiles'
+# alias dot='cd ~/dotfiles'
 alias film='cd ~/film'
 alias soft='cd ~/software'
 
