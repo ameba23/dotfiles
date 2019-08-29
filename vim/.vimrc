@@ -38,11 +38,11 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'ntpeters/vim-better-whitespace'
 
-
-Plugin 'hecal3/vim-leader-guide'
-let g:lmap = {}
-nnoremap <silent> <leader> :<c-u>LeaderGuide ','<CR>
-vnoremap <silent> <leader> :<c-u>LeaderGuideVisual ','<CR>
+Plugin 'dense-analysis/ale'
+" Plugin 'hecal3/vim-leader-guide'
+" let g:lmap = {}
+" nnoremap <silent> <leader> :<c-u>LeaderGuide ','<CR>
+" vnoremap <silent> <leader> :<c-u>LeaderGuideVisual ','<CR>
 
 " run code as you type
 " Plugin 'metakirby5/codi.vim'
@@ -62,7 +62,6 @@ Plugin 'mileszs/ack.vim'
 " Automatic closing of quotes and brackets
 Plugin 'cohama/lexima.vim'
 
-Plugin 'w0rp/ale'
 "Plugin 'ranger.vim'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Bundle 'tpope/vim-rails.git'
@@ -370,4 +369,4 @@ autocmd FileType cpp,java,php,js autocmd BufWritePre <buffer> %s/\s\+$//e
 
 set shell=zsh
 
-call leaderGuide#register_prefix_descriptions(',', 'g:lmap')
+" call leaderGuide#register_prefix_descriptions(',', 'g:lmap')
