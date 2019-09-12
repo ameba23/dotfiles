@@ -416,7 +416,6 @@ alias tomb=' tomb'
 alias fehdrop='feh -Tcpimg' 
 
 # build/edit my browser start page:
-alias oftenlinks='markdown ~/Documents/oftenlinks/oftenlinks.md >! ~/Documents/oftenlinks.html'
 alias oftenedit='vim ~/Documents/oftenlinks/oftenlinks.md && oftenlinks'
 
 # website stuff

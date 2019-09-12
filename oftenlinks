@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+htmlfile="~/Documents/oftenlinks.html"
+mdfile="~/Documents/oftenlinks/oftenlinks.md"
+
+echo "<html>" >! $htmlfile
+markdown $mdfile >> $htmlfile
+echo "</html>" >> $htmlfile
