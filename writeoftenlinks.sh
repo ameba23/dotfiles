@@ -3,8 +3,8 @@
 # 
 # ameba 11/2016
 
-htmlfile="~/Documents/oftenlinks.html"
-mdfile="~/Documents/oftenlinks/oftenlinks.md"
+htmlfile="$HOME/Documents/oftenlinks.html"
+mdfile="$HOME/Documents/oftenlinks/oftenlinks.md"
 
 # create markdown bullet point from link
 towrite="* [$VIMB_TITLE]($VIMB_URI)" 
