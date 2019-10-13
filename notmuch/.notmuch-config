@@ -31,7 +31,7 @@ path=/home/beetroot/Mail
 [user]
 name=ameba23
 primary_email=ameba23@systemli.org
-other_email=penguin@mtmedia.org;
+other_email=penguin@mtmedia.org;peg@blockades.org
 
 # Configuration for "notmuch new"
 #
